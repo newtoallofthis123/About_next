@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import Layout from "../../components/layout"
 import data from "./data.json"
 import { useRouter } from 'next/router'
 import Router from "next/router"
+import Link from "next/link"
 
 export default function Social() {
     const router = useRouter()
@@ -11,18 +12,16 @@ export default function Social() {
     const getDb = () => {
         return data[param]
     }
-
-    if (!getDb()) {
-        setTimeout(() => {
-            Router.push("/")
-        }, 3000)
-        return (
-            <Layout>
-                <h1 className="main-title">404</h1>
-                <h2>Heading Back</h2>
-            </Layout>
-        )
+    const handleNotFound = () => {
+        if (param === undefined || !getDb()) {
+            return (
+                <Layout>
+                    <h1 className="main-title">404</h1>
+                </Layout>
+            )
+        }
     }
+    handleNotFound()
 
     const useRedirect = (url, time) => {
         if (time === 0) {
@@ -47,7 +46,7 @@ export default function Social() {
                     You can change your mind
                 </p>
                 <p>
-                    <a href="/">Click here</a> to go back to the home page.
+                    <Link href="/">Click here</Link> to go back to the home page.
                 </p>
             </Layout>
         )
