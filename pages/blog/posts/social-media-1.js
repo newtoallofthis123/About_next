@@ -16,9 +16,12 @@ export default function SocialMedia() {
                 <div className='center'>
                     <Share title="Social Media. It's Complicated Part 1" url="social-media-1"></Share>
                     <div className="audio">
-                        <audio id="audio" src="/assets/blog/audio/social-media-1.ogg" controls></audio>
-                        <br />
-                            <small>Voiced by me: Ishan Joshi</small>
+                        <iframe
+                            title='Social Media. Its Complicated Part 1'
+                            src="https://podcasters.spotify.com/pod/show/noobscience/embed/episodes/Social-Media-Its-Complicated-Part-1-e20nbgi"    
+                            frameBorder="0" scrolling='no'
+                        />
+                        <small>Voiced by me: Ishan Joshi</small>
                     </div>
                 </div>
                 <div className="img">
