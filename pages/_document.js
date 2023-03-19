@@ -27,8 +27,9 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@100;400&family=Raleway&family=Poppins&family=Roboto+Condensed:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@100;400&family=Raleway&family=Poppins&family=Fira+Code&family=JetBrains+Mono:wght@400;700&family=Great+Vibes&family=Archivo+Black&family=Roboto+Condensed&family=Montserrat&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Yeseva+One&display=swap"
           rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"></link>
       </Head>
       <body>
         <Main />
