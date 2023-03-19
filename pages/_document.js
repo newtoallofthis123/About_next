@@ -4,19 +4,14 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta charset="utf-8" />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#f1fa00" />
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="title" content="NoobScience"/>
         <meta name="description" content="Hi! I am Ishan. I am a Student and Open Source Enthusiast. This is my personal portfolio website. I Like to Code Stuff. Check out my work!"/>
         <meta name="title" content="NoobScience"/>
         <meta name="keywords" content="noobscience, NoobScience, newtoallofthis123, technology, website"/>
         <meta name="robots" content="index, follow, archive"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="language" content="English"/>
         <meta name="author" content="NoobScience"/>
 
@@ -30,7 +25,7 @@ export default function Document() {
         <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/favicon.ico" color="#f1fa00" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
           href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@100;400&family=Raleway&family=Poppins&family=Roboto+Condensed:wght@700&display=swap"
           rel="stylesheet" />

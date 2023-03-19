@@ -48,22 +48,12 @@
     --heading-font: "JetBrains Mono", 'Courier New', Courier, monospace;
 }
 
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --color: #f3f1f1;
-        --bg: #1a1919;
-    }
-} */
-
-body {
+.blog {
     background-color: var(--bg);
     color: var(--color);
     font-family: var(--font);
     font-size: 1.2rem;
     line-height: 2rem;
-}
-
-.body{
     margin: 5vw 10vw;
     border: 8px solid var(--color);
 }
@@ -195,20 +185,20 @@ i {
     margin: 2vw;
 }
 
-p {
+.blog p {
     font-family: var(--font);
     font-weight: 400;
 }
 
-img {
+.blog img {
     height: auto;
 }
 
-b {
+.blog b {
     font-weight: 700;
 }
 
-a {
+.blog a {
     color: inherit;
     text-decoration: underline;
     font-family: inherit;
@@ -216,20 +206,20 @@ a {
     transition-delay: 0.1s;
 }
 
-a:hover {
+.blog a:hover {
     text-decoration: none;
     color: var(--bg);
     background-color: var(--color);
 }
 
-h2 {
+.blog h2 {
     font-family: var(--heading-font);
     font-size: 1.8rem;
     font-weight: 700;
     margin: 1rem 0;
 }
 
-h3 {
+.blog h3 {
     font-family: var(--heading-font);
     font-size: 1.5rem;
     font-weight: 700;
@@ -399,7 +389,7 @@ blockquote {
         padding: 12px;
     }
 
-    img {
+    .blog img {
         width: 100%;
     }
 

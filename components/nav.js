@@ -45,7 +45,7 @@ const Nav = () => {
             <nav className="index_m_nav">
                 <ul>
                     {/* eslint-disable-next-line */}
-                    <li className="nav-title"><img src={icon.src} width="32" height="32" style={{ verticalAlign: "middle", borderRadius: "24px" }} alt="NoobScience Icon" /> <span role="button" onClick={() => { navigate("/") }}>NoobScience</span><button onClick={toggleNav} style={{ fontSize: "1.4rem", margin: "0 1rem", }} id="op_toggle"><i className="bi bi-list" id="nav_icon"></i></button></li>
+                    <li className="nav-title"><img src={icon.src} width="32" style={{ verticalAlign: "middle", borderRadius: "24px" }} alt="NoobScience Icon" /> <span role="button" onClick={() => { navigate("/") }}>NoobScience</span><button onClick={toggleNav} style={{ fontSize: "1.4rem", margin: "0 1rem", }} id="op_toggle"><i className="bi bi-list" id="nav_icon"></i></button></li>
                     <div style={{display: nav ? "inline":"none",}} className="nav-content">
                         <li>
                             <Link href="/about" className="underline">About</Link>

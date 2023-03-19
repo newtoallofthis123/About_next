@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react'
 
 export default function Settings() {
-    const [settings, setSettings] = useState(true)
+    const [settings, setSettings] = useState(false)
     const toggleSettings = () => {
-        document.documentElement.setAttribute("data-theme", (localStorage.getItem("theme") || "light"))
-        document.documentElement.setAttribute("data-font", (localStorage.getItem("font") || "sans-serif")) 
         setSettings(!settings)
         if (settings) {
             document.getElementById("settings-container").style.display = "none"
@@ -14,8 +12,14 @@ export default function Settings() {
         }
     }
     const toggleTheme = (theme) => {
+        console.log(theme)
         if (theme === "system") {
-            theme = "light"
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                theme = "dark"
+            }
+            else {
+                theme = "light"
+            }
         }
         document.documentElement.setAttribute("data-theme", theme)
         localStorage.setItem("theme", theme)
@@ -25,15 +29,17 @@ export default function Settings() {
         localStorage.setItem("font", font)
     }
     useEffect(() => {
-        document.documentElement.setAttribute("data-theme", (localStorage.getItem("theme") || "light"))
-        document.documentElement.setAttribute("data-font", (localStorage.getItem("font") || "sans-serif")) 
-        if (settings) {
-            document.getElementById("settings-container").style.display = "none"
+        let theme = localStorage.getItem("theme")
+        let font = localStorage.getItem("font")
+        if (theme === null) {
+            theme = "system"
         }
-        else {
-            document.getElementById("settings-container").style.display = "block"
+        if (font === null) {
+            font = "sans-serif"
         }
-    }, [settings])
+        toggleTheme(theme)
+        toggleFont(font)
+    }, [])
   return (
       <div>
           <div style={{textAlign: "end",}}>
