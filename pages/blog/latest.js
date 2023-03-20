@@ -13,7 +13,7 @@ export default function BlogLatest() {
     if (isLoading) return <div>Loading...</div>
     if (!data) return null
     const post = data.blogs[0]
-    const time = 10
+    const time = 5
     setTimeout(() => {
         Router.push(`/blog/posts/${post.slug}`)
     }, time * 1000)

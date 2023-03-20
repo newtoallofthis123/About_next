@@ -42,8 +42,10 @@ export default function Settings() {
     }, [])
   return (
       <div>
-          <div style={{textAlign: "end",}}>
-              <button id="settings" onClick={toggleSettings}><i className="bi bi-gear"></i> Settings</button>
+          <div>
+              <div style={{ textAlign: "end", }}>
+                  <button id="settings" onClick={toggleSettings}><i className="bi bi-gear"></i> Settings</button>
+              </div>
           </div>
           <div id="settings-container">
               <div className="settings-content">

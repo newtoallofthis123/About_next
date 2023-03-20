@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const BlogNav = () => {
@@ -5,16 +6,18 @@ const BlogNav = () => {
         <>
             <nav className="blog-nav">
                 <ul>
-                    <li><a href="/blog" className="nav-title"> Ishan Writes...</a></li>
-                    <li><a href="/blog/archive">📦 Archives</a></li>
-                    <li><a href="/blog/latest">👀 Latest</a></li>
+                    <li><Link href="/blog" className="nav-title"> Ishan Writes...</Link></li>
+                    <li><Link href="/blog/archive"><i class="bi bi-archive-fill"></i> Archives</Link></li>
+                    <li><Link href="/blog/latest"><i class="bi bi-fire"></i> Latest</Link></li>
+                    <li><Link href="/social/github"><i className="bi bi-github"></i> GitHub</Link></li>
                 </ul>
             </nav>
             <nav className="blog-m_nav">
                 <ul>
-                    <li><a href="/blog" className="nav-title">Ishan Writes...</a></li>
-                    <li><a href="/blog/latest">📦 Archives</a></li>
-                    <li><a href="/blog/latest">👀 Latest</a></li>
+                    <li><Link href="/blog" className="nav-title"> Ishan Writes...</Link></li>
+                    <li><Link href="/blog/archive"><i class="bi bi-archive-fill"></i> Archives</Link></li>
+                    <li><Link href="/blog/latest"><i class="bi bi-fire"></i> Latest</Link></li>
+                    <li><Link href="/social/github"><i className="bi bi-github"></i> GitHub</Link></li> 
                 </ul>
             </nav>
         </>

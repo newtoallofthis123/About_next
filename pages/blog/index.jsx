@@ -42,7 +42,7 @@ export default function Blog() {
                                         {post.description}
                                     </p>
                                     <button><Link href={`blog/posts/${post.slug}`} >Read the Article!</Link></button>
-                                    <button><Link href={`blog/pdfs/${post.slug}`}>Download The PDF</Link></button>
+                                    <button><Link href={`/assets/blog/pdfs/${post.slug}.pdf`}>Download The PDF</Link></button>
                                 </div>
                             </div>
                         </div>
