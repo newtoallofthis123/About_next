@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '@/components/layout'
 import Prism from "prismjs";
+import Link from 'next/link';
 
 export default function C() {
     React.useEffect(() => {
@@ -490,6 +491,23 @@ int main() {
                 </pre>
 
             </div>
+            <div className="color-div">
+                <Link href="/notes/c/recursion">
+                    <h2>
+                        Next Up <i className="bi bi-arrow-right"></i> Recursion
+                    </h2>
+                </Link>
+            </div>
+            <div className="disclaimer">
+                <p>
+                    Nearly 80% of this article is AI generated.
+                </p>
+            </div>
+            <footer className="sticky-credit">
+                <h3>
+                    Content produced by <Link href="/">Ishan</Link> Joshi for Fun :)
+                </h3>
+            </footer>
       </Layout>
   )
 }

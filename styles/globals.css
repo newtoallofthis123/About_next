@@ -2,9 +2,29 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 ::selection {
-  background-color: #e97eff;
+  background-color: #f2f225;
   color: #000;
   line-height: 1.8rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color);
 }
 
 :root {
@@ -23,6 +43,7 @@
   --bg: #fdf8f8;
   --dark-img: none;
   --light-img: inline;
+  --link: #001eff;
 }
 
 :root[data-theme="dark"] {
@@ -30,6 +51,7 @@
   --bg: #1a1919;
   --dark-img: inline;
   --light-img: none;
+  --link: #fff200;
 }
 
 :root[data-theme="violet"] {
@@ -37,6 +59,7 @@
   --bg: #21002c;
   --dark-img: inline;
   --light-img: none;
+  --link: #fff200;
 }
 
 :root[data-theme="black"] {
@@ -44,6 +67,7 @@
   --bg: #000000;
   --dark-img: inline;
   --light-img: none;
+  --link: #fff200;
 }
 
 :root[data-theme="sepia"] {
@@ -51,6 +75,7 @@
   --bg: #f9f4e7;
   --dark-img: none;
   --light-img: inline;
+  --link: #001eff;
 }
 
 .light-pfp {
@@ -256,6 +281,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .home {
   text-align: center;
+}
+
+.home a{
+  text-decoration: underline;
+  color: var(--link);
 }
 
 .notes{
