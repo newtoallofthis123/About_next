@@ -5,8 +5,9 @@ import { Seo } from "@/components/seo"
 import Link from "next/link";
 import TypeWriter from "@/components/typewriter";
 
-import light_pfp from "@/static/images/profile-light.webp"
-import dark_pfp from "@/static/images/profile-dark.webp"
+// import light_pfp from "@/static/images/profile-light.webp"
+// import dark_pfp from "@/static/images/profile-dark.webp"
+// import Image from "next/image";
 
 const Home = () => {
     const scroll = () => {
@@ -19,11 +20,11 @@ const Home = () => {
     return (
         <Layout>
             <div className="hero">
-                <h1 className="index-title">
+                <h1 style={{padding: "0 0 2rem 0",}} className="index-title">
                     <span>{/* eslint-disable-next-line */}
-                        <img src={light_pfp.src} alt="Light Profile Picture" className="light-pfp profile-pic" />
+                        {/* <img src={light_pfp.src} alt="Light Profile Picture" className="light-pfp profile-pic" /> */}
                         {/* eslint-disable-next-line */}
-                        <img src={dark_pfp.src} alt="Dark Profile Picture" className="dark-pfp profile-pic" />
+                        {/* <img src={dark_pfp.src} alt="Dark Profile Picture" className="dark-pfp profile-pic" /> */}
                     </span><p></p>
                     <span style={{ color: "var(--blue)", }}>I</span>shan <span style={{ color: "var(--green)", }}>J</span>oshi
                 </h1>
@@ -78,6 +79,25 @@ const Home = () => {
                         <Link href="/tools">Tools</Link>
                     </li>
                 </ul>
+            </div>
+            <div style={{ backgroundColor: "var(--white)", }} className="color-div">
+                <h2>
+                    📌 Updates Board
+                </h2>
+                <div className="bod">
+                    <h3>
+                        Not to brag, but see this lighthouse score!
+                    </h3>
+                    <div className="img">
+                        <img src="/assets/site/lighthouse.png" alt="LightHouse Score" />
+                    </div>
+                    <p>
+                        I have been working on my website for a while now and I am really happy with the results.
+                        The lighthouse score is always in between 90-100.
+                        Now I am treating this as an achievement because, this site also hosts a blog that has 
+                        costly images and videos. I am just glad that I was able to achieve this score.
+                    </p>
+                </div>
             </div>
         </Layout>
     )

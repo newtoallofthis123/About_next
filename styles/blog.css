@@ -1,9 +1,3 @@
-::selection {
-    background-color: #fffd7e;
-    color: #000;
-    line-height: 1.8rem;
-}
-
 .blog {
     background-color: var(--bg);
     color: var(--color);
@@ -193,6 +187,7 @@ i {
 /* Custom Classes */
 .disclaimer {
     background-color: #f5cccc;
+    color: var(--black);
     padding: 2px 12px;
     border-radius: 12px;
     margin: 2rem;
@@ -321,6 +316,17 @@ blockquote {
     text-align: center;
     margin: 0.2vw 0;
     border-top: 2px solid var(--color);
+}
+
+.blog footer a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog footer a:hover{
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
 }
 
 .normal-img{

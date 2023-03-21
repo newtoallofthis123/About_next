@@ -12,7 +12,6 @@ export default function Settings() {
         }
     }
     const toggleTheme = (theme) => {
-        console.log(theme)
         if (theme === "system") {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 theme = "dark"
@@ -22,7 +21,7 @@ export default function Settings() {
             }
         }
         document.documentElement.setAttribute("data-theme", theme)
-        localStorage.setItem("theme", theme)
+        localStorage.setItem("theme", "system")
     }
     const toggleFont = (font) => {
         document.documentElement.setAttribute("data-font", font)

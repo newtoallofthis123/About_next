@@ -30,24 +30,26 @@ export default function Social() {
     }
 
     const [time, setTime] = useState(10)
-        setInterval(() => {
+    setInterval(() => {
+        if(time > 0) {
             setTime(time - 1)
-        }, 1000)
-        useRedirect(getDb(), time)
-        return (
-            <Layout>
-                <h1 className="main-title">Heading to...</h1>
-                <a style={{ fontSize: "1.2rem", }} href={getDb()}>{getDb()}</a>
-                <h1>in {time}</h1>
-                <p>
-                    Don't want to head to the site?
-                </p>
-                <p>
-                    You can change your mind
-                </p>
-                <p>
-                    <Link href="/">Click here</Link> to go back to the home page.
-                </p>
-            </Layout>
-        )
+        }
+    }, 1000)
+    useRedirect(getDb(), time)
+    return (
+        <Layout>
+            <h1 className="main-title">Heading to...</h1>
+            <a style={{ fontSize: "1.2rem", }} href={getDb()}>{getDb()}</a>
+            <h1>in {time}</h1>
+            <p>
+                Don't want to head to the site?
+            </p>
+            <p>
+                You can change your mind
+            </p>
+            <p>
+                <Link href="/">Click here</Link> to go back to the home page.
+            </p>
+        </Layout>
+    )
     }

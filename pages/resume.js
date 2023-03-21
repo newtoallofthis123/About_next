@@ -11,7 +11,7 @@ export default function Resume() {
                         width: "100%",
                         height: "100vh",
                     }}
-                src="https://drive.google.com/file/d/10DPMeKG3olUkViV_ae6kx2MkBz1IkQjE/preview"
+                src="/assets/resume.pdf"
                     frameborder="0"></iframe>
       </Layout>
   )
