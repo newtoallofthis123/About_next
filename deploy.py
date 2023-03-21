@@ -31,4 +31,8 @@ def write_content(content):
         print("Not commited to git or pushed to github")
 
 if __name__ == "__main__":
-    write_content(get_content())
+    user_pwd = input("Enter password: ")
+    if user_pwd == "NoobScience":
+        write_content(get_content())
+    else:
+        print("Incorrect password")
