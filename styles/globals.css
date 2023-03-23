@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=JetBrains+Mono:wght@400;700&family=Great+Vibes&family=Archivo+Black&family=Roboto+Condensed&family=Montserrat&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Yeseva+One&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
-
 ::selection {
-  background-color: #f2f225;
+  background-color: #fcfc5c;
   color: #000;
-  line-height: 1.8rem;
 }
 
 /* width */
@@ -36,11 +32,16 @@
   --violet: #dd5eff;
   --black: #1a1919;
   --white: #f9f5f5;
+  --blog-font-size: 1.2rem;
+  --blog-line-height: 1.8rem;
+  --font: "Atkinson Hyperlegible", -apple-system, sans-serif;
 }
 
 :root[data-theme="light"] {
   --color: #1a1919;
   --bg: #fdf8f8;
+  --blog-bg: #fffaf2;
+  --footer-bg: #8df5f5;
   --dark-img: none;
   --light-img: inline;
   --link: #001eff;
@@ -49,6 +50,8 @@
 :root[data-theme="dark"] {
   --color: #f3f1f1;
   --bg: #1a1919;
+  --blog-bg: #131921;
+  --footer-bg: #111111;
   --dark-img: inline;
   --light-img: none;
   --link: #fff200;
@@ -57,6 +60,8 @@
 :root[data-theme="violet"] {
   --color: #e1f0f0;
   --bg: #21002c;
+  --blog-bg: #21002c;
+  --footer-bg: #020006;
   --dark-img: inline;
   --light-img: none;
   --link: #fff200;
@@ -65,6 +70,8 @@
 :root[data-theme="black"] {
   --color: #ffffff;
   --bg: #000000;
+  --blog-bg: #000;
+  --footer-bg: #000;
   --dark-img: inline;
   --light-img: none;
   --link: #fff200;
@@ -73,6 +80,8 @@
 :root[data-theme="sepia"] {
   --color: #000000;
   --bg: #f9f4e7;
+  --blog-bg: #f3f5f5;
+  --footer-bg: #8df5f5;
   --dark-img: none;
   --light-img: inline;
   --link: #001eff;
@@ -92,7 +101,7 @@
 }
 
 :root[data-font="sans-serif"] {
-  --font: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font: "Atkinson Hyperlegible", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --heading-font: "Roboto Condensed", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   ;
 }
@@ -280,6 +289,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
   text-align: center;
 }
 
@@ -353,14 +366,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .m_sub_title {
   display: none;
-  margin: 1.8rem;
+  margin: 1rem;
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
 }
 
 .m_sub_title a {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--black);
+  text-decoration: none;
   border: 2px solid var(--color);
   padding: 3px;
 }
@@ -425,6 +439,15 @@ h1, h2, h3, h4, h5, h6 {
   text-align: justify;
   font-size: 1.2rem;
   line-height: 2rem;
+}
+
+.update_div{
+  margin: 0 10vw;
+}
+
+.update_div p{
+  font-size: 1.2rem;
+  font-family: var(--font);
 }
 
 .skills {

@@ -21,12 +21,12 @@ export default function Blog() {
                 data.blogs.map((post) => {
                     if (!post.wip)
                     return (
-                        <div key={post.id} class="recommendations">
-                            <div class="recommend">
+                        <div key={post.id} className="recommendations">
+                            <div className="recommend">
                                 <div className="img">
                                     <img src={`/assets/blog/images/${post.img}`} alt="Blog Post Image" />
                                 </div>
-                                <div class="content">
+                                <div className="content">
                                     <h3><Link href={`posts/${post.slug}`}>{post.title}</Link></h3>
                                     <p>
                                         {post.description}

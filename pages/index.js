@@ -30,9 +30,15 @@ const Home = () => {
                 </h1>
                 <TypeWriter data={does} />
                 <h2 className="sub_title"><Link href="/about" style={{ background: "#75f0f3" }}>Student</Link><Link href="/skills" style={{ background: "#95ee65" }}>Full Stack Dev</Link><Link href="/projects" style={{ background: "#f888d6" }}>Open Source</Link></h2>
-                <h2 className="m_sub_title"><Link href="/about" style={{ background: "#75f0f3", borderRadius: "12px", padding: "12px", margin: "40px" }}>Student</Link></h2>
-                <h2 className="m_sub_title"><Link href="/skills" style={{ background: "#95ee65", borderRadius: "12px", padding: "12px" }}>Full Stack</Link></h2>
-                <h2 className="m_sub_title"><Link href="/projects" style={{ background: "#f888d6", borderRadius: "12px", padding: "12px" }}>Open Source</Link></h2>
+                <div
+                    style={{
+                        margin: "2.2rem 0",
+                 }}
+                >
+                    <h2 className="m_sub_title"><Link href="/about" style={{ background: "#75f0f3", borderRadius: "12px", padding: "12px", margin: "40px" }}>Student</Link></h2>
+                    <h2 className="m_sub_title"><Link href="/skills" style={{ background: "#95ee65", borderRadius: "12px", padding: "12px" }}>Full Stack</Link></h2>
+                    <h2 className="m_sub_title"><Link href="/projects" style={{ background: "#f888d6", borderRadius: "12px", padding: "12px" }}>Open Source</Link></h2>
+                </div>
                 <div style={{ textAlign: "center" }}>
                     <button onClick={scroll} className='scroll_btn'><i className="bi bi-chevron-compact-down"></i></button>
                 </div>

@@ -1,15 +1,31 @@
 import React, {useState, useEffect} from 'react'
 
-export default function Settings() {
+export default function Settings({ blog = "false" }) {
+    (blog == "true") ? blog = true : blog = false
     const [settings, setSettings] = useState(false)
     const toggleSettings = () => {
         setSettings(!settings)
-        if (settings) {
-            document.getElementById("settings-container").style.display = "none"
-        }
-        else {
-            document.getElementById("settings-container").style.display = "block"
-        }
+    }
+    const fontIncrease = () => {
+        let fontSize = getComputedStyle(document.documentElement).getPropertyValue("--blog-font-size")
+        fontSize = parseFloat(fontSize)
+        fontSize += 0.2
+        document.documentElement.style.setProperty("--blog-font-size", fontSize + "rem")
+        document.documentElement.style.setProperty("--blog-line-height", (fontSize+ 0.6) + "rem")
+    }
+    const fontDecrease = () => {
+        let fontSize = getComputedStyle(document.documentElement).getPropertyValue("--blog-font-size")
+        fontSize = parseFloat(fontSize)
+        fontSize -= 0.2
+        document.documentElement.style.setProperty("--blog-font-size", fontSize + "rem")
+        document.documentElement.style.setProperty("--blog-line-height", (fontSize+0.6) + "rem")
+    }
+    const fontReset = () => {
+        let fontSize = getComputedStyle(document.documentElement).getPropertyValue("--blog-font-size")
+        fontSize = parseFloat(fontSize)
+        fontSize = 1.2
+        document.documentElement.style.setProperty("--blog-font-size", fontSize + "rem")
+        document.documentElement.style.setProperty("--blog-line-height", (fontSize + 0.6) + "rem")
     }
     const toggleTheme = (theme) => {
         if (theme === "system") {
@@ -43,10 +59,23 @@ export default function Settings() {
       <div>
           <div>
               <div style={{ textAlign: "end", }}>
-                  <button id="settings" onClick={toggleSettings}><i className="bi bi-gear"></i> Settings</button>
+                  <button className="settings" onClick={toggleSettings}><i className="bi bi-gear"></i> Settings</button>
+                  {
+                      (blog == true) ?
+                          <span>
+                               | <button className='settings' onClick={fontIncrease}><i className="bi bi-plus"></i> Increase</button> |
+                              <button className='settings' onClick={fontDecrease}><i className="bi bi-dash"></i> Decrease</button> |
+                              <button className='settings' onClick={fontReset}><i className="bi bi-repeat"></i> Reset</button>
+                          </span>
+                            : null
+                  }
               </div>
           </div>
-          <div id="settings-container">
+          <div
+              style={
+                  (settings)?{ display: "block" }:{ display: "none"}
+              }
+              id="settings-container">
               <div className="settings-content">
                   <h2>Settings</h2>
                   <div className="settings-options">

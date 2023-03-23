@@ -23,10 +23,14 @@ export default function Document() {
         <link rel="canonical" href="https://new.noobscience.rocks" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="mask-icon" href="/favicon.ico" color="#f1fa00" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@100;400&family=Raleway&family=Poppins&family=Fira+Code&family=JetBrains+Mono:wght@400;700&family=Great+Vibes&family=Archivo+Black&family=Roboto+Condensed&family=Montserrat&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Yeseva+One&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@100;400&family=Poppins&family=Fira+Code&family=JetBrains+Mono:wght@400;700&family=Great+Vibes&family=Archivo+Black&family=Roboto+Condensed&family=Montserrat&family=Atkinson+Hyperlegible:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Yeseva+One&display=swap"
           rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"></link>
       </Head>

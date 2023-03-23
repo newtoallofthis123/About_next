@@ -2,8 +2,17 @@ import Link from "next/link";
 import useSwr from 'swr'
 import { Seo } from "@/components/seo";
 import BlogLayout from "@/components/blog_layout";
+import Router from "next/router";
 
 export default function Blog() {
+    const ran_color = () => {
+        const choices = ["red", "yellow", "violet", "green"];
+        const random = choices[Math.floor(Math.random() * choices.length)];
+        return `var(--${random})`
+    };
+    const send = (post) => {
+        Router.push("/blog/posts/"+post)
+    }
     const fetcher = (url) => fetch(url).then((res) => res.json())
     const { data, error, isLoading } = useSwr('/api/all', fetcher)
 
@@ -31,12 +40,12 @@ export default function Blog() {
                     count += 1
                     if(count < 8 && !post.wip)
                     return (
-                        <div key={post.id} class="recommendations">
-                            <div class="recommend">
+                        <div key={post.id} className="recommendations">
+                            <div style={{ backgroundColor: ran_color(),}} onClick={() => {send(post.slug)}} className="recommend">
                                 <div className="img">
                                     <img src={`/assets/blog/images/${post.img}`} alt="Blog Post Image" />
                                 </div>
-                                <div class="content">
+                                <div className="content">
                                     <h3><Link href={`posts/${post.slug}`}>{post.title}</Link></h3>
                                     <p>
                                         {post.description}
@@ -53,7 +62,7 @@ export default function Blog() {
                     Okay, as you can see I want to be not talking about technology, but it
                     leaks into my words. Anyways, this is a place I just randomly share my thoughts.
                     There's a plan for more improvements and features, but for now, this is it.
-                    If you want to discuss something, please feel free to reach out on <i class="bi bi-twitter"></i><a href="https://twitter.com/noobscience1">Twitter</a>
+                    If you want to discuss something, please feel free to reach out on <i className="bi bi-twitter"></i><a href="https://twitter.com/noobscience1">Twitter</a>
                     . One more thing, I am not a native English speaker, so please excuse any
                     grammatical errors.
                 </p>
@@ -67,7 +76,7 @@ export default function Blog() {
                 <p>
                     I have been thinking about this for quite a while now and I want to try it
                     out. So this blog is a subsidiary of the main site <a href="https://noobscience.rocks">NoobScience</a> and
-                    is hosted on the same server. The code is available on <i class="bi bi-github"></i>
+                    is hosted on the same server. The code is available on <i className="bi bi-github"></i>
                     <a href="https://github.com/newtoallofthis123/About">GitHub</a>.
                     So, if you want to write a article on this blog, you can just fork the repo,
                     write your article and send a pull request. I'll review it and merge it.

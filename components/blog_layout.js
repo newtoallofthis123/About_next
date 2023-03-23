@@ -9,7 +9,7 @@ const BlogLayout = ({ children }) => {
     return (
         <div className="blog">
             <BlogNav></BlogNav>
-            <Settings></Settings>
+            <Settings blog="true"></Settings>
             <div className="main">
                 {children}
             </div>
