@@ -18,7 +18,7 @@ export default function Document() {
         <meta property="og:url" content="https://new.noobscience.rocks/" />
         <meta property="og:title" content="NoobScience"/>
         <meta property="og:description" content="Student and Open Source Enthusiast. I Like to Code Stuff. Check out my work!"/>
-        <meta property="og:image" content="/assets/banner.png"/>
+        <meta property="og:image" content="https://new.noobscience.rocks/assets/banner.png"/>
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="canonical" href="https://new.noobscience.rocks" />
         <link rel="manifest" href="/manifest.json" />

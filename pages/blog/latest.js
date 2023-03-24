@@ -20,31 +20,33 @@ export default function BlogLatest() {
     return (
         <BlogLayout>
             <Seo title="Latest | Ishan Writes"></Seo>
-            <h1>Blog Latest</h1>
-            <p>
-                This is the latest blog post.
-                Hope you have fun reading it!
-            </p>
-            <h2>
-                Redirecting to the latest blog post in {time} seconds...
-            </h2>
-            {
-                <div key={post.id} class="recommendations">
-                    <div class="recommend">
-                        <div className="img">
-                            <img src={`/assets/blog/images/${post.img}`} alt="Blog Post Image" />
-                        </div>
-                        <div class="content">
-                            <h3><Link href={`posts/${post.slug}`}>{post.title}</Link></h3>
-                            <p>
-                                {post.description}
-                            </p>
-                            <button><Link href={`blog/posts/${post.slug}`} >Read the Article!</Link></button>
-                            <button><Link href={`blog/pdfs/${post.slug}`}>Download The PDF</Link></button>
+            <main>
+                <h1>Blog Latest</h1>
+                <p>
+                    This is the latest blog post.
+                    Hope you have fun reading it!
+                </p>
+                <h2>
+                    Redirecting to the latest blog post in {time} seconds...
+                </h2>
+                {
+                    <div key={post.id} class="recommendations">
+                        <div class="recommend">
+                            <div className="img">
+                                <img src={`/assets/blog/images/${post.img}`} alt="Blog Post Image" />
+                            </div>
+                            <div class="content">
+                                <h3><Link href={`posts/${post.slug}`}>{post.title}</Link></h3>
+                                <p>
+                                    {post.description}
+                                </p>
+                                <button><Link href={`blog/posts/${post.slug}`} >Read the Article!</Link></button>
+                                <button><Link href={`blog/pdfs/${post.slug}`}>Download The PDF</Link></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </main>
         </BlogLayout>
   )
 }

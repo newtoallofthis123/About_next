@@ -37,7 +37,7 @@ export default function Settings({ blog = "false" }) {
             }
         }
         document.documentElement.setAttribute("data-theme", theme)
-        localStorage.setItem("theme", "system")
+        localStorage.setItem("theme", theme)
     }
     const toggleFont = (font) => {
         document.documentElement.setAttribute("data-font", font)

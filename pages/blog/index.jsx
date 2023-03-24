@@ -5,11 +5,12 @@ import BlogLayout from "@/components/blog_layout";
 import Router from "next/router";
 
 export default function Blog() {
-    const ran_color = () => {
-        const choices = ["red", "yellow", "violet", "green"];
-        const random = choices[Math.floor(Math.random() * choices.length)];
-        return `var(--${random})`
-    };
+    // Colors are sometimes same, so I am commenting this out for now
+    // const ran_color = () => {
+    //     const choices = ["red", "yellow", "violet", "green"];
+    //     const random = choices[Math.floor(Math.random() * choices.length)];
+    //     return `var(--${random})`
+    // };
     const send = (post) => {
         Router.push("/blog/posts/"+post)
     }
@@ -41,7 +42,7 @@ export default function Blog() {
                     if(count < 8 && !post.wip)
                     return (
                         <div key={post.id} className="recommendations">
-                            <div style={{ backgroundColor: ran_color(),}} onClick={() => {send(post.slug)}} className="recommend">
+                            <div onClick={() => {send(post.slug)}} className="recommend">
                                 <div className="img">
                                     <img src={`/assets/blog/images/${post.img}`} alt="Blog Post Image" />
                                 </div>
@@ -50,7 +51,7 @@ export default function Blog() {
                                     <p>
                                         {post.description}
                                     </p>
-                                    <button><Link href={`blog/posts/${post.slug}`} >Read the Article!</Link></button>
+                                    <button><Link href={`/blog/posts/${post.slug}`} >Read the Article!</Link></button>
                                     <button><Link href={`/assets/blog/pdfs/${post.slug}.pdf`}>Download The PDF</Link></button>
                                 </div>
                             </div>

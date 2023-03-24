@@ -1,12 +1,20 @@
 .main-card {
-    box-shadow: 6px 9px 48px 10px var(--color);
-    -webkit-box-shadow: 6px 9px 48px 10px var(--color);
-    -moz-box-shadow: 6px 9px 48px 10px var(--color);
+    box-shadow: 2px 3px 12px 5px var(--color);
+    -webkit-box-shadow: 2px 3px 12px 5px var(--color);
+    -moz-box-shadow: 2px 3px 12px 5px var(--color);
     border-radius: 24px;
     margin: 5% 10%;
     margin-top: 0px;
     padding: 2%;
     text-align: center;
+    transition-duration: 0.5s;
+    transition-delay: 50ms;
+}
+
+.main-card:hover{
+    box-shadow: 6px 9px 48px 10px var(--color);
+    -webkit-box-shadow: 6px 9px 48px 10px var(--color);
+    -moz-box-shadow: 6px 9px 48px 10px var(--color);
 }
 
 .social-btn {
@@ -20,16 +28,29 @@
     color: var(--color);
     transition-duration: 0.5s;
     transition-delay: 0.1s;
+    cursor: pointer;
+}
+
+.social-btn:hover{
+    background-color: var(--color);
+    color: var(--bg);
 }
 
 .social-btn a {
     text-decoration: none;
-    color: var(--color);
+    color: inherit;
 }
 
 .social-btn a:hover {
-    color: var(--color);
-    background-color: var(--bg);
+    color: inherit;
+    background-color: inherit;
+}
+
+/* To Fix! */
+
+.social-btn .bi {
+    color: inherit;
+    background-color: inherit;
 }
 
 @media screen and (max-width: 698px) {
@@ -39,7 +60,6 @@
 
     .btn-link {
         text-decoration: none;
-        color: #000;
         display: block;
         font-size: 1rem;
     }

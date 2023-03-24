@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Atkinson+Hyperlegible&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="https://noobscience.rocks/favicon.ico" type="image/x-icon">
+    <title>Markdown Editor | NoobScience</title>
+</head>
+<style>
+    ::selection{
+        background-color: #dcdcdc;
+        color: #000;
+    }
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .editor_div{
+        width: 48%;
+        padding: 12px;
+    }
+    #content{
+        width: 100%;
+        height: 80vh;
+        border-radius: 5px;
+        padding: 10px;
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        font-size: 1.2rem;
+        resize: vertical;
+        border: 0;
+    }
+    #content:focus{
+        outline: none;
+    }
+    .content_div{
+        width: 48%;
+        padding: 12px;
+        border-radius: 5px;
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        font-size: 1.2rem;
+    }
+</style>
+<body>
+    <h1>
+    </h1>
+    <div class="container">
+        <div class="editor_div">
+            <form method="post" action="/save">
+                <textarea name="content" id="content">{{ md_content }}</textarea>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+        <div id="content_div" class="content_div">
+        </div>
+    </div>
+</body>
+<script>
+    $("#content").keyup(function () {
+        var content = $("#content").val();
+        var html = marked.parse(content);
+        $("#content_div").html(html);
+        localStorage.setItem("content", content);
+    });
+    window.onload = () => {
+        var content = localStorage.getItem("content");
+        if(content){
+            $("#content").val(content);
+            var html = marked.parse(content);
+            $("#content_div").html(html);
+        }
+    }
+</script>
+</html>

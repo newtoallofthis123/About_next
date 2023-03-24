@@ -1,26 +1,51 @@
 import Layout from '@/components/layout'
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
+import useSwr from "swr"
 
 export default function Notes() {
-    const time = 5
-    setTimeout(() => {
-        Router.push(`/blog`)
-    }, time * 1000)
-    return (
-        <Layout>
-            <h1>Work in Progress</h1>
-            <p>
-                I am trying to write notes for my classes.
-                I will be adding them here soon!
-            </p>
-            <p>
-                Meanwhile you can check out my <Link href="/blog">Blog</Link>
-            </p>
-            <h2>
-                Redirecting to the Blog in 5 seconds...
-            </h2>
-      </Layout>
-  )
+    const fetcher = (url) => fetch(url).then(res => res.json())
+    const { data, error, isLoading } = useSwr(`https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json`, fetcher)
+    if (isLoading) return <div>Loading...</div>
+    if (error) return <div>Failed to load updates</div>
+    if (data) {
+        const { updates } = data
+        let max = 8
+        return (
+            <Layout>
+                <h1>
+                    NoobScience's Update Page
+                </h1>
+                <p>
+                    Okay, I have just been experimenting with Next.js and I have to say, it is pretty cool.
+                </p>
+                <p>
+                    So, I have coded this such that a json file on my GitHub repo is used to store the updates.
+                </p>
+                <p>
+                    Each is stored as an object in an array.
+                    So, when you click on an update, <br /> it will fetch the data from the json file and then find the update with the same id as the one you clicked on.
+                </p>
+                <p>
+                    So, free hosting and free updates. What more could you ask for?
+                </p>
+                <h2>
+                    Updates
+                </h2>
+                {
+                    updates.map(update => {
+                        max -= 1;
+                        if(max > 0)
+                        return (
+                            <div key={update.id}>
+                                <Link href={`/updates/${update.id}`}>
+                                    {update.name}
+                                </Link>
+                            </div>
+                        )
+                    })
+                }
+            </Layout>
+        )
+    }
 }

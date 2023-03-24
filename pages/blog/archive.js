@@ -13,32 +13,34 @@ export default function Blog() {
     return (
         <BlogLayout>
             <Seo title="Ishan Writes | Archives"></Seo>
-            <h1>Blog Archives</h1>
-            <p>
-                Here are all the blog posts I've written so far. I hope you enjoy them!
-            </p>
-            {
-                data.blogs.map((post) => {
-                    if (!post.wip)
-                    return (
-                        <div key={post.id} className="recommendations">
-                            <div className="recommend">
-                                <div className="img">
-                                    <img src={`/assets/blog/images/${post.img}`} alt="Blog Post Image" />
+            <main>
+                <h1>Blog Archives</h1>
+                <p>
+                    Here are all the blog posts I've written so far. I hope you enjoy them!
+                </p>
+                {
+                    data.blogs.map((post) => {
+                        if (!post.wip)
+                            return (
+                                <div key={post.id} className="recommendations">
+                                    <div className="recommend">
+                                        <div className="img">
+                                            <img src={`/assets/blog/images/${post.img}`} alt="Blog Post Image" />
+                                        </div>
+                                        <div className="content">
+                                            <h3><Link href={`posts/${post.slug}`}>{post.title}</Link></h3>
+                                            <p>
+                                                {post.description}
+                                            </p>
+                                            <button><Link href={`/blog/posts/${post.slug}`} >Read the Article!</Link></button>
+                                            <button><Link href={`/blog/pdfs/${post.slug}`}>Download The PDF</Link></button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="content">
-                                    <h3><Link href={`posts/${post.slug}`}>{post.title}</Link></h3>
-                                    <p>
-                                        {post.description}
-                                    </p>
-                                    <button><Link href={`blog/posts/${post.slug}`} >Read the Article!</Link></button>
-                                    <button><Link href={`blog/pdfs/${post.slug}`}>Download The PDF</Link></button>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })
-            }
+                            )
+                    })
+                }
+            </main>
         </BlogLayout>
     );
 }
