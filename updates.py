@@ -18,6 +18,16 @@ def write_content(content):
         file.write(json.dumps(content, indent=2))
         print("Data updated")
 
+def get_input(output):
+    while True:
+        line = input()
+        if line:
+            output.append(line)
+        else:
+            break
+    return output
+
+
 def get_time():
     now = datetime.datetime.now()
     return now.strftime("%Y-%m-%d %H:%M")
@@ -76,7 +86,7 @@ def add_data(action):
         if edit_type == "updates":
             Console().print(f"Editing update [bold blue]{edit_id}[/bold blue]")
             edit_name = Prompt.ask("Enter the name of the update", default=data["updates"][edit_index]["name"])
-            edit_content = Prompt.ask("Enter the content of the update", default=data["updates"][edit_index]["content"])
+            edit_content = '.\n'.join(get_input([]))
             data["updates"][edit_index]["name"] = edit_name
             data["updates"][edit_index]["content"] = edit_content
             write_content(data)
