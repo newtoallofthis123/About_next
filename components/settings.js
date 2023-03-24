@@ -64,9 +64,9 @@ export default function Settings({ blog = "false" }) {
                   {
                       (blog == true) ?
                           <span>
-                               | <button className='settings' onClick={fontIncrease}><i className="bi bi-plus"></i> Increase</button> |
-                              <button className='settings' onClick={fontDecrease}><i className="bi bi-dash"></i> Decrease</button> |
-                              <button className='settings' onClick={fontReset}><i className="bi bi-repeat"></i> Reset</button>
+                               | <button className='settings' onClick={fontIncrease}><i className="bi bi-plus"></i></button> |
+                              <button className='settings' onClick={fontDecrease}><i className="bi bi-dash"></i></button> |
+                              <button className='settings' onClick={fontReset}><i className="bi bi-repeat"></i></button>
                           </span>
                             : null
                   }

@@ -20,8 +20,7 @@ const BlogNav = () => {
                 <ul>
                     <li><Link href="/blog" className="nav-title"> Ishan Writes...</Link></li>
                     <li><Link href="/blog/archive"> Archives</Link></li>
-                    <li><Link href="/blog/latest"> Latest</Link></li>
-                    <li><Link href="/social/github"> GitHub</Link></li> 
+                    <li><Link href="/blog/latest"> Latest</Link></li> 
                     <li>
                         <Link href="/"> Author</Link>
                     </li>   

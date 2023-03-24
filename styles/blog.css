@@ -6,7 +6,7 @@
 }
 
 main {
-    padding: 2rem;
+    padding: 2vw;
 }
 
 i {
@@ -193,7 +193,8 @@ blockquote {
     font-size: 1rem;
     font-style: italic;
     border-left: 4px solid var(--color);
-    padding-left: 1rem;
+    padding-left: 5%;
+    margin: 2rem 0;
 }
 
 .credit {
@@ -341,8 +342,12 @@ blockquote {
 @media screen and (max-width: 768px) {
     .blog {
         font-size: 1rem;
-        margin: 0.5rem 0.75rem;
+        margin: 0;
         border: 5px solid var(--color);
+    }
+
+    .settings{
+        text-align: center;
     }
 
     .title {
@@ -360,10 +365,6 @@ blockquote {
 
     .bod {
         margin: 2vw;
-    }
-
-    .main {
-        padding: 12px;
     }
 
     .blog main img {

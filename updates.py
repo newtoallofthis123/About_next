@@ -36,13 +36,15 @@ def add_data(action):
     data = get_content()
     if action == "updates":
         update_name = Prompt.ask("Enter the name of the update")
-        update_content = Prompt.ask("Enter the content of the update")
+        print("Enter the content of the update. Press enter twice to exit")
+        update_content = '.\n'.join(get_input([]))
         update_id = str(len(data["updates"]) + 1)
         data["updates"].append({"id": update_id, "name": update_name, "content": update_content, "date": str(get_time()) })
         write_content(data)
     if action == "links":
         link_name = Prompt.ask("Enter Name of the link")
-        link_content = Prompt.ask("Enter the content of the link")
+        print("Enter the content of the update. Press enter twice to exit")
+        link_content = '.\n'.join(get_input([]))
         link_url = Prompt.ask("Enter the URL of the link")
         link_id = str(len(data["links"]) + 1)
         data["links"].append({"id": link_id, "name": link_name, "content": link_content, "url": link_url, "date": str(get_time()) })
@@ -86,14 +88,24 @@ def add_data(action):
         if edit_type == "updates":
             Console().print(f"Editing update [bold blue]{edit_id}[/bold blue]")
             edit_name = Prompt.ask("Enter the name of the update", default=data["updates"][edit_index]["name"])
-            edit_content = '.\n'.join(get_input([]))
+            edit_choice = Prompt.ask("Do you want to edit the content of the update?", choices=["y", "n"])
+            if edit_choice == "y":
+                print("Enter the content of the update. Press enter twice to exit")
+                edit_content = '.\n'.join(get_input([]))
+            else:
+                edit_content = data["updates"][edit_index]["content"]
             data["updates"][edit_index]["name"] = edit_name
             data["updates"][edit_index]["content"] = edit_content
             write_content(data)
         if edit_type == "links":
             Console().print(f"Editing link [bold blue]{edit_id}[/bold blue]")
             edit_name = Prompt.ask("Enter Name of the link", default=data["links"][edit_index]["name"])
-            edit_content = Prompt.ask("Enter the content of the link", default=data["links"][edit_index]["content"])
+            edit_choice = Prompt.ask("Do you want to edit the content of the link?", choices=["y", "n"])
+            if edit_choice == "y":
+                print("Enter the content of the update. Press enter twice to exit")
+                edit_content = '.\n'.join(get_input([]))
+            else:
+                edit_content = data["links"][edit_index]["content"]
             edit_url = Prompt.ask("Enter the URL of the link", default=data["links"][edit_index]["url"])
             data["links"][edit_index]["name"] = edit_name
             data["links"][edit_index]["content"] = edit_content

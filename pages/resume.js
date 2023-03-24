@@ -10,7 +10,7 @@ export default function Resume() {
                 color: 'var(--black)',
             }}
         >
-            <Seo title="Resume" />
+            <Seo title="Ishan's Resume" />
             <h1>Resume</h1>
             <p>
                 First up, this website in itself is a resume. I'm a full-stack

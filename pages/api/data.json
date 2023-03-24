@@ -3,12 +3,12 @@
         {
             "id": 4,
             "title": "The New Age of AI Subscriptions",
-            "description": "The new age of AI subscriptions",
+            "description": "We are suddenly seeing a lot of AI based subscription services. But what is the reason behind this sudden surge? And what does this mean for the future of AI? Is advertising enough to sustain the AI industry? Read on to find out.",
             "author": "Ishan",
             "slug": "2023/the-age-of-ai-subscriptions",
             "img": "age_of_ai_subscriptions.webp",
             "video": "age_of_ai_subscriptions.mp4",
-            "wip": true
+            "wip": false
         },
         {
             "id": 3,
