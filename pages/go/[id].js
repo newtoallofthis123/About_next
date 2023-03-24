@@ -2,7 +2,6 @@ import React from "react"
 import { useRouter } from 'next/router'
 import Router from "next/router"
 import useSWR from "swr"
-import Layout from "@/components/Layout"
 import Link from "next/link"
 
 export default function GoPage() {
