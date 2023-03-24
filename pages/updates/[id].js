@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import useSwr from "swr"
 import Link from 'next/link'
+import { Seo } from '@/components/seo'
 
 export default function UpdatesID() {
     const router = useRouter()
@@ -18,6 +19,7 @@ export default function UpdatesID() {
         if (update) {
             return (
                 <div className='updates_div'>
+                    <Seo title={update.name} ></Seo>
                     <h1>
                         Ishan's Updates
                     </h1>
@@ -34,7 +36,7 @@ export default function UpdatesID() {
                     <h2>Other Updates</h2>
                     {
                         updates.map(update => {
-                            if (update.id !== param) {
+                            if (update.id !== param && update.id > param) {
                                 return (
                                     <div key={update.id}>
                                         <Link href={`/updates/${update.id}`}>
