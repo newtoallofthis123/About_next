@@ -481,7 +481,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .link-btn {
-  background: var(--bg);
+  background: var(--white);
   font-family: inherit;
   padding: 0.6em 1.3em;
   font-weight: 900;
@@ -572,11 +572,33 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 50vw;
 }
 
+.updates_div a{
+  color: var(--link);
+}
+
 .updates_div .main_update{
   font-size: 1.2rem;
   font-family: var(--font);
   line-height: 2rem;
   margin: 2rem 0;
+}
+
+.resume_skills ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.resume_skills li{
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
+.resume_skills svg{
+  vertical-align: middle;
+  width: 32px;
+  margin: 0 0.5rem;
 }
 
 #settings-container {

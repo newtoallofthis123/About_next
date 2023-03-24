@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import useSwr from "swr"
 import Link from 'next/link'
 import { Seo } from '@/components/seo'
+import Settings from '@/components/settings'
+import { marked } from 'marked'
 
 export default function UpdatesID() {
     const router = useRouter()
@@ -16,9 +18,13 @@ export default function UpdatesID() {
         const { updates } = data
         console.log(updates)
         const update = updates.find(update => update.id === param)
+        const htmlContent = (content) => {
+            return { __html: marked.parse(content) }
+        }
         if (update) {
             return (
                 <div className='updates_div'>
+                    <Settings></Settings>
                     <Seo title={update.name} ></Seo>
                     <h1>
                         Ishan's Updates
@@ -31,7 +37,7 @@ export default function UpdatesID() {
                     </nav>
                     <div className="main_update">
                         <h2>{update.name}</h2>
-                        <p>{update.content}</p>
+                        <p dangerouslySetInnerHTML={htmlContent(update.content)}></p>
                     </div>
                     <h2>Other Updates</h2>
                     {

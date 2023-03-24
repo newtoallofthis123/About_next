@@ -1,0 +1,75 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Roboto+Condensed:wght@400;700&&display=swap');
+
+:root{
+    --color: #141313;
+    --bg: #ede7e7;
+}
+
+::selection{
+    background-color: #abf3f6;
+    color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --color: #f3eeee;
+        --bg: #0f0f0f;
+    }
+}
+
+body{
+    font-family: 'Atkinson Hyperlegible', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.5;
+    color: var(--color);
+    background-color: var(--bg);
+}
+
+main{
+    padding: 1rem 5%;
+    max-width: 60%;
+}
+
+nav{
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a{
+    color: var(--color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+nav a:hover{
+    background-color: var(--color);
+    color: var(--bg);
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin-left: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Roboto Condensed", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1{
+    font-size: 2.5rem;
+}

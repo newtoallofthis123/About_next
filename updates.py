@@ -37,6 +37,11 @@ def add_data(action):
         link_id = str(len(data["links"]) + 1)
         data["links"].append({"id": link_id, "name": link_name, "content": link_content, "url": link_url, "date": str(get_time()) })
         write_content(data)
+    if action == "go":
+        go_url = Prompt.ask("Enter URL of the link")
+        go_slug = Prompt.ask("Enter the slug of the link")
+        data["go"].append({"url": go_url, "slug": go_slug})
+        write_content(data)
     if action == "commit":
         os.system("git status")
         exit_try = input("These are the git changes. Press any key to proceed or type 'exit' to exit: ")
@@ -62,6 +67,8 @@ def add_data(action):
                     add_data("updates")
                 if create_type == "links":
                     add_data("links")
+                if create_type == "go":
+                    add_data("go")
             else:
                 exit()
         edit_type = Prompt.ask("Do you want to edit the a update or a link", choices=["updates", "links"])
@@ -82,13 +89,41 @@ def add_data(action):
             data["links"][edit_index]["content"] = edit_content
             data["links"][edit_index]["url"] = edit_url
             write_content(data)
+        if edit_type == "go":
+            Console().print(f"Editing go link [bold blue]{edit_id}[/bold blue]")
+            edit_url = Prompt.ask("Enter URL of the link", default=data["go"][edit_index]["url"])
+            edit_slug = Prompt.ask("Enter the slug of the link", default=data["go"][edit_index]["slug"])
+            data["go"][edit_index]["url"] = edit_url
+            data["go"][edit_index]["slug"] = edit_slug
+            write_content(data)
+
+def delete():
+    data = get_content()
+    delete_id = Prompt.ask("Enter the id of the update/link you want to delete")
+    if delete_id not in [str(i) for i in range(1, len(data["updates"]) + 1)] and delete_id not in [str(i) for i in range(1, len(data["links"]) + 1)]:
+        Console().print("Invalid id")
+        exit()
+    delete_type = Prompt.ask("Do you want to delete the a update or a link", choices=["updates", "links"])
+    delete_index = int(delete_id) - 1
+    if delete_type == "updates":
+        Console().print(f"Deleting update [bold blue]{delete_id}[/bold blue]")
+        del data["updates"][delete_index]
+        write_content(data)
+    if delete_type == "links":
+        Console().print(f"Deleting link [bold blue]{delete_id}[/bold blue]")
+        del data["links"][delete_index]
+        write_content(data)
+    if delete_type == "go":
+        Console().print(f"Deleting go link [bold blue]{delete_id}[/bold blue]")
+        del data["go"][delete_index]
+        write_content(data)
 
 def commit():
     os.chdir(DIR)
     os.system("pwd")
     os.system("git status")
     input("These are the git changes. Press enter to proceed")
-    msg = Prompt.ask("Commit message")
+    msg = "Add Updates"
     os.system("git add .")
     commit_choice = Prompt.ask("Commit and push to github?", choices=["y", "n"])
     if commit_choice == "y":
@@ -113,7 +148,7 @@ def main():
         (os.system("clear") if os.name == "posix" else os.system("cls"))
         Console().print(pyfiglet.figlet_format("Updates Manager v1.0"), style="bold blue")
         console.print("Enter the action you want to perform")
-        action = Prompt.ask("Action", choices=["updates", "links", "edit", "commit", "exit"])
+        action = Prompt.ask("Action", choices=["updates", "links", "go", "edit", "commit", "delete", "exit"])
         if action == "exit":
             Console().print("Exiting...")
             exit()

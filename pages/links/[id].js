@@ -1,7 +1,9 @@
 import React from 'react'
 import useSWR from "swr"
 import Link from 'next/link'
+import { Seo } from '@/components/seo'
 import { useRouter } from 'next/router'
+import { marked } from 'marked'
 
 export default function GoLinks() {
     const router = useRouter()
@@ -14,9 +16,13 @@ export default function GoLinks() {
     if (data) {
         const { links } = data
         const link = links.find(link => link.id === param)
+        const htmlContent = (content) => {
+            return { __html: marked.parse(content) }
+        }
         if (link) {
             return (
                 <div className='updates_div'>
+                    <Seo title={link.name}></Seo>
                     <h1>
                         Ishan's Links
                     </h1>
@@ -28,13 +34,13 @@ export default function GoLinks() {
                     </nav>
                     <div className="main_update">
                         <h2>{link.name}</h2>
-                        <p>{link.content}</p>
+                        <p dangerouslySetInnerHTML={htmlContent(link.content)}></p>
                         <Link href={link.url}>{link.url}</Link>
                     </div>
                 </div>
             )
         }
-        else {
+        else{
             <div>404</div>
         }
     }

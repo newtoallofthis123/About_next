@@ -28,15 +28,16 @@ export default function Settings({ blog = "false" }) {
         document.documentElement.style.setProperty("--blog-line-height", (fontSize + 0.6) + "rem")
     }
     const toggleTheme = (theme) => {
+        let set_theme = theme
         if (theme === "system") {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                theme = "dark"
+                set_theme = "dark"
             }
             else {
-                theme = "light"
+                set_theme = "light"
             }
         }
-        document.documentElement.setAttribute("data-theme", theme)
+        document.documentElement.setAttribute("data-theme", set_theme)
         localStorage.setItem("theme", theme)
     }
     const toggleFont = (font) => {
