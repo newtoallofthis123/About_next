@@ -13,38 +13,40 @@ export default function Notes() {
         let max = 8
         return (
             <Layout>
-                <h1>
-                    NoobScience's Update Page
-                </h1>
-                <p>
-                    Okay, I have just been experimenting with Next.js and I have to say, it is pretty cool.
-                </p>
-                <p>
-                    So, I have coded this such that a json file on my GitHub repo is used to store the updates.
-                </p>
-                <p>
-                    Each is stored as an object in an array.
-                    So, when you click on an update, <br /> it will fetch the data from the json file and then find the update with the same id as the one you clicked on.
-                </p>
-                <p>
-                    So, free hosting and free updates. What more could you ask for?
-                </p>
-                <h2>
-                    Updates
-                </h2>
-                {
-                    updates.map(update => {
-                        max -= 1;
-                        if(max > 0)
-                        return (
-                            <div key={update.id}>
-                                <Link href={`/updates/${update.id}`}>
-                                    {update.name}
-                                </Link>
-                            </div>
-                        )
-                    })
-                }
+                <div className="updates_div">
+                    <h1>
+                        NoobScience's Update Page
+                    </h1>
+                    <p>
+                        Okay, I have just been experimenting with Next.js and I have to say, it is pretty cool.
+                    </p>
+                    <p>
+                        So, I have coded this such that a json file on my GitHub repo is used to store the updates.
+                    </p>
+                    <p>
+                        Each is stored as an object in an array.
+                        So, when you click on an update, <br /> it will fetch the data from the json file and then find the update with the same id as the one you clicked on.
+                    </p>
+                    <p>
+                        So, free hosting and free updates. What more could you ask for?
+                    </p>
+                    <h2>
+                        Updates
+                    </h2>
+                    {
+                        updates.slice(0).reverse().map(update => {
+                            max -= 1;
+                            if (max > 0)
+                                return (
+                                    <div key={update.id}>
+                                        <Link href={`/updates/${update.id}`}>
+                                            {update.name}
+                                        </Link>
+                                    </div>
+                                )
+                        })
+                    }
+                </div>
             </Layout>
         )
     }

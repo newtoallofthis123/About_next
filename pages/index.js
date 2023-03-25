@@ -6,7 +6,6 @@ import Link from "next/link";
 import TypeWriter from "@/components/typewriter";
 import useSwr from "swr";
 import { marked } from "marked";
-import Router from "next/router";
 
 const Home = () => {
     const scroll = () => {
@@ -15,8 +14,9 @@ const Home = () => {
             behavior: "smooth"
         });
     }
-    const send = (url) => {
-        Router.push(url)
+    const [terminal, setTerminal] = React.useState(true);
+    const delete_terminal = () => {
+        setTerminal(false);
     }
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data, error } = useSwr('https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json', fetcher);
@@ -25,9 +25,11 @@ const Home = () => {
     return (
         <Layout>
             <Seo title="NoobScience | Student and Open Source Enthusiast" description="Home Page" />
-            <div id="scroll" className="terminal">
+            <div style={
+                (terminal) ? { display: "block" } : { display: "none" }
+            } id="scroll" className="terminal">
                 <div className="terminal__header">
-                    <span className="circle circle--red"></span>
+                    <span style={{cursor: "pointer",}} onClick={() => {delete_terminal()}} className="circle circle--red"></span>
                     <span className="circle circle--yellow"></span>
                     <span className="circle circle--green"></span>
                     Ishan_101.exe
@@ -66,7 +68,13 @@ const Home = () => {
                         I still have a lot to talk about. So, let's get to know each other better.
                         You can visit my <Link href="/about">About</Link> page to know more about me.
                         You can access my whole site from the nav bar. Press the button below to scroll back to the top. <span>
-                            <button onClick={scroll}><p style={{ cursor: "pointer", }}> <i className="bi bi-arrow-up"></i> </p></button>
+                            <button
+                                style={{
+                                    border: "none",
+                                    backgroundColor: "transparent",
+                                    color: "white",
+                                }}
+                                onClick={scroll}><p style={{ cursor: "pointer", }}> <i className="bi bi-arrow-up"></i> </p></button>
                         </span>
                     </p>
                 </div>

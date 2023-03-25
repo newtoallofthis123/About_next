@@ -1,7 +1,7 @@
-import '@/styles/globals.css'
-import '@/styles/pages.css'
-import '@/styles/social.css'
-import '@/styles/blog.css'
+import '@/styles/globals.scss'
+import '@/styles/pages.scss'
+import '@/styles/social.scss'
+import '@/styles/blog.scss'
 import "@/styles/prism/prism.css"
 import "@/styles/home.scss"
 

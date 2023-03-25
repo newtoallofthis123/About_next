@@ -12,7 +12,7 @@ export default function LinkIndex() {
     if (data) {
         return (
             <Layout>
-                <div>
+                <div className='updates_div'>
                     <h1>
                         Hey My guy!
                     </h1>
@@ -38,7 +38,7 @@ export default function LinkIndex() {
                             Some Links
                         </h2>
                         {
-                            data.links.map(link => {
+                            data.links.slice(0).reverse().map(link => {
                                 count += 1
                                 if (count < 5) {
                                     return (
