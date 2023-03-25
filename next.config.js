@@ -1,3 +1,5 @@
+const path = require('path')
+
 const withPWA = require('next-pwa')({
   dest: 'public',
   register: true,
@@ -8,4 +10,7 @@ const withPWA = require('next-pwa')({
 module.exports = withPWA({
   // next.js config
   reactStrictMode: true, 
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
 })

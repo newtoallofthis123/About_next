@@ -41,7 +41,7 @@ const About = () => {
                         With a strong background in software development and a love for creating, I am excited to continue pursuing new opportunities and challenges in this field.
                     </p>
                 </div>
-                <div style={{ "backgroundColor": "var(--pink)", }} className="color-div">
+                <div style={{ "backgroundColor": "var(--white)", }} className="color-div">
                     <h1>Random</h1>
                     <div className='random-div'>
                         <div style={{ textAlign: 'center', }}>

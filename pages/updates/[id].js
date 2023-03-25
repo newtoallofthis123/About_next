@@ -16,7 +16,7 @@ export default function UpdatesID() {
     if (error) return <div>Failed to load</div>
     if (data) {
         const { updates } = data
-        console.log(updates)
+        console.log(updates)        
         const update = updates.find(update => update.id === param)
         const htmlContent = (content) => {
             return { __html: marked.parse(content) }

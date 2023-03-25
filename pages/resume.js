@@ -8,9 +8,17 @@ export default function Resume() {
             style={{
                 backgroundColor: 'var(--white)',
                 color: 'var(--black)',
+                fontFamily: "'Atkinson Hyperlegible', sans-serif",
             }}
         >
             <Seo title="Ishan's Resume" />
+            <div>
+                <button style={{marginRight: "12px",}} className="link-btn">
+                    <Link href="/resume">HTML Resume</Link>
+                </button><button className="link-btn">
+                    <Link href="/assets/resume.pdf">Download PDF</Link>
+                </button>
+            </div>
             <h1>Resume</h1>
             <p>
                 First up, this website in itself is a resume. I'm a full-stack

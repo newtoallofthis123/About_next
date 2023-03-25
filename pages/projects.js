@@ -5,8 +5,7 @@ import Link from 'next/link'
 const Projects = () => {
     return (
         <Layout>
-            <h1 className="main-title">I've been Busy</h1>
-            <p className="main-subtitle">Here are some of the projects I've been working on.</p>
+            <h1 className="title">I've been Busy</h1>
             <div style={{ backgroundColor: "var(--pink)", }} className="color-div">
                 <h2>Before You Proceed</h2>
                 <p style={{ marginTop: '1.2rem', }}>
