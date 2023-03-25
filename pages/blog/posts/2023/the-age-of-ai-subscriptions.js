@@ -19,7 +19,7 @@ export default function AgeOfAISubscriptions() {
                     <p><Link href="/">Ishan</Link> on 2023-03-24</p>
                 </div>
                 <div className="center">
-                    <Share title="The Age of AI Subscriptions | Ishan Writes" url="the-age-of-ai-subscriptions"></Share>
+                    <Share title="The Age of AI Subscriptions | Ishan Writes" url="2023/the-age-of-ai-subscriptions"></Share>
                 </div>
                 <div className="img">
                     <img src="/assets/blog/images/age_of_ai_subscriptions.webp" alt="AI Subscriptions"></img>

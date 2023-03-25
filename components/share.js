@@ -1,11 +1,11 @@
 import React from 'react'
 
 export default function Share({ title, url }) {
-    const twitter = `https://twitter.com/share?url=https://noobscience.rocks/blog/posts/${url}&text=${title}`
-    const reddit = `https://www.reddit.com/submit?url=https://noobscience.rocks/blog/posts/${url}&title=${title}`
-    const email = `mailto:?subject=${title}&body=Check this out:https://noobscience.rocks/blog/posts/${url}`
-    const linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=https://noobscience.rocks/blog/posts/${url}&title=${title}`
-    const whatsapp = `https://api.whatsapp.com/send?text=${title}+https://noobscience.rocks/blog/posts/${url}`
+    const twitter = `https://twitter.com/share?url=https://new.noobscience.rocks/blog/posts/${url}&text=${title}`
+    const reddit = `https://www.reddit.com/submit?url=https://new.noobscience.rocks/blog/posts/${url}&title=${title}`
+    const email = `mailto:?subject=${title}&body=Check this out:https://new.noobscience.rocks/blog/posts/${url}`
+    const linkedin = `https://www.linkedin.com/shareArticle?mini=true&url=https://new.noobscience.rocks/blog/posts/${url}&title=${title}`
+    const whatsapp = `https://api.whatsapp.com/send?text=${title}+https://new.noobscience.rocks/blog/posts/${url}`
 
     return (
         <div className="options">

@@ -14,6 +14,10 @@ i {
     font-size: inherit;
 }
 
+.blog h1,h2,h3,h4,h5{
+    font-family: var(--font);
+}
+
 .blog .blog-nav {
     background-color: var(--footer-bg);
     color: #000;
@@ -185,7 +189,24 @@ i {
     padding: 2px 12px;
     border: 2px solid var(--color);
     border-radius: 12px;
-    margin: 2rem;
+    margin: 2vw;
+}
+
+.tldr {
+    display: block;
+    color: var(--color);
+    border: 0;
+    border-right: 2px;
+    border-style: solid;
+    border-color: var(--color);
+}
+
+.tldr span {
+    background-color: var(--blue);
+    color: var(--black);
+    padding: 0.5rem;
+    border: 2px solid var(--color);
+    cursor: pointer;
 }
 
 blockquote {
