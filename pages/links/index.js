@@ -5,7 +5,7 @@ import useSWR from "swr"
 
 export default function LinkIndex() {
     const fetcher = (url) => fetch(url).then(res => res.json())
-    const { data, error, isLoading } = useSWR(`https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json`, fetcher)
+    const { data, error, isLoading } = useSWR(`/api/v1/links`, fetcher)
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Failed to load</div>
     let count = 0
@@ -38,12 +38,12 @@ export default function LinkIndex() {
                             Some Links
                         </h2>
                         {
-                            data.links.slice(0).reverse().map(link => {
+                            data.slice(0).reverse().map(link => {
                                 count += 1
                                 if (count < 5) {
                                     return (
-                                        <div key={link.id}>
-                                            <Link href={`/links/${link.id}`}>
+                                        <div key={link.hash}>
+                                            <Link href={`/links/${link.hash}`}>
                                                 {link.name}
                                             </Link>
                                         </div>

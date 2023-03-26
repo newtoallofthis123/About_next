@@ -5,11 +5,11 @@ import useSwr from "swr"
 
 export default function Notes() {
     const fetcher = (url) => fetch(url).then(res => res.json())
-    const { data, error, isLoading } = useSwr(`https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json`, fetcher)
+    const { data, error, isLoading } = useSwr(`/api/v1/updates`, fetcher)
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Failed to load updates</div>
     if (data) {
-        const { updates } = data
+        const updates= data
         let max = 8
         return (
             <Layout>
@@ -38,8 +38,8 @@ export default function Notes() {
                             max -= 1;
                             if (max > 0)
                                 return (
-                                    <div key={update.id}>
-                                        <Link href={`/updates/${update.id}`}>
+                                    <div key={update._id}>
+                                        <Link href={`/updates/${update.hash}`}>
                                             {update.name}
                                         </Link>
                                     </div>

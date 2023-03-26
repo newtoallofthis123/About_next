@@ -11,13 +11,13 @@ export default function UpdatesID() {
     const { id } = router.query
     const param = id
     const fetcher = (url) => fetch(url).then(res => res.json())
-    const { data, error, isLoading } = useSwr(`https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json`, fetcher)
+    const { data, error, isLoading } = useSwr(`/api/v1/updates`, fetcher)
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Failed to load</div>
     if (data) {
-        const { updates } = data
-        console.log(updates)        
-        const update = updates.find(update => update.id === param)
+        const updates= data
+        console.log(updates)
+        const update = updates.find(update => update.hash === param)
         const htmlContent = (content) => {
             return { __html: marked.parse(content) }
         }
@@ -42,10 +42,10 @@ export default function UpdatesID() {
                     <h2>Other Updates</h2>
                     {
                         updates.map(update => {
-                            if (update.id !== param && update.id > param) {
+                            if (update.hash !== param && update.hash > param) {
                                 return (
-                                    <div key={update.id}>
-                                        <Link href={`/updates/${update.id}`}>
+                                    <div key={update._id}>
+                                        <Link href={`/updates/${update.hash}`}>
                                             {update.name}
                                         </Link>
                                     </div>

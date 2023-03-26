@@ -10,12 +10,12 @@ export default function GoLinks() {
     const { id } = router.query
     const param = id
     const fetcher = (url) => fetch(url).then(res => res.json())
-    const { data, error, isLoading } = useSWR(`https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json`, fetcher)
+    const { data, error, isLoading } = useSWR(`/api/v1/links`, fetcher)
     if (isLoading) return <div>Loading...</div>
     if (error) return <div>Failed to load</div>
     if (data) {
-        const { links } = data
-        const link = links.find(link => link.id === param)
+        const links = data
+        const link = links.find(link => link.hash === param)
         const htmlContent = (content) => {
             return { __html: marked.parse(content) }
         }

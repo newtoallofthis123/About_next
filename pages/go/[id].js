@@ -9,11 +9,11 @@ export default function GoPage() {
     const { id } = router.query
     const param = id
     const fetcher = (url) => fetch(url).then(res => res.json())
-    const { data, error } = useSWR('https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json', fetcher)
+    const { data, error } = useSWR('/api/v1/go', fetcher)
     if (error) return <div>failed to load</div>
     if (!data) return <div>Loading</div>
     if (data) {
-        const link = data.go.find(go => go.slug === param)
+        const link = data.find(go => go.slug === param)
         if (link) {
             setTimeout(() => {
                 Router.push(link.url)
