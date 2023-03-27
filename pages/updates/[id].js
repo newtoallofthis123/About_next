@@ -16,8 +16,8 @@ export default function UpdatesID() {
     if (error) return <div>Failed to load</div>
     if (data) {
         const updates= data
-        console.log(updates)
         const update = updates.find(update => update.hash === param)
+        const param_id = update._id
         const htmlContent = (content) => {
             return { __html: marked.parse(content) }
         }
@@ -42,7 +42,7 @@ export default function UpdatesID() {
                     <h2>Other Updates</h2>
                     {
                         updates.map(update => {
-                            if (update.hash !== param && update.hash > param) {
+                            if (update.hash !== param && update._id > param_id) {
                                 return (
                                     <div key={update._id}>
                                         <Link href={`/updates/${update.hash}`}>

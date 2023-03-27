@@ -21,14 +21,18 @@ export default function Notes() {
                         Okay, I have just been experimenting with Next.js and I have to say, it is pretty cool.
                     </p>
                     <p>
-                        So, I have coded this such that a json file on my GitHub repo is used to store the updates.
+                        I have been able to integrate MongoDB with Next.js and I have also been able to make a simple API.
+                        So, from now, all my updates will be made directly made to the database and will be fetched from the API.
                     </p>
                     <p>
-                        Each is stored as an object in an array.
-                        So, when you click on an update, <br /> it will fetch the data from the json file and then find the update with the same id as the one you clicked on.
+                        Although, I will be writing by blog in good old JSX and HTML.
+                        So, this is just to make it easier for me to update my links and stuff.
                     </p>
                     <p>
-                        So, free hosting and free updates. What more could you ask for?
+                        Also, don't pay much heed to the recommendation system. It is just a simple algorithm that I made.
+                        It is not very accurate.
+                        Have a better idea? Let me know!
+                        Have a great day!
                     </p>
                     <h2>
                         Updates

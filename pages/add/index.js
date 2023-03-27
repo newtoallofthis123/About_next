@@ -1,5 +1,7 @@
 import React from 'react'
 import { Seo } from '@/components/seo'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NS_PWD = process.env.NEXT_PUBLIC_NS_PWD
 
@@ -16,6 +18,7 @@ export default function Add() {
             setAuth(true)
         }
     }
+
     const updatePost = (e) => {
         e.preventDefault()
         const name = e.target.name.value
@@ -27,7 +30,7 @@ export default function Add() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ name, content })
-        })
+        }).then(() => { toast("Successfully posted Update") }).catch(() => { toast("Error posting Update") })
         return true
     }
 
@@ -36,38 +39,34 @@ export default function Add() {
         const name = e.target.name.value
         const content = e.target.content.value
         const link = e.target.link.value
-        setDone(true)
         fetch('/api/v1/links', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ name, content, link })
-        })
+        }).then(() => { toast("Successfully posted Link") }).catch(() => { toast("Error posting Link") })
     }
 
     const addGo = (e) => {
         e.preventDefault()
         const url = e.target.url.value
         const slug = e.target.slug.value
-        setDone(true)
         fetch('/api/v1/go', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ url, slug })
-        })
+        }).then(() => { toast("Successfully posted GO") }).catch(() => { toast("Error posting GO") })
     }
 
-    setInterval(() => {
-        setDone(false)
-    }, 2000)
     return (
         (auth) ? (
             <div className='admin_div'>
+                <Seo title="Admin Page"></Seo>
                 <h1>Admin</h1>
-                {done && <p>Done!</p>}
+                <ToastContainer />
                 <div>
                     <h2>Add an Update</h2>
                     <form onSubmit={updatePost} method="POST">
@@ -105,16 +104,16 @@ export default function Add() {
                 </div>
             </div>
         ) : (
-                <div className='password_div'>
-                    <Seo title="Login to view admin page"></Seo>
-                    <h1>Admin Page!</h1>
-                    <form onSubmit={handleSubmit}>
-                        <p>Enter Your Password</p>
-                        <input type="password" name="password" id="password" onChange={handlePassword} />
-                        <p></p>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
+            <div className='password_div'>
+                <Seo title="Login to view admin page"></Seo>
+                <h1>Admin Page!</h1>
+                <form onSubmit={handleSubmit}>
+                    <p>Enter Your Password</p>
+                    <input type="password" name="password" id="password" onChange={handlePassword} />
+                    <p></p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         )
-  )
+    )
 }

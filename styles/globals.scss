@@ -52,14 +52,14 @@
 
 :root[data-theme="dark"] {
   --color: #f3f1f1;
-  --bg: #1a1919;
+  --bg: #06000e;
   --blog-bg: #131921;
   --footer-bg: #111111;
   --dark-img: inline;
   --light-img: none;
-  --link: #fff200;
-  --selection-color: #fffdfd;
-  --selection-bg: #1d3bfd;
+  --link: #10ffe7;
+  --selection-color: #000000;
+  --selection-bg: #ffeb11;
 }
 
 :root[data-theme="violet"] {
@@ -70,6 +70,8 @@
   --dark-img: inline;
   --light-img: none;
   --link: #fff200;
+  --selection-color: #fffdfd;
+  --selection-bg: #1d3bfd;
 }
 
 :root[data-theme="black"] {
@@ -80,6 +82,8 @@
   --dark-img: inline;
   --light-img: none;
   --link: #fff200;
+  --selection-color: #fffdfd;
+  --selection-bg: #1d3bfd;
 }
 
 :root[data-theme="sepia"] {
@@ -522,14 +526,25 @@ h3 {
 
   a {
     color: var(--link);
+    padding: 0;
+    margin: 0;
   }
 
   .main_update {
     font-size: 1.2rem;
     font-family: var(--font);
-    line-height: 2rem;
-    margin: 2rem 0;
+    line-height: 1.8rem;
+    margin: 1rem 0;
   }
+
+  @media screen and (max-width: 1020px) {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    max-width: none;
+    a {
+      font-size: 1.2rem;
+    }
+  }    
 }
 
 .resume_skills ul {
@@ -590,7 +605,7 @@ h3 {
 
 @media screen and (max-width: 727px) {
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   #profile {

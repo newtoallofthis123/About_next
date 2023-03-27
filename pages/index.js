@@ -19,7 +19,7 @@ const Home = () => {
         setTerminal(false);
     }
     const fetcher = (...args) => fetch(...args).then(res => res.json());
-    const { data, error } = useSwr('https://raw.githubusercontent.com/newtoallofthis123/Assets/main/data.json', fetcher);
+    const { data, error } = useSwr('/api/v1/updates', fetcher);
     let count = 0
     const does = ["is a Student at GRIET", "is a Full Stack Developer", "is a Opinionated Writer", "is an Open Source Enthusiast", "'s Always on GitHub", "Loves Dogs"];
     return (
@@ -47,7 +47,7 @@ const Home = () => {
             <div>
                 <div className="main-title">
                     <p className="intro_heading animate__animated animate__fadeInDown">Hi friend,</p>
-                    <h1 className="main-title__heading animate__animated animate__fadeInDown animate__delay-1s">I'm <span className="name">Ishan</span></h1>
+                    <h1 className="styled_link main-title__heading animate__animated animate__fadeInDown animate__delay-1s">I'm <span className="name">Ishan</span></h1>
                 </div>
                 <div className="intro animate__animated animate__fadeIn animate__delay-2s">
                     <p>
@@ -67,15 +67,6 @@ const Home = () => {
                     <p>
                         I still have a lot to talk about. So, let's get to know each other better.
                         You can visit my <Link href="/about">About</Link> page to know more about me.
-                        You can access my whole site from the nav bar. Press the button below to scroll back to the top. <span>
-                            <button
-                                style={{
-                                    border: "none",
-                                    backgroundColor: "transparent",
-                                    color: "white",
-                                }}
-                                onClick={scroll}><p style={{ cursor: "pointer", }}> <i className="bi bi-arrow-up"></i> </p></button>
-                        </span>
                     </p>
                 </div>
                 <div className="updates">
@@ -92,12 +83,12 @@ const Home = () => {
                         {
                             (error)? <>Error Loading</>:
                             (!data) ? <>Loading</> :
-                                data.updates.slice(0).reverse().map((update) => {
+                                data.slice(0).reverse().map((update) => {
                                     const url = "/updates/" + update.id
                                     count++
                                     if (count < 3) {
                                         return (
-                                            <div className="update" key={update.id}>
+                                            <div className="update" key={update._id}>
                                                 <span>
                                                     <h3 className="update__heading"><Link href={url}>{update.name}</Link></h3>
                                                     <p className="update__date">{update.date}</p>
@@ -119,6 +110,27 @@ const Home = () => {
                         I write alot on my <Link href="/blog">blog</Link>. The blog is called <i>Ishan Writes</i>.
                         This is the latest blog post.
                         I highly recommend you to check out my blog. It's a great place to learn about tech and my experiences.
+                    </p>
+                    <h2>
+                        Anyways...
+                    </h2>
+                    <p>
+                        It's been a pleasure to have you here. I hope you enjoyed your stay.
+                        I'm always open to new opportunities. So, if you have any, feel free to <Link href="/social">contact</Link> me.
+                    </p>
+                    <p>
+                        BTW, all this home page mess is just for the sake of a home page. This nextjs site is still has nearly 40 unique pages and I suggest you check them all out.
+                        I'm still working on the site. So, expect a few changes here and there.
+                        Moreover, I am also working on a dynamic site map for this site. So, you can easily navigate through the site.
+                        You can access my whole site from the nav bar. Press the button below to scroll back to the top. <span>
+                            <button
+                                style={{
+                                    border: "none",
+                                    backgroundColor: "transparent",
+                                    color: "white",
+                                }}
+                                onClick={scroll}><p style={{ cursor: "pointer", }}> <i className="bi bi-arrow-up"></i> </p></button>
+                        </span>
                     </p>
                 </div>
             </div>
