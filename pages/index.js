@@ -86,7 +86,7 @@ const Home = () => {
                                 data.slice(0).reverse().map((update) => {
                                     const url = "/updates/" + update.id
                                     count++
-                                    if (count < 3) {
+                                    if (count < 4) {
                                         return (
                                             <div className="update" key={update._id}>
                                                 <span>
@@ -94,7 +94,7 @@ const Home = () => {
                                                     <p className="update__date">{update.date}</p>
                                                 </span>
                                                 <p dangerouslySetInnerHTML={{
-                                                    __html: marked.parse(update.content)
+                                                    __html: marked.parse(update.content.toString().substring(0, 400) + "...")
                                                 }} className="update__content"></p>
                                             </div>
                                         )

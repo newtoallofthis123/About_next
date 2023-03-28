@@ -5,7 +5,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 /* Track */
@@ -15,13 +15,15 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
+  height: 5px;
   background: #a5a5a5;
-  border-radius: 24px;
+  border-radius:5px;
+  border: 2px solid #000000;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #232322;
+  background: #979797;
 }
 
 :root {
@@ -40,8 +42,8 @@
 
 :root[data-theme="light"] {
   --color: #1a1919;
-  --bg: #fdf8f8;
-  --blog-bg: #fffaf2;
+  --bg: #fdfdfd;
+  --blog-bg: #f1f1f1;
   --footer-bg: #8df5f5;
   --dark-img: none;
   --light-img: inline;

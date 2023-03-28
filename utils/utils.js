@@ -20,7 +20,13 @@ const dateTime = () => {
     return datetime
 }
 
+const ranHash = () => {
+    const hash = Math.random().toString(8).substring(2, 5) + Math.random().toString(8).substring(2, 5);
+    return hash
+}
+
 module.exports = {
     hypens,
-    dateTime
+    dateTime,
+    ranHash
 }
