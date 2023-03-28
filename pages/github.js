@@ -22,10 +22,11 @@ const RepositoryList = () => {
 
     return (
         <div style={{ margin: "1.2rem" }}>
+            <Seo title="Ishan's GitHub Repo's" description="GitHub" />
             {repositories.map((repo) => (
                 <div style={{ backgroundColor: `var(--${randomColor()})`, }} className='repo' key={repo.id}>
                     {/* <img src={repo.owner.avatar_url} alt="UserPhoto" /> */}
-                    <a href={repo.html_url}>{repo.full_name}</a>
+                    <a className='a' href={repo.html_url}>{repo.full_name}</a>
                     <p>
                         {repo.description}
                     </p>
@@ -52,10 +53,4 @@ export default function GitHub() {
             </div>
         </Layout>
   )
-}
-
-export const Head = () => {
-    return (
-        <Seo title="Ishan's GitHub Repo's" description="GitHub" />
-    )
 }

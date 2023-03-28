@@ -84,7 +84,7 @@ const Home = () => {
                             (error)? <>Error Loading</>:
                             (!data) ? <>Loading</> :
                                 data.slice(0).reverse().map((update) => {
-                                    const url = "/updates/" + update.id
+                                    const url = "/updates/" + update.hash
                                     count++
                                     if (count < 4) {
                                         return (

@@ -1,10 +1,11 @@
+a {
+    color: var(--link);
+}
+
 .home{
     .home__title{
         font-family: "Fira Code", monospace;
         font-size: 7.5rem;
-    }
-    a{
-        color: var(--link);
     }
     .link-btn a {
         color: var(--black);

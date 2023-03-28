@@ -36,13 +36,15 @@ def commit():
     if commit_choice == "y":
         os.system("git commit -m \"" + msg + "\"")
         os.system("git push")
-        Console().print("Commited to git and pushed to [link='https://github.com/newtoallofthis123/About_next']github.com[/link]")
-        Console().print("Check deployment status at [link='https://vercel.com/newtoallofthis123/about-next']vercel.com[/link]")
+        Console().print("Commited to git and pushed to [link=https://github.com/newtoallofthis123/About_next]github.com[/link]")
+        Console().print("Check deployment status at [link=https://vercel.com/newtoallofthis123/about-next]vercel.com[/link]")
     else:
         print("Not commited to git or pushed to github")
 
 def deploy():
     data = get_content()
+    if str(int(data["version"].split(".")[2]) + 1) >= "10":
+        data["version"] = '.'.join(str(data["version"]).split(".")[0:2]) + "." + "0" + str(int(data["version"].split(".")[2]) + 1)
     data["version"] = '.'.join(str(data["version"]).split(".")[0:2]) + "." + str(int(data["version"].split(".")[2]) + 1)
     Console().log("Version updated to [bold red]" + data["version"] + "[/bold red]")
     write_content(data)

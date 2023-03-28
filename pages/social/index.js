@@ -50,7 +50,9 @@ const Socials = () => {
                     </svg> StackOverFlow</Link></button>
             </div>
         </div>
-        <h2>
+            <h2 style={{
+            textAlign: "center",
+        }}>
             The above page is a fork of <a href="https://links.noobscience.rocks" target="_blank" rel="noreferrer">Links</a>
         </h2>
     </Layout>

@@ -4,13 +4,7 @@ import Link from 'next/link'
 
 export default function Resume() {
     return (
-        <main
-            style={{
-                backgroundColor: 'var(--white)',
-                color: 'var(--black)',
-                fontFamily: "'Atkinson Hyperlegible', sans-serif",
-            }}
-        >
+        <main className='resume'>
             <Seo title="Ishan's Resume" />
             <div>
                 <button style={{marginRight: "12px",}} className="link-btn">

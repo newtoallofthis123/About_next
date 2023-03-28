@@ -88,7 +88,7 @@ export default function Settings({ blog = "false" }) {
                               <button onClick={() => toggleTheme("system")}><i className="bi bi-gear"></i> System</button><p></p>
                               <button onClick={() => toggleTheme("violet")}><i className="bi bi-moon"></i> Violet</button>
                               <button onClick={() => toggleTheme("sepia")}><i className="bi bi-sun"></i> Sepia</button>
-                              <button onClick={() => toggleTheme("black")}><i className="bi bi-moon"></i> Black</button>
+                              <button onClick={() => toggleTheme("monokai")}><i className="bi bi-moon"></i> Monokai</button>
                           </div>
                       </div>
                       <div className="settings-option">
