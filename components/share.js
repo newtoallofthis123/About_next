@@ -8,7 +8,9 @@ export default function Share({ title, url }) {
     const whatsapp = `https://api.whatsapp.com/send?text=${title}+https://new.noobscience.rocks/blog/posts/${url}`
 
     return (
-        <div className="options">
+        <div style={{
+            margin: "1vw 0",
+        }} className="options">
             {/* eslint-disable-next-line */}
             <button><a href={twitter}><i role="button"
                 className="bi bi-twitter"></i></a></button>

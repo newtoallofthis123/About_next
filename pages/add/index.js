@@ -25,21 +25,6 @@ export default function Add() {
         }
     }
 
-    const updatePost = (e) => {
-        e.preventDefault()
-        const name = e.target.name.value
-        const content = e.target.content.value
-        setDone(true)
-        fetch('/api/v1/updates', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name, content })
-        }).then(() => { toast("Successfully posted Update") }).catch(() => { toast("Error posting Update") })
-        return true
-    }
-
     const addLink = (e) => {
         e.preventDefault()
         const name = e.target.name.value
@@ -90,20 +75,6 @@ export default function Add() {
                     <div className='admin_div'>
                         <Seo title="Admin Page"></Seo>
                         <h1>Admin</h1>
-                        <div>
-                            <h2>Add an Update</h2>
-                            <p>
-                                Post an update on the home page. This will be shown on the home page.
-                            </p>
-                            <form onSubmit={updatePost} method="POST">
-                                <p>Name</p>
-                                <input type="text" name="name" id="name" />
-                                <p>Content</p>
-                                <textarea name="content" id="content" cols="30"></textarea>
-                                <p></p>
-                                <button type="submit">Submit</button>
-                            </form>
-                        </div>
                         <div>
                             <h2>Add a Link</h2>
                             <p>

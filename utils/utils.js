@@ -20,6 +20,20 @@ const dateTime = () => {
     return datetime
 }
 
+const dateHash = () => {
+    // get current date and time
+    const now = new Date();
+
+    // extract the date components
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0'); // add leading zero if needed
+    const day = now.getDate().toString().padStart(2, '0'); // add leading zero if needed
+
+    const datetime = `${year}${month}${day}`;
+
+    return datetime
+}
+
 const ranHash = () => {
     const hash = Math.random().toString(8).substring(2, 5) + Math.random().toString(8).substring(2, 5);
     return hash
@@ -28,5 +42,6 @@ const ranHash = () => {
 module.exports = {
     hypens,
     dateTime,
-    ranHash
+    ranHash,
+    dateHash
 }

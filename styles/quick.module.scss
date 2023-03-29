@@ -1,0 +1,118 @@
+.nav{
+    border-bottom: 2px solid #000000;
+    h1{
+        font-size: 3.5rem;
+        text-align: center;
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        font-weight: 700;
+    }
+
+    h2{
+        text-align: center;
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        font-weight: 700;
+    }
+
+    p{
+        font-family: "Atkinson Hyperlegible", sans-serif;
+        text-align: center;
+    }
+
+    .intro_subtitle {
+        text-align: center;
+        margin: 1vw 0;
+        a {
+            border: 2px solid #000000;
+            padding: 0.5rem 1rem;
+            font-family: "Atkinson Hyperlegible", sans-serif;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 1vw;
+        }
+
+        a:hover {
+            background-color: var(--blue);
+            color: var(--black);
+        }
+    }
+
+    ::selection {
+        background-color: rgb(200, 252, 255);
+        color: #000000;
+    }
+}
+
+.quick_div{
+    h1,h2,h3,h4,h5,h6,p,li,span{
+        font-family: "Atkinson Hyperlegible", sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        font-weight: 700;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    ::selection{
+        background-color: rgb(200, 252, 255);
+        color: #000000;
+    }
+}
+
+
+.main{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 2.2rem;
+}
+
+.header{
+    padding-top: 2vw;
+    display: flex;
+    justify-content: space-between;
+
+    .div2{
+        margin: 0 5rem;
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+        margin-top: 4rem;
+        border: 2px solid #000000;
+        border-radius: 50%;
+    }
+}
+
+.news_div{
+    h1,h2,h3,h4,h5,h6,p,li,span{
+        font-family: "Atkinson Hyperlegible", sans-serif;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+        font-weight: 700;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    ::selection{
+        background-color: rgb(200, 252, 255);
+        color: #000000;
+    }
+}
+
+.news_content {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    margin: 1rem 4rem;
+    font-size: 1.4rem;
+}

@@ -32,6 +32,9 @@ export default function UpdatesID() {
                     <p>
                         {update.date}
                     </p>
+                    <p>
+                        {update.author}
+                    </p>
                     <nav>
                         <Link href='/updates'>Back</Link>
                     </nav>

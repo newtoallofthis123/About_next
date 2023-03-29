@@ -2,7 +2,7 @@ import React from 'react'
 import { Seo } from '@/components/seo'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { hypens } from '@/utils/utils';
+import { dateHash} from '@/utils/utils';
 import Link from 'next/link';
 import { marked } from 'marked';
 
@@ -47,16 +47,16 @@ export default function NewsAdd() {
         e.preventDefault()
         const name = e.target.name.value
         const content = e.target.content.value
-        const author = e.target.author.value
-        fetch('/api/v1/updates', {
+        const link = e.target.link.value
+        fetch('/api/v1/news', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name, content, author })
+            body: JSON.stringify({ name, content, link })
         }).then(() => {
             toast("Successfully posted Link")
-            setLink(hypens(name))
+            setLink(dateHash())
         }).catch(() => { toast("Error posting Link") })
     }
 
@@ -75,38 +75,30 @@ export default function NewsAdd() {
             {
                 (auth) ? (
                     <div className='admin_div'>
-                        <Seo title="Add a New Update | Ishan's Updates"></Seo>
+                        <Seo title="Add Today's News"></Seo>
                         <h1>Hey Noobie!</h1>
                         <div>
-                            <h2>Write a new update</h2>
+                            <h2>Write Today's News</h2>
                             <p>
                                 The date and time presently is {time}
                             </p>
+                            <p>
+                                The link to the news will be <b>news/{dateHash()}</b>
+                            </p>
                             <form onSubmit={addLink} method="POST">
-                                <p>
-                                    <b>Name</b>: 
-                                    Enter the name of the update. This will be the title of the update.
-                                </p>
+                                <p>Name</p>
                                 <input style={{ width: "100%", }} type="text" name="name" id="name" />
-                                <p>
-                                    <b>Author</b>:
-                                    Enter your name or nickname. This will be displayed as the author of the update.
-                                </p>
-                                <input style={{ width: "100%", }} type="text" name="author" id="author" />
-                                <p>
-                                    <b>Content</b>: 
-                                    Be sure to write the content of the update in Markdown. You can use the preview to see how it will look.
-                                </p>
+                                <p>Content</p>
                                 <textarea style={{ width: "100%", }} onChange={handleContent} value={content} name="content" id="content" rows="20" cols="30"></textarea>
                                 <p></p>
+                                <p>Link</p>
+                                <input style={{ width: "100%",}} type="text" name="link" id="link" /><p></p>
                                 <div>
-                                    <h2>Preview of your update News</h2>
+                                    <h2>Preview of Today's News</h2>
                                     <p>
-                                        The date and time presently is {time} and this is the preview of the update.
-                                        Be sure to audit the update before posting it.
-                                        You won't be able to edit it or even delete it after posting it.
-                                        If you want to delete or edit it, you have to contact the owner.
-                                        Protocols to edit and delete are not yet implemented.
+                                        The date and time presently is {time} and this is the preview of the news.
+                                        Be sure to audit the news before posting it.
+                                        Also, the link to the news will be <b>news/{dateHash()}</b>
                                     </p>
                                     <p>
                                         By submitting, you agree to the terms and conditions of the site.
@@ -122,7 +114,7 @@ export default function NewsAdd() {
                             {
                                 (link) ? (
                                     <div>
-                                        <Link href={"/updates/" + link}>
+                                        <Link href={"/news/"+link}>
                                             {link}
                                         </Link>
                                     </div>
@@ -141,29 +133,18 @@ export default function NewsAdd() {
                             <input type="password" name="password" id="password" onChange={handlePassword} />
                             <p></p>
                             <button type="submit">Submit</button>
-                            </form>
-                            <p>
-                                Welcome to where the magic happens. This is the admin page.
-                                If you want to add a new update, you need to enter the password.
-                                If you don't know the password, you can ask the owner.
-                                Hence this is sort of a protected page.
-                            </p>
-                            <p>
-                                Sorry for the inconvenience.
-                                And to all my hacker friends <b>TRY HACK ME</b>
-                            </p>
-                            <p>
-                                No seriously, try hack me. I am still a noobie and I need to learn more.
-                                So, if you do hack me, please don't do anything bad and just tell me how you did it.
-                                You can find my <Link href="/social">links</Link> here.
-                            </p>
-                            <p>
-                                That being said, if you are a friend I gave the password to, you can enter it here.
-                                But, be sure to not share it with anyone else and audit the update before posting it.
-                            </p>
-                            <p>
-                                Have a nice day!
-                            </p>
+                        </form>
+                        <p>
+                            Hey! First off, Hi! Thanks for your interest in the site.
+                            I use this page for the admin stuff. If you are a hacker, you can try to hack me.
+                            If you are a friend, you can try to get the password from me.
+                        </p>
+                        <p>
+                            With that said, If you are indeed able to hack into the site, please don't do anything bad.
+                            I am not a big company, I am just a student trying to learn new things.
+                            So, just report it to me and I will fix it.
+                            I have a lot to learn, so please don't be mean.
+                        </p>
                     </div>
                 )
             }

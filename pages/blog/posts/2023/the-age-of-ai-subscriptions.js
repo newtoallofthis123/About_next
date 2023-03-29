@@ -3,7 +3,7 @@ import React from 'react'
 import { Seo } from '@/components/seo'
 import Link from 'next/link'
 import Share from '@/components/share'
-
+import Disclaimer from '@/components/disclaimer'
 
 export default function AgeOfAISubscriptions() {
     const [tldr, setTldr] = React.useState(false)
@@ -94,40 +94,7 @@ export default function AgeOfAISubscriptions() {
                         Thanks for reading this article. You can also find this article on my <Link href="/social/blog">hashnode</Link>. If you liked this article, please consider sharing it with your friends and family. Also, if you have any questions, please feel free to ask me. I am always happy to help.
                         All this aside though, I hope you have a great day and I will see you in the next article.
                     </p>
-                </div>
-                <div className="disclaimer">
-                    <h2>Disclaimer</h2>
-                    <p>
-                        Parts of this article are AI generated, including, but not limited to the TLDR and Introduction.
-                    </p>
-                    <p>
-                        This article is not sponsored by any company. All the opinions expressed in this article are my own.
-                    </p>
-                    <p>
-                        This article is not intended to be a financial advice. Please do your own research before investing in any company.
-                    </p>
-                    <p>
-                        I am not an expert in AI. So, if you find any errors in this article, please let me know on <Link href="/social/twitter">twitter</Link>.
-                    </p>
-                    <p>
-                        Atmost care is taken to make sure that the information in this article is correct. But, I am not responsible for any errors in this article.
-                    </p>
-                    <p>
-                        All company names, product names, service names, trademarks, registered trademarks, or service marks are the property of their respective owners.
-                    </p>
-                    <p>
-                        This article is not intended to be a legal advice. Please consult a lawyer before making any legal decisions.
-                    </p>
-                    <p>
-                        The technology of AI is still in it's infancy. So, please do not take this article too seriously.
-                        These are only the opinions of a 19 year old guy who is still learning about the world.
-                    </p>
-                    <p>
-                        By reading this article, you agree to the terms and conditions of this website.
-                    </p>
-                    <p>
-                        The author of this article is not responsible for any damages caused by the use of this article, including, but not limited to, financial damages, mental damages, physical damages, etc.
-                    </p>
+                    <Disclaimer></Disclaimer>
                 </div>
             </main>
       </BlogLayout>

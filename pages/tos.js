@@ -4,7 +4,7 @@ import React from 'react'
 export default function Tos() {
     return (
         <Layout>
-            <div style={{textAlign: "justify",}} className="bod">
+            <div style={{textAlign: "justify", margin: "2vw", fontFamily: "var(--font)",}} className="bod">
                 <h1 class="atx" id="terms-of-service">Terms of Service</h1>
                 <p>generate the terms of service for my personal blog that uses nextjs, is hosted on vercel, uses name.com domain service and uses cookies for seeing last visited and also uses google ads. Generate a good amount. Generate a TLDR for beginners and rest should be advanced as if written by a lawyer. Don't use points, generate paragraphs</p>
                 <h1 class="atx" id="terms-of-service-1">Terms of Service</h1>
