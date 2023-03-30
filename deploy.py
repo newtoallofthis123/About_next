@@ -73,4 +73,11 @@ def main():
         print("Wrong password")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        Console().print("\nExiting Peacefully...")
+        exit()
+    except Exception as e:
+        Console().print("Error: " + str(e))
+        exit()

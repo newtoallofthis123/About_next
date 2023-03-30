@@ -21,7 +21,7 @@ const Home = () => {
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data, error } = useSwr('/api/v1/updates', fetcher);
     let count = 0
-    const does = ["is a Student at GRIET", "is a Full Stack Developer", "is a Opinionated Writer", "is an Open Source Enthusiast", "'s Always on GitHub", "Loves Dogs"];
+    const does = ["is a Student at GRIET", "is a Full Stack Developer", "is a Opinionated Writer", "is an Open Source Enthusiast", "'s Always on GitHub"];
     return (
         <Layout>
             <Seo title="NoobScience | Student and Open Source Enthusiast" description="Home Page" />
@@ -132,6 +132,17 @@ const Home = () => {
                                 onClick={scroll}><p style={{ cursor: "pointer", }}> <i className="bi bi-arrow-up"></i> </p></button>
                         </span>
                     </p>
+                </div>
+                <div className="animate__animated animate__fadeOutDown animate__delay-5s notification">
+                    <div className="notification__content">
+                        <p onClick={
+                            () => {
+                                window.location.href = "/services"
+                            }
+                        }>
+                            <i className="bi bi-megaphone"></i> New Services Page! Click to Check it out
+                        </p>
+                    </div>
                 </div>
             </div>
         </Layout>

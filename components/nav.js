@@ -35,6 +35,9 @@ const Nav = () => {
                         <Link href="/updates" className="underline">Updates</Link>
                     </li>
                     <li>
+                        <Link href="/services" className="underline">Services</Link>
+                    </li>
+                    <li>
                         <Link href="/github" className="underline">GitHub</Link>
                     </li>
                     <li>
@@ -66,7 +69,7 @@ const Nav = () => {
                             <Link href="/updates" className="underline">Updates</Link>
                         </li>
                         <li>
-                            <Link href="/github" className="underline">GitHub</Link>
+                            <Link href="/services" className="underline">Services</Link>
                         </li>
                         <li>
                             <Link href="/social" className="underline">Social</Link>

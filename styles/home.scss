@@ -78,6 +78,22 @@ a {
     }
 }
 
+.notification{
+    font-family: var(--font);
+    font-size: 1.4rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    translate: translate(-50%, 50%);
+    padding: 0.5rem;
+    margin: 0;
+    color: var(--color);
+    background-color: var(--bg);
+    text-align: center;
+    border-radius: 0 0 0 1rem;  
+    cursor: pointer;
+}
+
 .styled_link {
     position: relative;
     display: inline-block;
