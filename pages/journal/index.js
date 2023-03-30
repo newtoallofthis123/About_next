@@ -42,7 +42,7 @@ export default function Notes() {
                             if (max > 0)
                                 return (
                                     <div key={update._id}>
-                                        <Link href={`/updates/${update.hash}`}>{update.name}</Link> on {update.date}
+                                        <Link href={`/journal/${update.hash}`}>{update.name}</Link> on {update.date}
                                     </div>
                                 )
                         })

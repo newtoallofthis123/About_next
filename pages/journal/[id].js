@@ -7,6 +7,7 @@ import Settings from '@/components/settings'
 import { marked } from 'marked'
 import LoadingScreen from '@/components/loading'
 import Router from 'next/router'
+import { dateHash } from '@/utils/utils'
 
 export default function JournalID() {
     const router = useRouter()
@@ -25,7 +26,8 @@ export default function JournalID() {
             }, 2000)
             return <div>Journal Not Found. Redirecting to all my journals</div>
         }
-        const param_id = update._id
+        console.log(update)
+        const param_id = "1234"
         const htmlContent = (content) => {
             return { __html: marked.parse(content) }
         }
