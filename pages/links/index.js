@@ -2,11 +2,12 @@ import Layout from '@/components/layout'
 import React from 'react'
 import Link from 'next/link'
 import useSWR from "swr"
+import LoadingScreen from '@/components/loading'
 
 export default function LinkIndex() {
     const fetcher = (url) => fetch(url).then(res => res.json())
     const { data, error, isLoading } = useSWR(`/api/v1/links`, fetcher)
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
     if (error) return <div>Failed to load</div>
     let count = 0
     if (data) {

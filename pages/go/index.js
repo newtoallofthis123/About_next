@@ -1,6 +1,7 @@
 import React from 'react'
 import { Seo } from '@/components/seo'
 import Router from "next/router"
+import Link from 'next/link'
 
 export default function NoGo() {
     const [time, setTime] = React.useState(5)
@@ -33,7 +34,7 @@ export default function NoGo() {
                 So, err um...enjoy
             </p>
             <p>
-                If you want to include your url here, send a pull request on the <a href="/go/git">Github repo</a>.
+                If you want to include your url here, send a pull request on the <Link href="/go/git">Github repo</Link>.
             </p>
             <p>
                 BTW, yes! I can center a div using CSS.

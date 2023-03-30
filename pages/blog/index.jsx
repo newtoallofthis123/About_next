@@ -3,6 +3,7 @@ import useSwr from 'swr'
 import { Seo } from "@/components/seo";
 import BlogLayout from "@/components/blog_layout";
 import Router from "next/router";
+import LoadingScreen from "@/components/loading";
 
 export default function Blog() {
     // Colors are sometimes same, so I am commenting this out for now
@@ -18,7 +19,7 @@ export default function Blog() {
     const { data, error, isLoading } = useSwr('/api/all', fetcher)
 
     if (error) return <div>Failed to load users</div>
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
     if (!data) return null
     let count = 0
     return (

@@ -40,6 +40,8 @@
   --blog-font-size: 1.2rem;
   --blog-line-height: 1.8rem;
   --font: "Atkinson Hyperlegible", -apple-system, sans-serif;
+  --selection-color: #0a0a0a;
+  --selection-bg: #baf4fb;
 }
 
 :root[data-theme="light"] {
@@ -616,6 +618,59 @@ h3 {
   }
 }
 }
+
+// Begin to UI Verse Code by https: //uiverse.io/profile/Satwinder04
+.loader {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--bg);
+  text-align: center;
+  margin: 5rem 2rem;
+
+  img{
+    padding: 5rem;
+    width: 10vw;
+    // height: 100px;
+  }
+
+.loader-text {
+  font-family: var(--font);
+  font-size: 1.7rem;
+  color: var(--color);
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.loader-bar {
+  width: 30%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color);
+  animation: loader-bar-animation 2s ease-in-out infinite;
+}
+}
+
+@keyframes loader-bar-animation {
+  0% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
+
+  50% {
+    /* transform: translateX(100%) rotate(-90deg); */
+    transform: translateX(100%);
+  }
+
+  100% {
+    /* transform: translateX(-100%) rotate(270deg); */
+    transform: translateX(-100%);
+  }
+}
+
+// End to UI Verse Code by https: //uiverse.io/profile/Satwinder04
 
 #settings-container {
   text-align: center;

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Seo } from '@/components/seo'
 import { useRouter } from 'next/router'
 import { marked } from 'marked'
+import LoadingScreen from '@/components/loading'
 
 export default function GoLinks() {
     const router = useRouter()
@@ -11,7 +12,7 @@ export default function GoLinks() {
     const param = id
     const fetcher = (url) => fetch(url).then(res => res.json())
     const { data, error, isLoading } = useSWR(`/api/v1/links`, fetcher)
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
     if (error) return <div>Failed to load</div>
     if (data) {
         const links = data

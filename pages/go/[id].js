@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Router from "next/router"
 import useSWR from "swr"
 import Link from "next/link"
+import LoadingScreen from "@/components/loading"
 
 export default function GoPage() {
     const router = useRouter()
@@ -11,7 +12,7 @@ export default function GoPage() {
     const fetcher = (url) => fetch(url).then(res => res.json())
     const { data, error } = useSWR('/api/v1/go', fetcher)
     if (error) return <div>failed to load</div>
-    if (!data) return <div>Loading</div>
+    if (!data) return <div><LoadingScreen></LoadingScreen></div>
     if (data) {
         const link = data.find(go => go.slug === param)
         if (link) {

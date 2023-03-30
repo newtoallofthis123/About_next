@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Seo } from '@/components/seo'
 import Settings from '@/components/settings'
 import { marked } from 'marked'
+import LoadingScreen from '@/components/loading'
 
 export default function UpdatesID() {
     const router = useRouter()
@@ -12,7 +13,7 @@ export default function UpdatesID() {
     const param = id
     const fetcher = (url) => fetch(url).then(res => res.json())
     const { data, error, isLoading } = useSwr(`/api/v1/updates`, fetcher)
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
     if (error) return <div>Failed to load</div>
     if (data) {
         const updates= data

@@ -2,13 +2,14 @@ import BlogLayout from "@/components/blog_layout";
 import Link from "next/link";
 import useSwr from 'swr'
 import { Seo } from "@/components/seo";
+import LoadingScreen from "@/components/loading";
 
 export default function Blog() {
     const fetcher = (url) => fetch(url).then((res) => res.json())
     const { data, error, isLoading } = useSwr('/api/all', fetcher)
 
     if (error) return <div>Failed to load users</div>
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
     if (!data) return null
     return (
         <BlogLayout>

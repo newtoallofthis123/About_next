@@ -2,11 +2,12 @@ import Layout from '@/components/layout'
 import React from 'react'
 import Link from 'next/link'
 import useSwr from "swr"
+import LoadingScreen from '@/components/loading'
 
 export default function Notes() {
     const fetcher = (url) => fetch(url).then(res => res.json())
     const { data, error, isLoading } = useSwr(`/api/v1/updates`, fetcher)
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
     if (error) return <div>Failed to load updates</div>
     if (data) {
         const updates= data

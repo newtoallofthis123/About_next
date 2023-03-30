@@ -4,13 +4,14 @@ import Router from 'next/router'
 import BlogLayout from '@/components/blog_layout'
 import useSwr from 'swr'
 import { Seo } from '@/components/seo'
+import LoadingScreen from '@/components/loading'
 
 export default function BlogLatest() {
     const fetcher = (url) => fetch(url).then((res) => res.json())
     const { data, error, isLoading } = useSwr('/api/all', fetcher)
 
     if (error) return <div>Failed to load users</div>
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
     if (!data) return null
     const post = data.blogs[0]
     const time = 5
