@@ -6,6 +6,7 @@ import Link from "next/link";
 import TypeWriter from "@/components/typewriter";
 import useSwr from "swr";
 import { marked } from "marked";
+import Router from "next/router";
 
 const Home = () => {
     const scroll = () => {
@@ -30,7 +31,7 @@ const Home = () => {
             } id="scroll" className="terminal">
                 <div className="terminal__header">
                     <span style={{cursor: "pointer",}} onClick={() => {delete_terminal()}} className="circle circle--red"></span>
-                    <span className="circle circle--yellow"></span>
+                    <span onClick={() => {Router.push("/add/")}} className="circle circle--yellow"></span>
                     <span className="circle circle--green"></span>
                     Ishan_101.exe
                 </div>

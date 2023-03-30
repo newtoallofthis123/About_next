@@ -34,6 +34,19 @@ const dateHash = () => {
     return datetime
 }
 
+const getTime = () => {
+    const date = new Date()
+    const options = {
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+
+    const time = date.toLocaleString('en-US', options)
+    return time
+}
+
 const ranHash = () => {
     const hash = Math.random().toString(8).substring(2, 5) + Math.random().toString(8).substring(2, 5);
     return hash
@@ -43,5 +56,6 @@ module.exports = {
     hypens,
     dateTime,
     ranHash,
-    dateHash
+    dateHash,
+    getTime
 }

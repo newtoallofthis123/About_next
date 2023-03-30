@@ -75,6 +75,12 @@ export default function Add() {
                     <div className='admin_div'>
                         <Seo title="Admin Page"></Seo>
                         <h1>Admin</h1>
+                        <p>
+                            Other Pages
+                        </p>
+                        <nav>
+                            <Link href='/add/updates'>Updates</Link> <Link href='/add/journal'>Journal</Link>
+                        </nav>
                         <div>
                             <h2>Add a Link</h2>
                             <p>

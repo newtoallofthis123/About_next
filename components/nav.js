@@ -32,7 +32,10 @@ const Nav = () => {
                         <Link href="/resume" className="underline">Resume</Link>
                     </li>
                     <li>
-                        <Link href="/updates" className="underline">Updates</Link>
+                        <Link href="/updates" className="underline">Upates</Link>
+                    </li>
+                    <li>
+                        <Link href="/journal" className="underline">Journal</Link>
                     </li>
                     <li>
                         <Link href="/services" className="underline">Services</Link>
@@ -67,6 +70,9 @@ const Nav = () => {
                         </li>
                         <li>
                             <Link href="/updates" className="underline">Updates</Link>
+                        </li>
+                        <li>
+                            <Link href="/updates" className="underline">Journal</Link>
                         </li>
                         <li>
                             <Link href="/services" className="underline">Services</Link>
