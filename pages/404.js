@@ -6,6 +6,7 @@ import Link from 'next/link'
 export default function NotFound() {
   return (
     <Layout>
+      <Seo title="404 Error" />
       <div style={{ backgroundColor: "var(--red)", }} className="color-div">
         <h1 style={{ color: "var(--black)", }} className="main-title">Not Found! Bruh</h1>
         <h2>What is the 404 error?</h2>
@@ -21,14 +22,10 @@ export default function NotFound() {
         </h2>
         <p style={{textAlign: "center",}}>
           So I recommend you to go back to the <Link href="/">homepage</Link> and now that I sound weird and not myself, 
-          I am going to stop writing this. If you think this is a bug, please report it on the <a href="/go/git">Github repo</a>.
+          I am going to stop writing this. If you think this is a bug, please report it on the <Link href="/go/git">Github repo</Link>.
         </p>
         <button style={{backgroundColor: "var(--yellow)",}} className='link-btn'><Link href="/">HomePage Sire!</Link></button>
       </div>
     </Layout>
   )
-}
-
-export const Head = () => {
-  <Seo title="404 | NoobScience" description="404 Error"></Seo>
 }

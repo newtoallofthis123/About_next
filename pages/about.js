@@ -25,7 +25,7 @@ const About = () => {
                         {time()}! I am Ishan. I am a tech-savvy student with a passion for software development, I am constantly seeking new opportunities to learn and grow in the field.
                         My primary focus is on building full stack applications using the Flask API and MERN stack.
                         Known online as NoobScience, I am also a strong advocate for open source software and Linux.
-                        Currently, I am studying computer science and engineering at <a href="http://griet.ac.in">GRIET</a>, where I specialize in coding with Python, and am also expanding my skills in JavaScript.
+                        Currently, I am studying computer science and engineering at <a href="https://griet.ac.in">GRIET</a>, where I specialize in coding with Python, and am also expanding my skills in JavaScript.
                         I am passionate about understanding how software works, and particularly enjoy diving deep into the inner workings of applications and open source projects that aim to replace proprietary alternatives.
                         With a strong foundation in technology and a deep love for open source software, I am excited to continue exploring new opportunities in the field. Let's <a href="https://newtoallofthis123.github.io/tree">connect</a>!
                     </p>
