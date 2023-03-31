@@ -46,8 +46,9 @@
 
 :root[data-theme="light"] {
   --color: #1a1919;
-  --bg: #f9f9f9;
+  --bg: #fffef9;
   --blog-bg: #f1f1f1;
+  --nav-bg: #100f0f;
   --footer-bg: #8df5f5;
   --dark-img: none;
   --light-img: inline;
@@ -58,8 +59,9 @@
 
 :root[data-theme="dark"] {
   --color: #f3f1f1;
-  --bg: #06000e;
+  --bg: #0e1012;
   --blog-bg: #131921;
+  --nav-bg: #010f20;
   --footer-bg: #111111;
   --dark-img: inline;
   --light-img: none;
@@ -94,7 +96,8 @@
 
 :root[data-theme="sepia"] {
   --color: #000000;
-  --bg: #fdf5a0;
+  --bg: #f9f7de;
+  --nav-bg: #181818;
   --blog-bg: #feffb9;
   --footer-bg: #8df5f5;
   --dark-img: none;
@@ -131,7 +134,7 @@
 body {
   background-color: var(--bg);
   color: var(--color);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 2rem;
   margin: 0;
 }
@@ -166,7 +169,12 @@ h3 {
 }
 
 .index-nav {
-  border: 2px solid var(--color);
+  border-bottom: 1px solid var(--white);
+  background-color: var(--nav-bg);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   ul {
     list-style-type: none;
@@ -181,17 +189,17 @@ h3 {
   }
 
   li a {
-    font-family: 'Raleway', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.4rem;
     display: block;
-    color: var(--color);
+    color: var(--white);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
 
   li a:hover {
-    color: var(--color);
+    color: var(--white);
     background-color: inherit;
   }
 
@@ -199,14 +207,14 @@ h3 {
     font-family: 'Archivo Black', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.4rem;
     display: block;
-    color: var(--color);
+    color: var(--white);
     text-align: center;
     cursor: pointer;
     padding: 14px 16px;
     border: 0;
-    border-right: 2px;
+    border-right: 1px;
     border-style: solid;
-    border-color: var(--color);
+    border-color: var(--white);
   }
 
   .nav-title {
@@ -325,7 +333,7 @@ h3 {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--color);
+  background-color: var(--white);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -375,8 +383,8 @@ h3 {
 
   h1 {
     font-family: "Roboto Condensed", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 5rem;
-    margin: 3vw 0;
+    font-size: 3.5rem;
+    margin: 2vw 0;
   }
 
   a {
@@ -393,6 +401,11 @@ h3 {
     text-align: justify;
     font-size: 1.2rem;
     line-height: 2rem;
+  }
+
+  ::selection{
+    background-color: var(--white);
+    color: var(--black);
   }
 
   @media screen and (max-width: 1020px) {
@@ -614,7 +627,9 @@ h3 {
   color: var(--black);
   background-color: var(--white);
   font-family: var(--font);
-  margin: 5vw 10vw;
+  margin: 5vw;
+  padding: 2vw 5vw;
+  border-radius: 12px;
 
   a{
     color: var(--black);

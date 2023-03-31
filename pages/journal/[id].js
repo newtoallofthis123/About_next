@@ -7,7 +7,6 @@ import Settings from '@/components/settings'
 import { marked } from 'marked'
 import LoadingScreen from '@/components/loading'
 import Router from 'next/router'
-import { dateHash } from '@/utils/utils'
 
 export default function JournalID() {
     const router = useRouter()
@@ -26,8 +25,7 @@ export default function JournalID() {
             }, 2000)
             return <div>Journal Not Found. Redirecting to all my journals</div>
         }
-        console.log(update)
-        const param_id = "1234"
+        const param_id = update._id
         const htmlContent = (content) => {
             return { __html: marked.parse(content) }
         }
@@ -35,13 +33,14 @@ export default function JournalID() {
             return (
                 <div className='journal_div'>
                     <Settings></Settings>
-                    <Seo title={`Journal for ${update.date}`} ></Seo>
+                    <Seo title={`Journal for ${new Date().toDateString()}`} ></Seo>
                     <h1>
                         Ishan's Journal
                     </h1>
                     <p>
-                        for {update.date} at {update.time}
+                        for {update.date} at {update.time} IST
                     </p>
+                    <Link href="/journal">Back</Link>
                     <div style={{
                         padding: '1rem 0',
                     }} className="main_journal">

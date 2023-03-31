@@ -22,7 +22,7 @@ const Home = () => {
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data, error } = useSwr('/api/v1/updates', fetcher);
     let count = 0
-    const does = ["is a Student at GRIET", "is a Full Stack Developer", "is a Opinionated Writer", "is an Open Source Enthusiast", "'s Always on GitHub"];
+    const does = ["Student at GRIET", "Full Stack Developer", "Opinionated Writer", "Open Source Enthusiast", "Always on GitHub", "Dog Bro :)"];
     return (
         <Layout>
             <Seo title="NoobScience | Student and Open Source Enthusiast" description="Home Page" />
@@ -37,7 +37,7 @@ const Home = () => {
                 </div>
                 <div>{"~>   "}
                     <span>
-                        Ishan
+                        {/* Ishan */}
                         <TypeWriter
                             data={does}
                         ></TypeWriter>
@@ -68,6 +68,8 @@ const Home = () => {
                     <p>
                         I still have a lot to talk about. So, let's get to know each other better.
                         You can visit my <Link href="/about">About</Link> page to know more about me.
+                        And you can also check out my <Link href="/social">Social</Link> page to connect with me.
+                        And I know this is a lot of ands but, I also have a <Link href="/blog">Blog</Link> and <Link href="/journal">Journal</Link> where I write about tech and my experiences.
                     </p>
                 </div>
                 <div className="updates">

@@ -19,6 +19,9 @@ export default function Notes() {
                         NoobScience's Update Page
                     </h1>
                     <p>
+                        <Link href="/updates/archive">Archive</Link> <Link href="/updates/latest">Latest</Link>
+                    </p>
+                    <p>
                         Okay, I have just been experimenting with Next.js and I have to say, it is pretty cool.
                     </p>
                     <p>
@@ -36,7 +39,7 @@ export default function Notes() {
                         Have a great day!
                     </p>
                     <h2>
-                        Updates
+                        Recent Updates
                     </h2>
                     {
                         updates.slice(0).reverse().map(update => {

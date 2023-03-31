@@ -18,6 +18,7 @@ export default function UpdatesID() {
     if (data) {
         const updates= data
         const update = updates.find(update => update.hash === param)
+        if(!update) return <div>404</div>
         const param_id = update._id
         const htmlContent = (content) => {
             return { __html: marked.parse(content) }
