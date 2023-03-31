@@ -31,7 +31,7 @@ const Home = () => {
             } id="scroll" className="terminal">
                 <div className="terminal__header">
                     <span style={{cursor: "pointer",}} onClick={() => {delete_terminal()}} className="circle circle--red"></span>
-                    <span onClick={() => {Router.push("/add/")}} className="circle circle--yellow"></span>
+                    <span onClick={() => {Router.push("/admin/")}} className="circle circle--yellow"></span>
                     <span className="circle circle--green"></span>
                     Ishan_101.exe
                 </div>
