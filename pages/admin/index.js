@@ -79,7 +79,7 @@ export default function Add() {
                             Other Pages
                         </p>
                         <nav>
-                            <Link href='/add/updates'>Updates</Link> <Link href='/add/journal'>Journal</Link>
+                            <Link href='admin/updates'>Updates</Link> <Link href='/admin/journal'>Journal</Link> <Link href='/admin/view'>View</Link>
                         </nav>
                         <div>
                             <h2>Add a Link</h2>

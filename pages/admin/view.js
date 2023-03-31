@@ -2,8 +2,23 @@ import React from 'react'
 import { connectToDatabase } from '@/utils/db'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {Seo} from "@/components/seo";
 
 export default function DbView({ data }) {
+    const [auth, setAuth] = React.useState(false)
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+    }
+    const handlePasswordSubmit = (e) => {
+        e.preventDefault()
+        if (password === NS_PWD) {
+            setAuth(true)
+            toast("Welcome back Admin. We missed you 😎")
+        }
+        else {
+            toast("Wrong Password! Are you a Hacker? 🧑‍💻")
+        }
+    }
     const handleSubmit = (topic) => (e) => {
         const choice = window.confirm("Are you sure you want to delete this item?")
         if (!choice)
@@ -42,6 +57,7 @@ export default function DbView({ data }) {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover />
+            (auth) ? (
             <h1>View</h1>
             {
                 data.map((collection, index) => {
@@ -52,40 +68,63 @@ export default function DbView({ data }) {
                             <h2>{topics[index]}</h2>
                             <table>
                                 <tbody>
-                                    {
-                                        collection.map((item, sub_index) => {
-                                            return (
-                                                <tr key={sub_index}>
-                                                    {
-                                                        Object.keys(item).map((key, index) => { 
-                                                            if (key !== "_id" && key !== "collection" && key !== "content")
-                                                                return (
-                                                                    <td key={index}>{item[key]}</td>
-                                                                )
-                                                        })
-                                                    }
-                                                    <td>
-                                                        <form action={`/admin/${actions[0]}/${topics[index]}`} method="POST">
-                                                            <input type="hidden" name="id" value={item._id} />
-                                                            <input type="submit" value="Edit" />
-                                                        </form>
-                                                    </td>
-                                                    <td>
-                                                        <form onSubmit={handleSubmit(topics[index])} method='POST'>
-                                                            <input type="hidden" name={`del_id`} value={item._id} />
-                                                            <input type="submit" value="Delete" />
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                            )
-                                        })
-                                    }
+                                {
+                                    collection.map((item, sub_index) => {
+                                        return (
+                                            <tr key={sub_index}>
+                                                {
+                                                    Object.keys(item).map((key, index) => {
+                                                        if (key !== "_id" && key !== "collection" && key !== "content")
+                                                            return (
+                                                                <td key={index}>{item[key]}</td>
+                                                            )
+                                                    })
+                                                }
+                                                <td>
+                                                    <form action={`/admin/${actions[0]}/${topics[index]}`} method="POST">
+                                                        <input type="hidden" name="id" value={item._id} />
+                                                        <input type="submit" value="Edit" />
+                                                    </form>
+                                                </td>
+                                                <td>
+                                                    <form onSubmit={handleSubmit(topics[index])} method='POST'>
+                                                        <input type="hidden" name={`del_id`} value={item._id} />
+                                                        <input type="submit" value="Delete" />
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        )
+                                    })
+                                }
                                 </tbody>
                             </table>
                         </div>
                     )
                 })
             }
+            ):(
+            <div className='password_div'>
+                <Seo title="Login to view admin page"></Seo>
+                <h1>Admin Page!</h1>
+                <form onSubmit={handlePasswordSubmit}>
+                    <p>Enter Your Password</p>
+                    <input type="password" name="password" id="password" onChange={handlePassword} />
+                    <p></p>
+                    <button type="submit">Submit</button>
+                </form>
+                <p>
+                    Hey! First off, Hi! Thanks for your interest in the site.
+                    I use this page for the admin stuff. If you are a hacker, you can try to hack me.
+                    If you are a friend, you can try to get the password from me.
+                </p>
+                <p>
+                    With that said, If you are indeed able to hack into the site, please don't do anything bad.
+                    I am not a big company, I am just a student trying to learn new things.
+                    So, just report it to me and I will fix it.
+                    I have a lot to learn, so please don't be mean.
+                </p>
+            </div>
+            )
         </div>
   )
 }
