@@ -20,6 +20,13 @@ const dateTime = () => {
     return datetime
 }
 
+const dateUTC = () => {
+    // get current date and time
+    const now = new Date();
+    const date = now.toUTCString();
+    return date
+}
+
 const dateHash = () => {
     // get current date and time
     const now = new Date();
@@ -57,5 +64,6 @@ module.exports = {
     dateTime,
     ranHash,
     dateHash,
-    getTime
+    getTime,
+    dateUTC
 }
