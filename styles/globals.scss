@@ -10,20 +10,20 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #d5d5d5c4;
+  background: #a9a9a9c4;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   height: 5px;
-  background: #a5a5a5;
-  border-radius:5px;
-  border: 2px solid #000000;
+  background: #555555;
+  border-radius: 5px;
+  // border: 2px solid #000000;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #979797;
+  background: #848484;
 }
 
 :root {
@@ -37,8 +37,8 @@
   --white: #f9f5f5;
   --bg: #fdfdfd;
   --color: #1a1919;
-  --blog-font-size: 1.2rem;
-  --blog-line-height: 1.8rem;
+  --blog-font-size: 1.3rem;
+  --blog-line-height: 2rem;
   --font: "Atkinson Hyperlegible", -apple-system, sans-serif;
   --selection-color: #0a0a0a;
   --selection-bg: #baf4fb;
@@ -47,7 +47,7 @@
 :root[data-theme="light"] {
   --color: #1a1919;
   --bg: #fffef9;
-  --blog-bg: #f1f1f1;
+  --blog-bg: #eeecec;
   --nav-bg: #100f0f;
   --footer-bg: #8df5f5;
   --dark-img: none;
@@ -190,7 +190,7 @@ h3 {
 
   li a {
     font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     display: block;
     color: var(--white);
     text-align: center;
@@ -375,7 +375,7 @@ h3 {
 }
 
 .color-div {
-  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Atkinson Hyperlegible", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: var(--yellow);
   color: var(--black);
   font-size: 1.2rem;
@@ -407,8 +407,8 @@ h3 {
   }
 
   ::selection{
-    background-color: var(--white);
-    color: var(--black);
+    background-color: #0554ff;
+    color: #ffffff;
   }
 
   @media screen and (max-width: 1322px) {

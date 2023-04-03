@@ -6,7 +6,11 @@
     max-width: 100vw;
 
     main{
-        padding: 2vw;
+        margin: 2vw;
+    }
+
+    .bod{
+        margin: 2vw 10vw;
     }
 
     i {
@@ -221,7 +225,7 @@
         }
 
         main{
-            margin: 2vw;
+            margin: 4vw;
         }
 
         main img {
@@ -276,7 +280,7 @@
     display: block;
     color: var(--color);
     border: 0;
-    margin: 1rem 0;
+    margin: 3rem 0;
     border-right: 2px;
     border-style: solid;
     border-color: var(--color);

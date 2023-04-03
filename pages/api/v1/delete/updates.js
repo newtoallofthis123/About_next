@@ -6,7 +6,7 @@ export default async function handler(req, res) {
         const { db } = await connectToDatabase();
         const { id } = req.body
         const del_id = new ObjectId(id)
-        const data = await db.collection("updates").deleteOne({ _id: del_id })
+        const data = await db.collection("page").deleteOne({ _id: del_id })
         console.log(data);
         if (data)
             res.json(data);

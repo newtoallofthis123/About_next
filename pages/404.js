@@ -9,20 +9,28 @@ export default function NotFound() {
       <Seo title="404 Error" />
       <div style={{ backgroundColor: "var(--red)", }} className="color-div">
         <h1 style={{ color: "var(--black)", }} className="main-title">Not Found! Bruh</h1>
-        <h2>What is the 404 error?</h2>
-        <code>
-          The 404 (Not Found) status code indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists. A 404 status code does not indicate whether this lack of representation is temporary or permanent; the 410 (Gone) status code is preferred over 404 if the origin server knows, presumably through some configurable means, that the condition is likely to be permanent.
-
-          A 404 response is heuristically cacheable; i.e., unless otherwise indicated by the method definition or explicit cache controls (see Section 4.2.2 of [CACHING]).
-        </code>
         <h2>
           I could have included a cute
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> 404 page</a>
           , but I didn't.
         </h2>
-        <p style={{textAlign: "center",}}>
-          So I recommend you to go back to the <Link href="/">homepage</Link> and now that I sound weird and not myself, 
-          I am going to stop writing this. If you think this is a bug, please report it on the <Link href="/go/git">Github repo</Link>.
+        <p>
+          You just hit a route that doesn't exist... the sadness.
+          Anyways, you can go back to the <Link href="/">home</Link> page.
+          So, what are you waiting for? Go back to the home page!
+          BTW! You can also check out my <Link href="/blog">blog</Link> page.
+          And if you want to see my <Link href="/projects">projects</Link> page.
+        </p>
+        <p>
+          I try to make my pages as accessible as possible, so if you have any
+          suggestions, please let me know!
+          You can also contribute to this site on <Link href="/social/git">GitHub</Link>.
+        </p>
+        <p>
+          If you want to see my <Link href="/social">social</Link> page.
+        </p>
+        <p>
+          Now that I'm done with all the ads, you can go back to the home page.
         </p>
         <button style={{backgroundColor: "var(--yellow)",}} className='link-btn'><Link href="/">HomePage Sire!</Link></button>
       </div>

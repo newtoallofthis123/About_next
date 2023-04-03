@@ -27,6 +27,13 @@ export default function DbView({ data }) {
             return
         e.preventDefault();
         const id = e.target.del_id.value;
+        if (!id) {
+            toast("Something went wrong")
+            return
+        }
+        if (topic === "page") {
+            topic = "updates"
+        }
         fetch(`/api/v1/delete/${topic}`, {
             method: 'POST',
             headers: {
@@ -43,6 +50,7 @@ export default function DbView({ data }) {
                 }
             })
             .catch((err) => {
+                console.log(err)
                 toast("Error posting Link")
             }
         )
