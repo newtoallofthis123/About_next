@@ -9,6 +9,7 @@ export default function GoPage() {
     const router = useRouter()
     const { id } = router.query
     const param = id
+    const [time, setTime] = React.useState(5)
     const fetcher = (url) => fetch(url).then(res => res.json())
     const { data, error } = useSWR('/api/v1/go', fetcher)
     if (error) return <div>failed to load</div>
@@ -19,12 +20,18 @@ export default function GoPage() {
             setTimeout(() => {
                 Router.push(link.url)
             }, 5000)
+            setInterval(() => {
+                setTime(time - 1)
+            }, 1000)
         }
         return (
             <div className="updates_div">
                 <h1>Redirecting to</h1>
-                <p>
+                <a href={link}>
                     {link ? link.url : 'Not Found'}
+                </a>
+                <p>
+                    in {time} seconds
                 </p>
                 <Link href="/">Go Back</Link>
             </div>
