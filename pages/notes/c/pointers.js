@@ -1,14 +1,9 @@
-import Layout from '@/components/layout'
-import React from 'react'
-import Prism from 'prismjs'
 import Link from 'next/link'
+import NotesLayout from '@/components/notes_layout'
 
 export default function PointersC() {
-    React.useEffect(() => {
-        Prism.highlightAll()
-    })
     return (
-        <Layout>
+        <NotesLayout>
             <div className="notes">
                 <h1 className='center main-title'>Pointers in C</h1>
                 <h2>
@@ -143,6 +138,6 @@ void printArray(int *arr, int size) {
                     </h3>
                 </footer>
             </div>
-      </Layout>
+      </NotesLayout>
   )
 }

@@ -1,14 +1,9 @@
-import React from 'react'
-import Layout from '@/components/layout'
-import Prism from "prismjs";
 import Link from 'next/link';
+import NotesLayout from '@/components/notes_layout';
 
 export default function C() {
-    React.useEffect(() => {
-        Prism.highlightAll();
-    }, []);
     return (
-        <Layout>
+        <NotesLayout>
             <div className='notes'>
                 <h1 style={{textDecoration: "underline",}} className="center main-title">C Notes</h1>
                 <h2>
@@ -489,25 +484,13 @@ int main() {
                         }
                     </code>
                 </pre>
-
-            </div>
-            <div className="color-div">
-                <Link href="/notes/c/recursion">
-                    <h2>
-                        Next Up <i className="bi bi-arrow-right"></i> Recursion
-                    </h2>
-                </Link>
-            </div>
-            <div className="disclaimer">
                 <p>
-                    Nearly 80% of this article is AI generated.
+                    Next up: 
+                    <Link href="recursion">
+                        Recursion
+                    </Link>
                 </p>
             </div>
-            <footer className="sticky-credit">
-                <h3>
-                    Content produced by <Link href="/">Ishan</Link> Joshi for Fun :)
-                </h3>
-            </footer>
-      </Layout>
+      </NotesLayout>
   )
 }
