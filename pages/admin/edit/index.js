@@ -170,7 +170,7 @@ export default function EditAdmin() {
                                     </div>
                                 </div>
                             ): (
-                                    <div></div>
+                                <div></div>
                             )
                         }
                     </div>

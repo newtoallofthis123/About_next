@@ -3,13 +3,11 @@ import Link from "next/link";
 import React from "react";
 
 import BlogNav from "./blog_nav"
-import Settings from "./settings";
 
 const BlogLayout = ({ children }) => {
     return (
         <div className="blog">
             <BlogNav></BlogNav>
-            <Settings blog="true"></Settings>
             <div className="main">
                 {children}
             </div>

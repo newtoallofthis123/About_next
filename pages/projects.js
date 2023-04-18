@@ -5,100 +5,158 @@ import Link from 'next/link'
 const Projects = () => {
     return (
         <Layout>
-            <h1 className="title">I've been Busy</h1>
-            <div style={{ backgroundColor: "var(--pink)", }} className="color-div">
-                <h2>Before You Proceed</h2>
-                <p style={{ marginTop: '1.2rem', }}>
-                    As a hands-on learner, I have gained a wealth of experience through a diverse range of projects.
-                    While not all of my endeavors have been successful, I believe that every experience has been valuable in helping me grow and improve.
-                    The projects showcased on my portfolio are those that I am particularly proud of, but I invite you to explore my full range of work on my Github page.
-                    There you will find a comprehensive collection of my projects, including updates and improvements made along the way. Thank you for considering my work.
-                </p>
-            </div>
-            <div className="color-div">
-                <h1>NoobPaste</h1>
-                <p>
-                    I am proud to introduce NoobPaste, my first independent web application development project.
-                    This application, which serves as a replica of pastebin.com, was built using Flask for the back-end and Bootstrap and jQuery for the user interface.
-                    One of the key features of NoobPaste is its emphasis on privacy, as it utilizes server-side encryption to ensure that neither I nor any other administrator can view users' private pastes.
-                    Additionally, I am currently working on developing an admin page to manage all pastes on the platform.
-                    This project is an ongoing effort and I welcome contributions on GitHub.
-                </p>
-                <div style={{ textAlign: 'center' }}>
-                    <button style={{ backgroundColor: "var(--red)", margin: '1.8rem', }} className="link-btn"><a href="https://www.youtube-nocookie.com/embed/RepoBnHNx_A"><i className="bi bi-youtube"></i> Watch the Showcase</a></button>
-                    <button style={{ backgroundColor: "var(--blue)", }} className="link-btn"><a href="https://github.com/newtoallofthis123/NoobPaste"><i className="bi bi-github"></i> Contribute on GitHub</a></button>
+            <div className="normalize">
+                <div className="full-content-div">
+                    <h1>Projects</h1>
+                    <p className='text-div'>
+                        A showcase of projects I am most happy with.
+                        I have many other projects that you can find on my GitHub.
+                        Feel free to check them out.
+                        All my projects are open source and you are always welcome to contribute.
+                        Most of these are really close to my heart since most of them were made while I was learning.
+                        So, I hope you enjoy them.
+                    </p>
                 </div>
-            </div>
-            <div style={{backgroundColor: "var(--red)",}} className="color-div">
-                <h1>PEEP</h1>
-                <p>
-                    I love working in the command line and I wanted to streamline
-                    the experience of working with a few aspects for a while now.
-                    I have been working on a project called PEEP (Personalized Environment and Execution Prompt) for a while now.
-                    It is a command line tool that gives you nifty little sub apps you can use.
-                    It is a work in progress and I am working on adding more features to it.
-                    It has stuff like a qr code generator, a semi online editor, a search feature and an inbuilt markdown editor
-                    that can be used to create markdown files.
-                    This was my first python project using classes, arguments and stuff like that and I quite proud of it.
-                    Wanna try improve it? Check it out on GitHub.
-                </p>
-                <div style={{ textAlign: 'center' }}>
-                    <button style={{ backgroundColor: "var(--violet)", margin: '1.8rem', }} className="link-btn"><a href="https://peep.noobscience.rocks"><i className="bi bi-globe"></i>Visit the Site</a></button>
-                    <button style={{ backgroundColor: "var(--blue)", }} className="link-btn"><a href="https://github.com/newtoallofthis123/peep"><i className="bi bi-github"></i> Contribute on GitHub</a></button>
+                <div>
+                    <div className="page-div two-normal-divs">
+                        <div className="content content-rest content-div-yellow">
+                            <div>
+                                <iframe src="https://www.youtube-nocookie.com/embed/RepoBnHNx_A" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                                <b>
+                                    YouTube Showcase 
+                                </b>
+                            </div>
+                        </div>
+                        <div className="content content-half content-div-blue">
+                            <h2>NoobPaste</h2>
+                            <p className='text-div'>
+                                One the first projects I ever worked on was a pastebin clone. I created it using flask, postgres, bootstrap and jquery.
+                                This was my first attempt at Full Stack Development, and I learned a lot from it.
+                                It is very close to my heart. Although, due to the rate restrictions on the free tier of Heroku, I have had to take it down.
+                                It is still available on GitHub, and you can find the link below. Feel free to contribute.
+                            </p>
+                            <div className="btn__div">
+                                <button style={{backgroundColor: "var(--pink)",}} className="fancy_btn">
+                                    <a href="https://github.com/newtoallofthis123/NoobPaste">
+                                        Source Code
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div style={{backgroundColor: "var(--blue)",}} className="color-div">
-                <h1>Links</h1>
-                <p>
-                    Links is a simple custom link tree that I made for my social media accounts.
-                    It's made using create-react-app and is hosted on GitHub Pages.
-                    It was one of my first projects using React and I am quite proud of it.
-                    I am currently working on adding a dark mode to it.
-                    Links doesn't use any database and all the links are stored in a JSON file.
-                    This json file is fetched and displayed on the page.
-                    So, if you want to use it, you can fork it and edit the JSON file to add your links and 
-                    Links should work fine for you.
-                    Seems like a fun little project? Check it out on GitHub.
-                </p>
-                <div style={{ textAlign: 'center' }}>
-                    <button style={{ backgroundColor: "var(--red)", margin: '1.8rem', }} className="link-btn"><a href="https://links.noobscience.rocks"><i className="bi bi-globe"></i>Visit the Site</a></button>
-                    <button style={{ backgroundColor: "var(--yellow)", }} className="link-btn"><a href="https://github.com/newtoallofthis123/links"><i className="bi bi-github"></i> Contribute on GitHub</a></button>
+                <div>
+                    <div className="page-div two-normal-divs">
+                        <div className="content content-rest content-div-pink">
+                            <div>
+                                <img src="/assets/site/screenshot.png" alt="" />
+                            </div>
+                            <b>
+                                Screen Shot of Site
+                            </b>
+                            <div>
+                                Taken on 2023-04-18
+                            </div>
+                        </div>
+                        <div className="content content-half content-div-blue">
+                            <h2>This Website</h2>
+                            <p className='text-div'>
+                                One of the biggest and most recent projects I have worked on is this website. I created it using Next.js, MongoDB and Sass.
+                                It is a monorepo and is hosted on Vercel.
+                                It involves various stuff like updates, admin panel, and more.
+                                It took me a while to create, but I am very happy with the result.
+                                What do you think?
+                            </p>
+                            <div className="btn__div">
+                                <button className="fancy_btn">
+                                    <a href="https://github.com/newtoallofthis123/About_next">
+                                        Source Code
+                                    </a>
+                                </button><button className="fancy_btn">
+                                    <a href="https://noobscience.rocks">
+                                        Live Site
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div style={{backgroundColor: "var(--violet)",}} className="color-div">
-                <h1>My Portfolio</h1>
-                <p>
-                    This site you are currently on is my portfolio and it is also my <Link href="/blog">blog</Link>.
-                    It is built using Gatsby and is hosted on Netlify.
-                    I had a lot of fun building this site and honestly, hats off to the Gatsby team for making such a great framework.
-                    My portfolio was earlier built using create-react-app and I had to manually deploy it on GitHub Pages.
-                    I had originally planned a vanilla JS site for my blog, but I decided to use Gatsby for my portfolio and blog.
-                    Gatsby actually is faster in production than my previous site and it is also a lot easier to maintain.
-                    This site is open source and you can fork and make it your own. Check it out on GitHub.
-                </p>
-                <div style={{ textAlign: 'center' }}>
-                    <button style={{ backgroundColor: "var(--yellow)", margin: '1.8rem', }} className="link-btn"><a href="https://noobscience.rocks"><i className="bi bi-globe"></i>Visit the Site</a></button>
-                    <button style={{ backgroundColor: "var(--blue)", }} className="link-btn"><a href="https://github.com/newtoallofthis123/About"><i className="bi bi-github"></i> Contribute on GitHub</a></button>
+                <div>
+                    <div className="page-div two-normal-divs">
+                        <div className="content content-rest">
+                            <div>
+                                <img style={{
+                                    border: "none",
+                                }} src="https://peep.noobscience.rocks/static/header.svg" alt="" />
+                            </div>
+                            <b>
+                                PEEP Logo
+                            </b>
+                            <div>
+                                PEEP stands for Personalized Environment and Execution Prompt
+                                It is a CLI with a lot of features.
+                            </div>
+                        </div>
+                        <div className="content content-half content-div-blue">
+                            <h2>PEEP</h2>
+                            <p className='text-div'>
+                                My favourite python project is PEEP. It is a CLI with a lot of features.
+                                It helps you do various things like editing your files quickly, generating QRCodes, and more.
+                                It uses a lot of libraries, and I have learned a lot from it.
+                                The source code is available on GitHub, and you can find the link below.
+                                Tell me what you think.
+                            </p>
+                            <div className="btn__div">
+                                <button style={{backgroundColor: "var(--pink)",}} className="fancy_btn">
+                                    <a href="https://github.com/newtoallofthis123/peep">
+                                        Source Code
+                                    </a>
+                                </button>
+                                <button style={{ backgroundColor: "var(--pink)", }} className="fancy_btn">
+                                    <a href="https://peep.noobscience.rocks">
+                                        Learn More
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div style={{ backgroundColor: "var(--green)", }} className="color-div">
-                <h1>HTMLer</h1>
-                <p>
-                    HTMLer is a simple markdown editor that I made mainly for writing my blog posts.
-                    There are many good markdown editors out there, but I wanted to make one for myself that
-                    would just do one thing and do it well.
-                    So, all you do is write markdown and it will be converted to HTML.
-                    You can then copy the HTML and paste it in your blog post.
-                    That's it. It's that simple. No fancy features, no nothing.
-                    It is actually a lot faster than most markdown editors out there.
-                    It is built using plain old vanilla JS and it is hosted on GitHub Pages.
-                    Quite a simple project, but I use it a lot and I am quite happy with it.
-                    Wanna try it out? Check it out on GitHub.
-                </p>
-                <div style={{ textAlign: 'center' }}>
-                    <button style={{ backgroundColor: "var(--red)", margin: '1.8rem', }} className="link-btn"><a href="https://htmler.noobscience.rocks"><i className="bi bi-globe"></i>Visit the Site</a></button>
-                    <button style={{ backgroundColor: "var(--violet)", }} className="link-btn"><a href="https://github.com/newtoallofthis123/htmler"><i className="bi bi-github"></i> Contribute on GitHub</a></button>
+                <div>
+                    <div className="page-div two-normal-divs">
+                        <div className="content content-rest content-div-blue">
+                            <div>
+                                <iframe src="https://www.youtube-nocookie.com/embed/Y7MZqqcqWs4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                            </div>
+                            <b>
+                                YouTube Showcase
+                            </b>
+                        </div>
+                        <div className="content content-half content-div-yellow">
+                            <h2>
+                                YTPS
+                            </h2>
+                            <p className='text-div'>
+                                Not necessarily the best project I have worked on, but it is quite fun.
+                                Welcome to YTPS, the YouTube Terminal Search and Play.
+                                It is a CLI that lets you search and play YouTube videos.
+                                From the CLI, you can search for videos, play them, and more.
+                                Now, be warned that it doesn't use the YouTube API, so it is not very accurate.
+                                It scrapes the YouTube website, using a number of libraries.
+                                So, if you are interested in something like this, check it out.
+                            </p>
+                            <div className="btn__div">
+                                <button style={{ backgroundColor: "var(--pink)", }} className="fancy_btn">
+                                    <a href="https://github.com/newtoallofthis123/ytps">
+                                        Source Code
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <h2 className='text-div'>
+                   Just These for Now, will add more soon 
+                </h2>
             </div>
         </Layout>
     )

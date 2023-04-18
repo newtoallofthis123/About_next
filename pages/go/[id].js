@@ -25,7 +25,7 @@ export default function GoPage() {
             }, 1000)
         }
         return (
-            <div className="updates_div">
+            <div className="redirect">
                 <h1>Redirecting to</h1>
                 <a href={link}>
                     {link ? link.url : 'Not Found'}

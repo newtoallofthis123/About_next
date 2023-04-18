@@ -23,16 +23,30 @@ const RepositoryList = () => {
     return (
         <div style={{ margin: "1.2rem" }}>
             <Seo title="Ishan's GitHub Repo's" description="GitHub" />
-            {repositories.map((repo) => (
-                <div style={{ backgroundColor: `var(--${randomColor()})`, }} className='repo' key={repo.id}>
-                    {/* <img src={repo.owner.avatar_url} alt="UserPhoto" /> */}
-                    <a className='a' href={repo.html_url}>{repo.full_name}</a>
-                    <p>
-                        {repo.description}
-                    </p>
-                    <button style={{ backgroundColor: `var(--white)`, }} className="link-btn"><a href={repo.html_url} className="link">View on GitHub</a></button>
-                </div>
-            ))}
+            <ul>
+                {repositories.map((repo) => (
+                    <li key={repo.id}
+                        onClick={() => window.open(repo.html_url)}
+                        className="repo-item">
+                        <div>
+                            <div className="repo-name">
+                                <a href={repo.html_url}>{repo.full_name}</a>
+                            </div>
+                            <div className="repo-description">
+                                {repo.description}
+                            </div>
+                        </div>
+                        <div className="repo-details">
+                            <div className={`repo-language ${repo.language}`}>
+                                {repo.language}
+                            </div>
+                            <div className="repo-stars">
+                                {repo.stargazers_count}
+                            </div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 }
@@ -40,16 +54,25 @@ const RepositoryList = () => {
 export default function GitHub() {
     return (
         <Layout>
-            <div className="github">
-                <h1>GitHub</h1>
-                <p>
-                    Do you want to check out my GitHub
-                </p>
-                <button className='social-btn'>
-                    <a style={{color: "var(--color)",}} href="https://github.com/newtoallofthis123/">github.com/newtoallofthis123/</a>
-                </button>
-                <p>Or Here are some of my GitHub repositories I recently commited to:</p>
-                {RepositoryList()}
+            <div className="normalize">
+                <div className="full-content-div">
+                    <h1>GitHub</h1>
+                    <div style={{
+                        textAlign: "center",
+                    }}>
+                        <div className="text-div">
+                            <p>Here are some of my GitHub repositories I recently commited to:</p>
+                        </div>
+                        <div>
+                            <button onClick={() => {
+                                window.open("https://github.com/newtoallofthis123")
+                            }} className="fancy_btn">
+                                https://github.com/newtoallofthis123
+                            </button>
+                        </div>
+                    </div>
+                    {RepositoryList()}
+                </div>
             </div>
         </Layout>
   )

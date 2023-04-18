@@ -6,12 +6,12 @@ import { Seo } from "./seo";
 
 export default function Layout({ children }) {
     return (
-        <div className="home">
+        <>
             <Nav></Nav>
             <Seo></Seo>
-            <Settings ></Settings>
+            {/* <Settings ></Settings> */}
             {children}
             <Footer></Footer>
-        </div>
+        </>
     )
 }

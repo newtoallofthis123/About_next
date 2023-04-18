@@ -1,69 +1,92 @@
 import React from 'react'
 import Layout from '@/components/layout'
 import Link from 'next/link'
-import profile from "@/static/images/profile-light.webp"
+import { Seo } from '@/components/seo'
+import Aos from 'aos'
 
 const About = () => {
-    const time = () => {
-        const date = new Date()
-        const hours = date.getHours()
-        if (hours < 12) {
-            return "Good Morning"
-        } else if (hours < 18) {
-            return "Good Afternoon"
-        } else {
-            return "Good Evening"
-        }
-    }
+    React.useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            easing: 'ease-out',
+            // once: true,
+            disable: 'mobile',
+        })
+    }, [])
     return (
         <Layout>
-            <div className="home">
-                {/* <h1 className='main-title'>Hello! I am Ishan</h1> */}
-                <div style={{backgroundColor: "var(--green)",}} className="color-div">
-                    <h1>Who are you?</h1>
-                    <p>
-                        {time()}! I am Ishan. I am a tech-savvy student with a passion for software development, I am constantly seeking new opportunities to learn and grow in the field.
-                        My primary focus is on building full stack applications using the Flask API and MERN stack.
-                        Known online as NoobScience, I am also a strong advocate for open source software and Linux.
-                        Currently, I am studying computer science and engineering at <a href="https://griet.ac.in">GRIET</a>, where I specialize in coding with Python, and am also expanding my skills in JavaScript.
-                        I am passionate about understanding how software works, and particularly enjoy diving deep into the inner workings of applications and open source projects that aim to replace proprietary alternatives.
-                        With a strong foundation in technology and a deep love for open source software, I am excited to continue exploring new opportunities in the field. Let's <a href="https://newtoallofthis123.github.io/tree">connect</a>!
-                    </p>
+            <Seo title="About Me"></Seo>
+            <div className="normalize">
+                <div className="full-content-div content-div-yellow">
+                    <h1 className='greetings'>
+                        About The Noob
+                    </h1>
+                    <div className='about__div text-div'>
+                        <p>
+                            Lovely day to you! I'm Ishan, a 18 year old student from India.
+                            A self taught programmer and a full stack web developer,
+                            I'm currently looking into the world of machine learning and AI.
+                            Other then that, you might find me lurking on the internet, reading 
+                            interesting books, keeping up with the latest tech news or playing with my
+                            lovely German Shepherd <Link href="/dog">Dog</Link> (It's called Lyka in case you were wondering).
+                            However, before I go on and on about myself, if you mostly interested in my professional skills, 
+                            please head over to my <Link href="/skills">Skills</Link> page.
+                        </p>
+                        <p>
+                            I'm currently a student at <Link href="https://www.griet.ac.in/">GRIET</Link>, pursuing a B.Tech in Computer Science and Engineering.
+                            It's in Hyderabad, India and Hyderabad's a pretty cool place to live in.
+                            Anyways, I'm a pretty chill guy and I love to talk about tech, so if you want to talk about anything,
+                            feel free to <Link href="/social">connect</Link> with me.
+                            I started programming when I was 16 and I've been doing it ever since.
+                            Python was the first language I learnt, but I've been working with JavaScript and React for the past year.
+                            I'm also a big fan of open source and I love to contribute to open source projects.
+                            All of my projects are open source and you can find them on my <Link href="/projects">Projects</Link> page. 
+                        </p>
+                    </div>
                 </div>
-                <div style={{ backgroundColor: "var(--blue)", }} className="color-div">
-                    <h1>Interests</h1>
-                    <p>
-                        As a versatile individual with a passion for technology, I am constantly engaged in a variety of activities.
-                        Whether I am on my computer exploring the latest advancements in software development or spending time with friends and my beloved dog, Lyka,
-                        I am always striving to learn and grow. My interests include playing games such as Minetest and Rocket League,
-                        as well as following the latest developments in esports.
-                        Additionally, I enjoy writing and sharing my thoughts and ideas through my active Twitter presence and personal blog.
-                        With a strong background in software development and a love for creating, I am excited to continue pursuing new opportunities and challenges in this field.
-                    </p>
-                </div>
-                <div style={{ "backgroundColor": "var(--white)", }} className="color-div">
-                    <h1>Random</h1>
-                    <div className='random-div'>
-                        <div style={{ textAlign: 'center', }}>
-                            <img src={profile.src} width="360" className='img' id="profile" style={{ verticalAlign: "middle", borderRadius: "24px", padding: '12px', }} alt="" />
-                        </div>
-                        <div className='div-content'>
+                <div className="half-two-divs">
+                    <div className="content content-half content-div">
+                        <h1 className="content-title">
+                            NoobScience?
+                        </h1>
+                        <div className="text-div">
                             <p>
-                                As a tech-savvy individual with a passion for innovation and experimentation, I am currently focused on mastering the JAMStack and exploring the MERN stack for web development.
-                                I am also deeply interested in the world of AI, and am fascinated by the capabilities of language models like ChatGPT.
-                                I have a broad range of interests and am always open to discussing new topics and ideas.
-
-                                My personal tech setup includes a Lenovo ideapad3 laptop, a Samsung M13 Android phone, and a fitness tracker.
-                                I am a huge fan of customizing my software to suit my needs and preferences, and I am always looking for ways to improve my workflow and productivity.
-
-                                I am also active on Github and am open to contributing to open-source projects or collaborating with other developers.
-                                If you're interested in connecting or working together, feel free to reach out to me via <a href="mailto:noobscience@duck.com" className="link">mail</a>. Let's connect and see how we can <Link href="/projects">create</Link> something amazing together.
+                                I started to get into tech when I was about 17.
+                                Trying different things in the world of tech, I found that I really enjoyed programming.
+                                Python seemed like a good place to start, so I started learning Python.
+                                Although technically, I had learnt a little HTML from <a href="https://freecodecamp.org">freeCodeCamp</a>.
+                                I remember I was really excited to learn Python and I was really enjoying it.
+                                So, when I was creating small projects in python, I wanted to share them with the world, but was hesitant to do so.
+                                I was afraid that people would judge me for being a beginner and I was afraid that people would think that I was a noob.
+                            </p>
+                            <p>
+                                So, why not make a strength out of it? I thought. Hence the name <em>NoobScience</em>.
+                                Ever since that day, NoobScience has been a summary of my journey as a beginner in the world of tech.
+                                So, yeah, that's the story behind the name. Find it interesting? Well, I do too! Let's <Link href="/social">connect</Link>!
+                                Scrollll for more!
+                            </p>
+                        </div>
+                    </div>
+                    <div className="content content-rest content-div-pink">
+                        <h1 className="content-title">
+                            NoobScience Logo
+                        </h1>
+                        <div data-aos="fade-left" className="center-img">
+                            <img src="/logo192.png" alt="profile" />
+                            <p>
+                                The logo is a simple lightning bolt, suggesting speed and simplicity.
+                                The logo was originally created using <a href="https://github.com/enricocid/VectorifyDaHome">
+                                    VectorifyDaHome
+                                </a> and then edited to make it suit my needs.
+                            </p>
+                            <p>
+                                TM and © NoobScience 2023
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-      </Layout>
+        </Layout>
   )
 }
 

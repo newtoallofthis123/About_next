@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import useSwr from "swr"
 import Link from 'next/link'
 import { Seo } from '@/components/seo'
-import Settings from '@/components/settings'
 import { marked } from 'marked'
 import LoadingScreen from '@/components/loading'
 
@@ -25,8 +24,7 @@ export default function UpdatesID() {
         }
         if (update) {
             return (
-                <div className='updates_div'>
-                    <Settings></Settings>
+                <div className='page-div updates_div'>
                     <Seo title={update.name} ></Seo>
                     <h1>
                         Ishan's Updates
@@ -44,7 +42,10 @@ export default function UpdatesID() {
                         <h2>{update.name}</h2>
                         <p dangerouslySetInnerHTML={htmlContent(update.content)}></p>
                     </div>
-                    <h2>Other Updates</h2>
+                    {
+                        (updates.length > 0) ?
+                            <h2>Other Updates</h2>: null
+                    }
                     {
                         updates.map(update => {
                             if (update.hash !== param && update._id > param_id) {

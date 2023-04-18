@@ -13,7 +13,7 @@ export default function UpdateArchive() {
         const updates = data
         return (
             <Layout>
-                <div className="updates_div">
+                <div className="page-div updates_div">
                     <h1>
                         Updates Archive
                     </h1>

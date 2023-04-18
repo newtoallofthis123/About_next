@@ -1,23 +1,24 @@
 import React from "react";
 import Nav from "./nav"
-import Settings from "./settings";
 import Footer from "./footer";
 import { Seo } from "./seo";
-import Prism from "prismjs";
+import hljs from "highlight.js";
 
 export default function NotesLayout({ children }) {
     React.useEffect(() => {
-        Prism.highlightAll()
+        hljs.highlightAll();
         document.documentElement.setAttribute("data-theme", "light")
         document.documentElement.setAttribute("data-font", "serif")
     })
     return (
-        <div className="home">
+        <div>
             <Nav></Nav>
-            <Seo></Seo>
-            <Settings ></Settings>
-            {children}
-            <Footer></Footer>
+
+            <div className="page-div">
+                <Seo></Seo>
+                {children}
+                <Footer></Footer>
+            </div>
         </div>
     )
 }

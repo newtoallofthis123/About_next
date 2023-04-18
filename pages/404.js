@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <Layout>
       <Seo title="404 Error" />
-      <div style={{ backgroundColor: "var(--bg)", color: "var(--color)", }} className='color-div'>
+      <div style={{ backgroundColor: "var(--bg)", color: "var(--color)", }} className='normalize color-div'>
         <h1>
           You ran into a <></>
           <span style={{

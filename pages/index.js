@@ -1,12 +1,10 @@
 import React from "react";
 
-import Layout from "@/components/layout";
-import { Seo } from "@/components/seo"
+import HomeLayout from "@/components/home_layout";
 import Link from "next/link";
-import TypeWriter from "@/components/typewriter";
+import Head from "next/head";
 import useSwr from "swr";
-import { marked } from "marked";
-import Router from "next/router";
+import AOS from 'aos';
 
 const Home = () => {
     const scroll = () => {
@@ -15,140 +13,201 @@ const Home = () => {
             behavior: "smooth"
         });
     }
-    const [terminal, setTerminal] = React.useState(true);
-    const delete_terminal = () => {
-        setTerminal(false);
-    }
+    React.useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out',
+            disable: 'mobile',
+        });
+        AOS.refresh();
+    }, []);
     const fetcher = (...args) => fetch(...args).then(res => res.json());
     const { data, error } = useSwr('/api/v1/updates', fetcher);
+    const { data: blog_data, error: blog_error } = useSwr('/api/all', fetcher);
+    const { data: notes_data, error: notes_error } = useSwr('/api/v2/notes/all', fetcher);
     let count = 0
+    let notes_count = 0
     const does = ["Student at GRIET", "Full Stack Developer", "Opinionated Writer", "Open Source Enthusiast", "Always on GitHub", "Dog Bro :)"];
+    const time = () => {
+        const date = new Date()
+        const hours = date.getHours()
+        if (hours < 12) {
+            return "Hope you are having a great morning"
+        } else if (hours < 18) {
+            return "Great Noon to you"
+        } else {
+            return "Hope you are having a fun night"
+        }
+    }
     return (
-        <Layout>
-            <Seo title="NoobScience | Student and Open Source Enthusiast" description="Home Page" />
-            <div style={
-                (terminal) ? { display: "block" } : { display: "none" }
-            } id="scroll" className="terminal">
-                <div className="terminal__header">
-                    <span style={{cursor: "pointer",}} onClick={() => {delete_terminal()}} className="circle circle--red"></span>
-                    <span onClick={() => {Router.push("/admin/")}} className="circle circle--yellow"></span>
-                    <span className="circle circle--green"></span>
-                    Ishan_101.exe
-                </div>
-                <div>{"~>   "}
-                    <span>
-                        {/* Ishan */}
-                        <TypeWriter
-                            data={does}
-                        ></TypeWriter>
-                    </span>
-                    <span className="terminal_cursor animate__animated animate__flash animate__infinite animate__slow">|</span>
-                </div>
-            </div>
-            <div>
-                <div className="main-title">
-                    <p className="intro_heading animate__animated animate__fadeInDown">Hi friend,</p>
-                    <h1 className="styled_link main-title__heading animate__animated animate__fadeInDown animate__delay-1s">I'm <span className="name">Ishan</span></h1>
-                </div>
-                <div className="intro animate__animated animate__fadeIn animate__delay-2s">
-                    <p>
-                        Cool name right?
-                        Hang around and we might become internet buddies.
-                        First up. I'm a student at GRIET, Hyderabad. I'm a Full Stack Developer and an Open Source Enthusiast.
-                        I'm also a writer. I love to write about tech and my experiences.
-                    </p>
-                    <p>
-                        Currently, I mainly work with JavaScript and Python. But, my journey, as a developer, has been a roller coaster ride.
-                        I started coding and well, developing when I was 17. I started with Python and then moved to JavaScript.
-                    </p>
-                    <p>
-                        I've worked with React, Next.js, Node.js, Express.js, MongoDB, and a lot more recently.
-                        But, Flask, python and Django always will have a special place in my heart.
-                    </p>
-                    <p>
-                        I still have a lot to talk about. So, let's get to know each other better.
-                        You can visit my <Link href="/about">About</Link> page to know more about me.
-                        And you can also check out my <Link href="/social">Social</Link> page to connect with me.
-                        And I know this is a lot of ands but, I also have a <Link href="/blog">Blog</Link> and <Link href="/journal">Journal</Link> where I write about tech and my experiences.
-                    </p>
-                </div>
-                <div className="updates">
-                    <h2 className="updates__heading">Updates</h2>
-                    <p>
-                        I tried something new. So, I made a <Link href="/blog">blog</Link> and it's more of a article site.
-                        So, I wanted a place where I could share my thoughts. Sort of like a custom twitter board.
-                        And I wanted to avoid hosting costs. So, I made a blog using Next.js and Vercel and used a json file as a database. Yes.
-                        You heard it right. I used a json file as a database. I know it's not the best way to do it. But, it's a start. The json file is
-                        hosted on <i className="bi bi-github"></i> GitHub and I'm using the GitHub API to fetch the data.
-                        Here are a few of my latest updates
-                    </p>
-                    <div className="updates__content">
-                        {
-                            (error)? <>Error Loading</>:
-                            (!data) ? <>Loading</> :
-                                data.slice(0).reverse().map((update) => {
-                                    const url = "/updates/" + update.hash
-                                    count++
-                                    if (count < 4) {
-                                        return (
-                                            <div className="update" key={update._id}>
-                                                <span>
-                                                    <h3 className="update__heading"><Link href={url}>{update.name}</Link></h3>
-                                                    <p className="update__date">{update.date}</p>
-                                                </span>
-                                                <p dangerouslySetInnerHTML={{
-                                                    __html: marked.parse(update.content.toString().substring(0, 400) + "...")
-                                                }} className="update__content"></p>
-                                            </div>
-                                        )
-                                    }
-                                }
-                                )
-                        }
+        <HomeLayout>
+            <Head>
+                <title>
+                    NoobScience | Open Source Enthusiast
+                </title>
+            </Head>
+            <div className="two-content-divs">
+                <div
+                    className="animate__animated animate__fadeInDown hero content content-div-yellow">
+                    <h1 className="hero__title">
+                        Meet The Noob
+                    </h1>
+                    <div className="hero__text">
+                        {time()}! I am Ishan Joshi and I like to talk tech.
+                        Currently at <Link href="https://greit.ac.in">GRIET</Link>, I am pursuing my Bachelors in Computer Science.
+                        You might find me in India, but mostly, it is fun living on the <i className="bi bi-globe"></i> <Link href="/social">Internet</Link>.
+                        Anyways, a little quirky and a lot of fun, I think I am a pretty cool guy. So, let's get to know each other.
+                    </div>
+                    <div className="hero__btn">
+                        <button className="fancy_btn">
+                            <Link href="/about">Let's Get Going</Link>
+                        </button>
+                    </div>
+                    <div className="hero__text">
+                        Or you know, I can take you on a tour of my <Link href="/projects">Projects</Link> or my <Link href="/blog">Blog</Link>.
+                        Better yet, just scrollllllllllll
                     </div>
                 </div>
-                <div className="latest_blog">
-                    <h2 className="blog__heading">Latest Blog Post</h2>
-                    <p>
-                        I write alot on my <Link href="/blog">blog</Link>. The blog is called <i>Ishan Writes</i>.
-                        This is the latest blog post.
-                        I highly recommend you to check out my blog. It's a great place to learn about tech and my experiences.
-                    </p>
-                    <h2>
-                        Anyways...
-                    </h2>
-                    <p>
-                        It's been a pleasure to have you here. I hope you enjoyed your stay.
-                        I'm always open to new opportunities. So, if you have any, feel free to <Link href="/social">contact</Link> me.
-                    </p>
-                    <p>
-                        BTW, all this home page mess is just for the sake of a home page. This nextjs site is still has nearly 40 unique pages and I suggest you check them all out.
-                        I'm still working on the site. So, expect a few changes here and there.
-                        Moreover, I am also working on a dynamic site map for this site. So, you can easily navigate through the site.
-                        You can access my whole site from the nav bar. Press the button below to scroll back to the top. <span>
-                            <button
-                                style={{
-                                    border: "none",
-                                    backgroundColor: "transparent",
-                                    color: "white",
-                                }}
-                                onClick={scroll}><p style={{ cursor: "pointer", }}> <i className="bi bi-arrow-up"></i> </p></button>
-                        </span>
-                    </p>
-                </div>
-                <div className="animate__animated animate__fadeOutDown animate__delay-5s notification">
-                    <div className="notification__content">
-                        <p onClick={
-                            () => {
-                                window.location.href = "/services"
-                            }
-                        }>
-                            <i className="bi bi-megaphone"></i> New Services Page! Click to Check it out
+                <div
+                    className="animate__animated animate__fadeInUp content content-div-blue">
+                    <div className="center-img">
+                        <img src="/assets/profile.png" alt="profile" />
+                        <h2
+                            style={{
+                                textAlign: "center",
+                                fontSize: "2.5rem",
+                                fontWeight: "bold",
+                                textDecoration: "underline",
+                                textDecorationThickness: "0.8rem",
+                                lineHeight: 1,
+                            }}
+                        >
+                            The Noob<Link style={{
+                                textDecoration: "none",
+                                cursor: "text",
+                        }} href="/admin"><sup>TM</sup></Link>
+                        </h2>
+                        <p
+                            style={{
+                                textAlign: "center",
+                                fontSize: "1.2rem",
+                                lineHeight: 1,
+                            }}
+                        >
+                            No seriously, that's me
                         </p>
                     </div>
                 </div>
             </div>
-        </Layout>
+            <div style={{
+                backgroundColor: "var(--green)",
+            }} className="full-content-div">
+                <div className="notification">
+                    <div className="notification__text">
+                        <h1>
+                            What's Up?
+                        </h1>
+                        <p>
+                            Currently Working on a redesigned version of this website. It will be live soon.
+                            Or hopefully, you are reading this on the new website.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div className="half-two-divs">
+                <div data-aos="fade-up" className="content content-half">
+                    <div  className="showcase-div">
+                        {
+                            (blog_error)? <>Error Loading</>:
+                                (!blog_data) ? <>Loading</> :(
+                                    <div className="animate__animated animate__fadeIn" style={{cursor: "pointer",}} onClick={() => {
+                                        window.location.href = `${blog_data.blogs[0].slug}`}
+                                    } key={blog_data.blogs[0].id}>
+                                        <h1>{blog_data.blogs[0].title}</h1>
+                                        <div className="center-img">
+                                            <img src={`${blog_data.blogs[0].img}`} alt=""/>
+                                        </div>
+                                        <div className="text-div">
+                                            <p>
+                                                {blog_data.blogs[0].description}
+                                            </p>
+                                        </div>
+                                        <div className="hero__btn">
+                                            <button style={{width: "100%", backgroundColor: "var(--yellow)",}} className="fancy_btn">
+                                                <Link href={`/blog/${blog_data.blogs[0].slug}`}>Read More</Link>
+                                            </button>
+                                        </div>
+                                    </div>
+                                )
+                        }
+                    </div>
+                </div>
+                <div className="content content-rest">
+                    <div className="col-divs">
+                        <div data-aos="fade-left" className="content content-half content-div-pink">
+                            <h1>
+                                Updates
+                            </h1>
+                            <p>
+                                Here are some of my latest updates:
+                            </p>
+                            {
+                                (error)? <>Error Loading</>:
+                                    (!data) ? <>Loading</> :
+                                        data.slice(0).reverse().map((update) => {
+                                                const url = "/updates/" + update.hash
+                                                count++
+                                                if (count < 6) {
+                                                    return (
+                                                        <div className="update" key={update._id}>
+                                                            <ul style={{
+                                                                listStyle: "none",
+                                                                lineHeight: "1.5rem",
+                                                                padding: "0 0.5rem",
+                                                            }}>
+                                                                <li><Link href={url}>{update.name}</Link></li>
+                                                            </ul>
+                                                        </div>
+                                                    )
+                                                }
+                                            }
+                                        )
+                            }
+                        </div>
+                        <div className="content content-half">
+                            <h1>
+                                Latest Notes
+                            </h1>
+                            <p>
+                                Here are some of my latest notes:
+                            </p>
+                            {
+                                (notes_error) ? <p>Error Loading</p> :
+                                    (!notes_data) ? <p>Loading</p> :
+                                        notes_data.slice(0).reverse().map((note) => {
+                                            const url = "/notes/" + note.slug
+                                            notes_count++
+                                            if (notes_count < 12) {
+                                                return (
+                                                    <div className="update" key={note._id}>
+                                                        <ul style={{
+                                                            listStyle: "none",
+                                                            lineHeight: "1.5rem",
+                                                            padding: "0 0.5rem",
+                                                        }}>
+                                                            <li>{note.category}: <Link href={url}>{note.title}</Link></li>
+                                                        </ul>
+                                                    </div>
+                                                )
+                                            }
+                                        }
+                                        )
+                            }                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </HomeLayout>
     )
 }
 

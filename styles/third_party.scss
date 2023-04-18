@@ -1,0 +1,191 @@
+/* Fancy BTN from https: //uiverse.io/adamgiebl/giant-donkey-36 */
+/* Slightly Modified for My Needs */
+
+.fancy_btn {
+    background: var(--yellow);
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: inherit;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+}
+
+.fancy_btn:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.fancy_btn:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+.fancy_btn a{
+    color: black;
+    text-decoration: none;
+}
+
+// Begin to UI Verse Code by https: //uiverse.io/profile/Satwinder04
+.loader {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--bg);
+    text-align: center;
+    margin: 5rem 2rem;
+
+    img{
+        padding: 5rem;
+        width: 10vw;
+        // height: 100px;
+    }
+
+    .loader-text {
+        font-family: var(--font);
+        font-size: 1.7rem;
+        color: var(--color);
+        margin-bottom: 20px;
+        align-self: center;
+    }
+
+    .loader-bar {
+        width: 30%;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--color);
+        animation: loader-bar-animation 2s ease-in-out infinite;
+    }
+}
+
+@keyframes loader-bar-animation {
+    0% {
+        /* transform: translateX(-100%) rotate(270deg); */
+        transform: translateX(-100%);
+    }
+
+    50% {
+        /* transform: translateX(100%) rotate(-90deg); */
+        transform: translateX(100%);
+    }
+
+    100% {
+        /* transform: translateX(-100%) rotate(270deg); */
+        transform: translateX(-100%);
+    }
+}
+
+// End to UI Verse Code by https: //uiverse.io/profile/Satwinder04
+
+// Start of Code by ChatGPT
+
+// Define the base styles for the repository list item
+.repo-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e1e4e8;
+
+    // Add hover effect on the repository list item
+    &:hover {
+        background-color: #f6f8fa;
+        cursor: pointer;
+    }
+
+    // Add the repository name and description styles
+    .repo-name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .repo-description {
+        font-size: 1rem;
+        color: #586069;
+        margin-bottom: 0.5rem;
+    }
+
+    // Add the language and stars styles
+    .repo-details {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .repo-language {
+        font-size: 1rem;
+        color: #586069;
+        margin-right: 1rem;
+
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+
+        // Define colors for specific programming languages
+        &.JavaScript:before {
+            background-color: #f1e05a;
+        }
+        &.HTML:before {
+            background-color: #e34c26;
+        }
+        &.CSS:before {
+            background-color: #563d7c;
+        }
+        &.TypeScript:before {
+            background-color: #2b7489;
+        }
+        &.Python:before {
+            background-color: #3572A5;
+        }
+        &.Java:before {
+            background-color: #b07219;
+        }
+        &.Markdown:before {
+            background-color: #181717;
+        }
+        &.Astro:before {
+            background-color: #ff4d00;
+        }
+        &.Rust:before {
+            background-color: #dea584;
+        }
+        &.C:before {
+            background-color: #555555;
+        }
+        &.Go:before {
+            background-color: #00ADD8;
+        }
+    }
+
+    .repo-stars {
+        font-size: 1rem;
+        color: #586069;
+
+        // Add a star icon before the number of stars
+        &:before {
+            content: '★';
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+// Define the styles for the repository list container
+.repo-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    // Add a border to the container to separate it from other content
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    overflow: hidden;
+}

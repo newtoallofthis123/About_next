@@ -12,7 +12,7 @@ const Tool = () => {
                 </p>
                 <ol>
                     <li>
-                        <Link className="text-link link" href="/write">HTMLER</Link> - Convert Markdown to HTML.
+                        <Link className="text-link link" href="/tools/md">HTMLER</Link> - Convert Markdown to HTML.
                     </li>
                     <li>
                         <Link className="text-link link" href="/tools/qr">QrCode</Link> - Generate QR Codes.

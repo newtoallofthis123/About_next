@@ -50,10 +50,10 @@ export default function DbView({ data }) {
                 }
             })
             .catch((err) => {
-                console.log(err)
-                toast("Error posting Link")
-            }
-        )
+                    console.log(err)
+                    toast("Error posting Link")
+                }
+            )
     }
     return (
         <div className='db_div'>
@@ -73,41 +73,41 @@ export default function DbView({ data }) {
                         <h1>View</h1>
                         {
                             data.map((collection, index) => {
-                                const topics = ["page", "links", "go", "journal"]
+                                const topics = ["page", "links", "notes"]
                                 const actions = ["edit", "delete", "add", "view"]
                                 return (
                                     <div key={index}>
                                         <h2>{topics[index]}</h2>
                                         <table>
                                             <tbody>
-                                                {
-                                                    collection.map((item, sub_index) => {
-                                                        return (
-                                                            <tr key={sub_index}>
-                                                                {
-                                                                    Object.keys(item).map((key, index) => {
-                                                                        if (key !== "_id" && key !== "collection" && key !== "content")
-                                                                            return (
-                                                                                <td key={index}>{item[key]}</td>
-                                                                            )
-                                                                    })
-                                                                }
-                                                                <td>
-                                                                    <form action={`/admin/${actions[0]}/${topics[index]}`} method="POST">
-                                                                        <input type="hidden" name="id" value={item._id} />
-                                                                        <input type="submit" value="Edit" />
-                                                                    </form>
-                                                                </td>
-                                                                <td>
-                                                                    <form onSubmit={handleSubmit(topics[index])} method='POST'>
-                                                                        <input type="hidden" name={`del_id`} value={item._id} />
-                                                                        <input type="submit" value="Delete" />
-                                                                    </form>
-                                                                </td>
-                                                            </tr>
-                                                        )
-                                                    })
-                                                }
+                                            {
+                                                collection.map((item, sub_index) => {
+                                                    return (
+                                                        <tr key={sub_index}>
+                                                            {
+                                                                Object.keys(item).map((key, index) => {
+                                                                    if (key !== "_id" && key !== "collection" && key !== "content")
+                                                                        return (
+                                                                            <td key={index}>{item[key]}</td>
+                                                                        )
+                                                                })
+                                                            }
+                                                            <td>
+                                                                <form action={`/admin/${actions[0]}/${topics[index]}`} method="POST">
+                                                                    <input type="hidden" name="id" value={item._id} />
+                                                                    <input type="submit" value="Edit" />
+                                                                </form>
+                                                            </td>
+                                                            <td>
+                                                                <form onSubmit={handleSubmit(topics[index])} method='POST'>
+                                                                    <input type="hidden" name={`del_id`} value={item._id} />
+                                                                    <input type="submit" value="Delete" />
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                })
+                                            }
                                             </tbody>
                                         </table>
                                     </div>
@@ -139,16 +139,15 @@ export default function DbView({ data }) {
                     </div>
                 )}
         </div>
-  )
+    )
 }
 
 export async function getServerSideProps() {
     const { db } = await connectToDatabase();
     let data = []
     data[0] = await db.collection("page").find({}).sort({ _id: -1 }).toArray();
-    data[1] = await db.collection("links").find({}).toArray();
-    data[2] = await db.collection("go").find({}).toArray();
-    data[3] = await db.collection("journal").find({}).toArray();
+    data[1] = await db.collection("go").find({}).toArray();
+    data[2] = await db.collection("notes").find({}).toArray();
     return {
         props: {
             data: JSON.parse(JSON.stringify(data)),

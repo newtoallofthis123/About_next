@@ -14,7 +14,7 @@ export default function UpdateLatest() {
     let max = 3
     const updates = data.slice(0).reverse()
     return (
-        <div className="updates_div">
+        <div className="page-div updates_div">
             <Seo title={updates[0].name} ></Seo>
             <h2>
                 {updates[0].name}

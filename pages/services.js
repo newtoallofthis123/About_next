@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Services() {
     return (
         <Layout>
-            <div style={{ backgroundColor: "var(--yellow)" }} className="color-div">
+            <div style={{ backgroundColor: "var(--yellow)" }} className="normalize color-div">
                 <Seo title="Services I offer"></Seo>
                 <h1>
                     Services I offer

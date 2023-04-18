@@ -1,0 +1,71 @@
+.admin_div {
+    background-color: var(--bg);
+    padding: 1rem;
+    border: 3px solid var(--color);
+    border-radius: 5px;
+    margin: 2vw;
+
+    input, textarea, select {
+        font: var(--font);
+        background-color: var(--bg);
+        color: var(--color);
+        width: 80%;
+        border: 3px solid var(--color);
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    button[type=submit] {
+        font: var(--font);
+        background-color: var(--bg);
+        color: var(--color);
+        border: 3px solid var(--color);
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem;
+        cursor: pointer;
+    }
+
+    .md_div {
+        background-color: var(--bg);
+        padding: 1rem;
+        border: 3px solid var(--color);
+        border-radius: 5px;
+        margin: 2vw;
+    }
+}
+
+.password_div{
+    background-color: var(--bg);
+    padding: 1rem;
+    border: 3px solid var(--color);
+    border-radius: 5px;
+    margin: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        font: var(--font);
+        background-color: var(--bg);
+        color: var(--color);
+        width: 80%;
+        border: 3px solid var(--color);
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    button[type=submit] {
+        font: var(--font);
+        background-color: var(--bg);
+        color: var(--color);
+        border: 3px solid var(--color);
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem;
+        cursor: pointer;
+    }
+}

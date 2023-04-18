@@ -13,7 +13,7 @@ export default function Social() {
         return data[param]
     }
     const handleNotFound = () => {
-        if (param === undefined || !getDb()) {
+        if (param === undefined || getDb() === undefined) {
             return (
                 <Layout>
                     <h1 className="main-title">404</h1>
@@ -24,6 +24,9 @@ export default function Social() {
     handleNotFound()
 
     const useRedirect = (url, time) => {
+        if(url === undefined) {
+            return null
+        }
         if (time === 0) {
             Router.push(url)
         }
@@ -38,19 +41,37 @@ export default function Social() {
     useRedirect(getDb(), time)
     return (
         <Layout>
-            <div className="link">
-                <h1 className="main-title">Heading to...</h1>
-                <a style={{ fontSize: "1.2rem", }} href={getDb()}>{getDb()}</a>
-                <h1>in {time}</h1>
-                <p>
-                    Don't want to head to the site?
-                </p>
-                <p>
-                    You can change your mind
-                </p>
-                <p>
-                    <Link href="/">Click here</Link> to go back to the home page.
-                </p>
+            <div className="normalize">
+                {
+                    getDb() !== undefined ? (
+                        <div className="redirect">
+                            <h1>Heading to...</h1>
+                            {
+                                getDb() === undefined ? (
+                                    <p>Not Found</p>
+                                ) : null
+                            }
+                            <a style={{ fontSize: "1.2rem", }} href={getDb()}>{getDb()}</a>
+                            <h1>in {time}</h1>
+                            <p>
+                                Don't want to head to the site?
+                            </p>
+                            <p>
+                                You can change your mind
+                            </p>
+                            <p>
+                                <Link href="/">Click here</Link> to go back to the home page.
+                            </p>
+                        </div>
+                    ):(
+                        <div className="redirect">
+                            <h1>404</h1>
+                            <p>
+                                Not Found
+                            </p>
+                        </div>
+                    )
+                }
             </div>
         </Layout>
     )
