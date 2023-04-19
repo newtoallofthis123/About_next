@@ -97,7 +97,7 @@ export default function HomeLayout({ children }) {
                             <Link href="/updates" className="underline">Updates</Link>
                         </li>
                         <li>
-                            <Link href="/journal" className="underline">Journal</Link>
+                            <Link href="/notes" className="underline">Notes</Link>
                         </li>
                         <li>
                             <Link href="/services" className="underline">Services</Link>

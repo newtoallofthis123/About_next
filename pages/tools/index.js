@@ -23,9 +23,6 @@ const Tool = () => {
                     <li>
                         <Link className="text-link link" href="/tools/git">Git Info</Link> - Get info about a GitHub repo.
                     </li>
-                    <li>
-                        <Link className="text-link link" href="/tools/random">Random Generator</Link> - Generate random identity.
-                    </li>
                 </ol>
                 <p className="center">
                     All of these tools are made using ReactJS.

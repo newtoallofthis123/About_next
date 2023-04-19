@@ -1,47 +1,73 @@
 import React from 'react'
 import { Seo } from '@/components/seo'
-import Router from "next/router"
 import Link from 'next/link'
+import Layout from '@/components/layout'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ranHash } from '@/utils/utils'
 
 export default function NoGo() {
-    const [time, setTime] = React.useState(5)
-    setInterval(() => {
-        setTime(time - 1)
-        if(time === 0) {
-            Router.push("/")
-        }
-    }, 1000)
+    const [link, setLink] = React.useState("")
+    const addGo = (e) => {
+        e.preventDefault()
+        const url = e.target.url.value
+        const slug = ranHash()
+        setLink("/go/" + slug)
+        fetch('/api/v1/go', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url, slug })
+        }).then(() => { toast("Successfully posted GO") }).catch(() => { toast("Error posting GO") })
+    }
     return (
-        <div style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            textAlign: "center",
-        }}>
-            <Seo title="You are not supposed to be here"></Seo>
-            <h1>
-                This is a custom redirection page.
-            </h1>
-            <p>
-                You are not supposed to be here.
-                The page will redirect to the home page in {time} seconds.
-            </p>
-            <p>
-                I use this page to redirect to a array of urls stored in a json file.
-                For privacy, I have not included the json file here.
-                Although you can see the code for the page in the Github repo.
-                So, err um...enjoy
-            </p>
-            <p>
-                If you want to include your url here, send a pull request on the <Link href="/go/git">Github repo</Link>.
-            </p>
-            <p>
-                BTW, yes! I can center a div using CSS.
-            </p>
-            <p>
-                NoobScience 2023
-            </p>
-      </div>
+        <Layout>
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover />
+            <div className="normalize">
+                <div className="page-div">
+                    <div style={{
+                        border: 0,
+                    }} className="admin_div">
+                        <div>
+                            <form onSubmit={addGo} method="POST">
+                                <h1>URL Shortener</h1>
+                                <p>
+                                    Powered By NoobScience
+                                </p>
+                                <input type="text" name="url" id="url" />
+                                <button type="submit">Submit</button>
+                            </form>
+                            {link && <div>
+                                <button className="fancy_btn">
+                                    Link is: <Link href={link}>{link}</Link>
+                                </button>
+                            </div>}
+                        </div>
+                        <p>
+                            This is a simple URL Shortener that uses Next.js and MongoDB.
+                            Hosted under my site, it is mostly for personal use.
+                            But, you are welcome to use it.
+                            Just no custom URLs.
+                            Mostly since they are used for malicious purposes.
+                            I am not responsible for any links.
+                            I also cannot guarantee that the links will work.
+                            I might delete them if I feel like it.
+                            So, don't use this for anything important.
+                            With that said, enjoy!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </Layout>
   )
 }

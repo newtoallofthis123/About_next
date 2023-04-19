@@ -134,7 +134,7 @@ const Home = () => {
                                         </div>
                                         <div className="hero__btn">
                                             <button style={{width: "100%", backgroundColor: "var(--yellow)",}} className="fancy_btn">
-                                                <Link href={`/blog/${blog_data.blogs[0].slug}`}>Read More</Link>
+                                                <a href={`${blog_data.blogs[0].slug}`}>Read More</a>
                                             </button>
                                         </div>
                                     </div>
