@@ -101,7 +101,7 @@ const Home = () => {
             </div>
             <div style={{
                 backgroundColor: "var(--green)",
-            }} className="full-content-div">
+            }} className="full-content-div content-div-green">
                 <div className="notification">
                     <div className="notification__text">
                         <h1>
@@ -174,7 +174,9 @@ const Home = () => {
                                         )
                             }
                         </div>
-                        <div className="content content-half">
+                        <div style={{
+                            border: "3px solid var(--color)",
+                        }} className="content content-half">
                             <h1>
                                 Latest Notes
                             </h1>

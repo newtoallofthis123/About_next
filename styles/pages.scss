@@ -24,8 +24,54 @@
         flex: 1 1 50%;
         // width: 100%;
         padding: 0;
-        border: 3px solid var(--color);
+        // border: 3px solid var(--black);
         border-top: none;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            flex: 1;
+        }
+    }
+}
+
+.not-found-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+
+    }
+
+    .content {
+        flex: 1 1 50%;
+        // width: 100%;
+        padding: 0;
+        border-top: none;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            flex: 1;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .content-main {
+        flex: 1 1 50%;
+        padding: 2% 1%;
+        margin: 5% 0;
+        margin-left: 3%;
+
+        h1{
+            font-size: 4rem;
+            font-weight: 900;
+        }
 
         @media (max-width: 1024px) {
             width: 100%;
@@ -37,16 +83,37 @@
 .content-div-blue {
     background-color: var(--blue);
     color: var(--black);
+
+    a{
+        color: var(--black);
+    }
 }
 
 .content-div-yellow {
     background-color: var(--yellow);
     color: var(--black);
+
+    a{
+        color: var(--black);
+    }
 }
 
 .content-div-pink {
     background-color: var(--pink);
     color: var(--black);
+
+    a{
+        color: var(--black);
+    }
+}
+
+.content-div-green{
+    background-color: #4dc2b0;
+    color: var(--black);
+
+    a{
+        color: var(--black);
+    }
 }
 
 .center-img {
@@ -77,10 +144,10 @@
         flex: 1 1 50%;
         width: 100%;
         padding: 2rem;
-        border: 3px solid var(--color);
+        // border: 3px solid var(--black);
         border-top: none;
     }
-    border-bottom: 3px solid var(--color);
+    // border-bottom: 3px solid var(--black);
 }
 
 .half-two-divs{
@@ -132,6 +199,7 @@
 }
 
 .latest__div {
+    color: var(--black);
     text-align: center;
     margin: 1rem 2rem;
 
@@ -166,11 +234,7 @@
     li{
         font-size: 1.2rem;
         a{
-            color: var(--color);
             text-decoration: underline;
-            &:hover{
-                color: var(--color);
-            }
         }
     }
 }
@@ -194,14 +258,15 @@
 .page-div{
     padding: 2rem;
     margin: 2rem;
-    border: 3px solid var(--color);
+    border: 3px solid var(--black);
     border-radius: 0.4em;
     box-shadow: 0.3em 0.4em;
 
     img{
         width: 80%;
         margin: 0 auto;
-        border: 3px solid var(--color);
+        border: 3px solid var(--black);
+        border-radius: 24px;
     }
 
     @media screen and (max-width: 1024px) {
@@ -269,7 +334,7 @@
     .content {
         padding: 2rem;
         margin: 0;
-        border: 3px solid var(--color);
+        border: 3px solid var(--black);
         border-top: none;
 
         @media (max-width: 1032px) {
@@ -304,11 +369,11 @@
         img{
             width: 100%;
             margin: 0 auto;
-            border: 3px solid var(--color);
+            border: 3px solid var(--black);
         }
 
         iframe{
-            border: 3px solid var(--color);
+            border: 3px solid var(--black);
             border-radius: 12px;
             width: 30rem;
             height: 20rem;
@@ -373,11 +438,7 @@
         }
     }
     a{
-        color: var(--color);
         text-decoration: underline;
-        &:hover{
-            color: var(--color);
-        }
     }
 
     @media screen and (max-width: 1024px) {
@@ -462,7 +523,7 @@
 
     .content {
         margin: 0;
-        border: 3px solid var(--color);
+        border: 3px solid var(--black);
 
         @media (max-width: 768px) {
             width: 100%;
@@ -490,7 +551,12 @@
     overflow-x: hidden;
     pre{
         background-color: var(--color);
-        color: var(--white);
+        color: var(--bg);
+
+        @media (prefers-color-scheme: dark){
+            background-color: var(--bg);
+            color: var(--color);
+        }
     }
 
     img{

@@ -57,12 +57,51 @@ export default function Credits() {
                             </li>
                         </ol>
                         <h2>
+                            Assets
+                        </h2>
+                        <p>
+                            I used some of the best free assets from the internet.
+                        </p>
+                        <ol>
+                            <li><a href="https://www.figma.com/community/file/1216966408247057717/404-Error-page">
+                            404.svg
+                            </a></li>
+                            <li><a href="https://icons.getbootstrap.com/">
+                            Bootstrap Icons
+                            </a></li>
+                            <li><a href="https://inkscape.org/">
+                            Icon designed in Inkscape
+                            </a></li>
+                            <li><a href="
+                            https://www.figma.com/
+                            ">
+                            Design in Figma
+                            </a></li>
+                        </ol>
+                        <h2>
                            Finally,
                         </h2>
                         <p>
                             This would not be possible without the help of my wonderful friends and mates.
                             So, I would like to thank them for their help.
                         </p>
+                        <ol>
+                            <li><a href="">
+                            Sachin's
+                            </a> a.k.a Sneha Padhi</li>
+                            <li><a href="https://instagram.com/the_ansh4">
+                            Dalchini
+                            </a> a.k.a Devansh Kumar</li>
+                            <li><a href="">
+                            PP
+                            </a> a.ka. Prudhvi</li>
+                            <li><a href="">
+                            Anuska
+                            </a> a.ka. Anushka Kumar</li>
+                            <li><a href="">
+                            Dhaniya
+                            </a> a.k.a Ram Kishan</li>
+                        </ol>
                         <p>
                             And BTW, shout out to my parents :)
                         </p>

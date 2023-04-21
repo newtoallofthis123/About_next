@@ -28,12 +28,12 @@ export default function Footer() {
                         The Code is licensed under the MIT License.
                     </li>
                     <li>
-                        Dark Mode is on the way.
+                        Currently on v.3.6 
                     </li>
                     <li>
                         Made with  <span>
                         <i style={{
-                            color: "red",
+                            color: "var(--yellow)",
                         }} className="bi bi-heart-fill"></i>
                     </span>️ by Ishan.
                     </li>

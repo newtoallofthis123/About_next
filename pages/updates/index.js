@@ -17,9 +17,7 @@ export default function Notes() {
             <Layout>
                 <div className="normalize">
                     <div className="half-two-divs">
-                        <div style={{
-                            border: "3px solid var(--color)",
-                        }} className="content content-half content-div">
+                        <div className="content content-half content-div">
                             <h1 className="content-title">
                                 Ishan's Updates
                             </h1>
@@ -54,9 +52,7 @@ export default function Notes() {
                                 </div>
                             </div>
                         </div>
-                        <div style={{
-                            border: "3px solid var(--color)",
-                        }} className="content content-rest content-div-pink">
+                        <div className="content content-rest content-div-pink">
                             <h1 className="content-title">
                                 Recent Updates
                             </h1>

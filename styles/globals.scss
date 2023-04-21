@@ -44,6 +44,21 @@
     --selection-bg: #0059ff;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --blue: #5c9cfc;
+        --green: #83f583;
+        --yellow: #ffd845;
+        --pink: #ed72bc;
+        --red: #ff9c9c;
+        --violet: #dd5eff;
+        --black: #1a1919;
+        --white: #f9f5f5;
+        --bg: #1a1919;
+        --color: #f9f5f5;
+    }
+}
+
 :root[data-theme="light"] {
     --color: #1a1919;
     --bg: #ffffff;
