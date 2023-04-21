@@ -142,3 +142,20 @@
         }
     }
 }
+
+.editor{
+    h1{
+        margin: 0;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    select{
+        font-size: 1rem;
+        margin: 2rem 0;
+        padding: 0.5rem;
+        border: 2px solid var(--black);
+        border-radius: 12px;
+        cursor: pointer;
+    }
+}

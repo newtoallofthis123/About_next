@@ -1,10 +1,12 @@
 import React from 'react'
-import { Seo } from './seo'
+import Head from 'next/head'
 
 export default function LoadingScreen() {
     return (
         <div className="loader">
-            <Seo title="Loading From MongoDB"></Seo>
+            <Head>
+                <title>Loading...</title>
+            </Head>
             <div className="loader-text">
                 Can You Please Wait?
                 <p>
