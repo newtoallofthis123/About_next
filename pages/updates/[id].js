@@ -2,9 +2,9 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import useSwr from "swr"
 import Link from 'next/link'
-import { Seo } from '@/components/seo'
 import { marked } from 'marked'
 import LoadingScreen from '@/components/loading'
+import Head from 'next/head'
 
 export default function UpdatesID() {
     const router = useRouter()
@@ -25,7 +25,9 @@ export default function UpdatesID() {
         if (update) {
             return (
                 <div className='page-div updates_div'>
-                    <Seo title={update.name} ></Seo>
+                    <Head>
+                        <title>{update.name}</title>
+                    </Head>
                     <h1>
                         Ishan's Updates
                     </h1>
