@@ -58,7 +58,7 @@ export default function HomeLayout({ children }) {
                             <Link className="underline" href="/social">Social</Link>
                         </li>
                         <li>
-                            <Link className="underline" href="/social/github">GitHub</Link>
+                            <Link className="underline" href="/github">GitHub</Link>
                         </li>
                         <li>
                             <Link className="underline" href="/notes">Notes</Link>
