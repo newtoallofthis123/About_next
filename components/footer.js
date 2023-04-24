@@ -28,7 +28,7 @@ export default function Footer() {
                         The Code is licensed under the MIT License.
                     </li>
                     <li>
-                        Currently on v.3.6 
+                        Currently on v.3.7
                     </li>
                     <li>
                         Made with  <span>

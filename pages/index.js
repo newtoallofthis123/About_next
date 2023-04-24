@@ -189,7 +189,7 @@ const Home = () => {
                                         notes_data.slice(0).reverse().map((note) => {
                                             const url = "/notes/" + note.slug
                                             notes_count++
-                                            if (notes_count < 12) {
+                                            if (notes_count < 6) {
                                                 return (
                                                     <div className="update" key={note._id}>
                                                         <ul style={{
