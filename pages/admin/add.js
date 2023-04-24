@@ -2,7 +2,7 @@ import React from 'react'
 import { Seo } from '@/components/seo'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { hypens } from '@/utils/utils';
+import { dateHash, hypens } from '@/utils/utils';
 import Link from 'next/link';
 import { marked } from 'marked';
 import { ranHash } from '@/utils/utils';
@@ -61,6 +61,45 @@ export default function NewsAdd() {
             toast("Successfully posted Link")
             setLink(hypens(name))
         }).catch(() => { toast("Error posting Link") })
+    }
+
+    const addJournal = (e) => {
+        e.preventDefault()
+        const name = e.target.name.value
+        const content = e.target.content.value
+        const hash = dateHash()
+        const time = new Date().toLocaleString()
+        const date = new Date().toUTCString()
+        fetch('/api/v1/journal', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, content, hash, time, date })
+        }).then(() => {
+            toast("Successfully posted Journal")
+            setLink("/journal/" + hash)
+        }).catch(() => { toast("Error posting Journal") })
+    }
+
+    const addCode = (e) => {
+        e.preventDefault()
+        const title = e.target.title.value
+        const content = e.target.content.value
+        const lang = e.target.lang.value
+        const hash = ranHash()
+        fetch('/api/v2/code/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ title, content, lang, hash })
+        }).then(
+            () => {
+                toast("Successfully posted Code")
+                setLink("/code/" + hash)
+            }
+        ).catch(() => { toast("Error posting Code") })
     }
 
     const addGo = (e) => {
@@ -123,6 +162,8 @@ export default function NewsAdd() {
                                 <option value="go">Add a New Link</option>
                                 <option value="updates">Add a new update</option>
                                 <option value="notes">Add a new note</option>
+                                <option value="journal">Add a new journal</option>
+                                <option value="code">Add a new code snippet</option>
                             </select>
                         </form>
                         {
@@ -230,6 +271,99 @@ export default function NewsAdd() {
                                         }} type="submit">Submit</button>
                                         <p></p>
                                         <Link href={link}>{link}</Link>
+                                    </form>
+                                </div>
+                            )
+                        }
+                        {
+                            mode === 'journal' && (
+                                <div>
+                                    <h2>Write a new journal entry</h2>
+                                    <form onSubmit={addJournal} method="POST">
+                                        <p>
+                                            <b>Title</b>:
+                                            Enter the title of the journal entry.
+                                        </p>
+                                        <input type="text" name="name" id="name" />
+                                        <p>
+                                            <b>Content</b>:
+                                            Be sure to write the content of the journal entry in Markdown. You can use the preview to see how it will look.
+                                        </p>
+                                        <textarea onChange={handleContent} value={content} name="content" id="content" rows="20" cols="30"></textarea>
+                                        <p></p>
+                                        <div>
+                                            <h2>Preview of your journal entry</h2>
+                                            <p>
+                                                By submitting, you agree to the terms and conditions of the site.
+                                                And if you are not the owner, you agree the owner is not responsible for any damages.
+                                            </p>
+                                            <div className="md_div" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}></div>
+                                        </div>
+                                        <p></p>
+                                        <button style={{
+                                            backgroundColor: 'red',
+                                            color: 'white',
+                                            border: 'none',
+                                            padding: '10px',
+                                            borderRadius: '5px'
+                                        }} type="submit">Submit</button>
+                                        <p></p>
+                                        {
+                                            (link) ? (
+                                                <div>
+                                                    <Link href={link}>
+                                                        {link}
+                                                    </Link>
+                                                </div>
+                                            ) : (
+                                                <></>
+                                            )
+                                        }
+                                    </form>
+                                </div>
+                            )
+                        }
+                        {
+                            mode === 'code' && (
+                                <div>
+                                    <h2>Write a new code snippet</h2>
+                                    <form onSubmit={addCode} method="POST">
+                                        <p>
+                                            <b>Title</b>:
+                                            Enter the title of the code snippet.
+                                        </p>
+                                        <input type="text" name="title" id="title" />
+                                        <p>
+                                            <b>Language</b>:
+                                            Enter the language of the code snippet.
+                                        </p>
+                                        <input type="text" name="lang" id="lang" />
+                                        <p>
+                                            <b>Content</b>:
+                                            Be sure to write the content of the code snippet only.
+                                        </p>
+                                        <textarea onChange={handleContent} value={content} name="content" id="content" rows="20" cols="30"></textarea>
+                                        <p></p>
+                                        <p></p>
+                                        <button style={{
+                                            backgroundColor: 'red',
+                                            color: 'white',
+                                            border: 'none',
+                                            padding: '10px',
+                                            borderRadius: '5px'
+                                        }} type="submit">Submit</button>
+                                        <p></p>
+                                        {
+                                            (link) ? (
+                                                <div>
+                                                    <Link href={link}>
+                                                        {link}
+                                                    </Link>
+                                                </div>
+                                            ) : (
+                                                    <></>
+                                            )
+                                        }
                                     </form>
                                 </div>
                             )

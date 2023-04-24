@@ -10,6 +10,11 @@ const Highlight = ({ children, language }) => {
     return (
         <pre
             className={`hljs ${language}`}
+            style={{
+                backgroundColor: "#23241f",
+                padding: "1rem",
+                border: "3px solid white",
+            }}
         >
             <code ref={codeRef} className={`language-${language}`}>
                 {children}
