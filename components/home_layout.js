@@ -1,6 +1,4 @@
 import React from "react";
-import Nav from "./nav"
-import Settings from "./settings";
 import Footer from "./footer";
 import { Seo } from "./seo";
 import Link from "next/link";

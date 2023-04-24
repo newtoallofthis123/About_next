@@ -4,7 +4,9 @@ import Link from 'next/link'
 
 export default function Resume() {
     return (
-        <div className='page-div'>
+        <div style={{
+            fill: "var(--color)",
+        }} className='page-div'>
             <Seo title="Ishan's Resume" />
             <div>
                 <button style={{marginRight: "12px",}} className="fancy_btn">

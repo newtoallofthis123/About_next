@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from "next/link";
+import Init from './init';
 
 export default function Footer() {
     const [footer, setFooter] = React.useState(false)
@@ -28,7 +29,7 @@ export default function Footer() {
                         The Code is licensed under the MIT License.
                     </li>
                     <li>
-                        Currently on v.3.7
+                        <Init></Init>
                     </li>
                     <li>
                         Made with  <span>
