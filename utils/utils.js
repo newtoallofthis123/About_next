@@ -66,11 +66,17 @@ const ranHash = () => {
     return hash;
 }
 
+const emailValidate = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
 module.exports = {
     hypens,
     dateTime,
     ranHash,
     dateHash,
     getTime,
-    dateUTC
+    dateUTC,
+    emailValidate
 }

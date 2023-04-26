@@ -308,6 +308,61 @@
 
 }
 
+.contact-div{
+    input{
+        width: 80%;
+        padding: 1rem;
+        margin: 0.5rem;
+        font-family: var(--font);
+        font-size: 1.5rem;
+        border: 3px solid var(--black);
+        border-radius: 0.4em;
+        transition-duration: 0.2s;
+        transition-delay: 50ms;
+    }
+
+    input:hover{
+        outline: none;
+        box-shadow: 0.3em 0.4em;
+    }
+
+    input:focus{
+        outline: none;
+        box-shadow: 0.3em 0.4em;
+    }
+
+    input[type="submit"]{
+        cursor: pointer;
+    }
+
+    textarea{
+        width: 80%;
+        padding: 1rem;
+        resize: vertical;
+        margin: 0.5rem;
+        font-family: var(--font);
+        font-size: 1.4rem;
+        border: 3px solid var(--black);
+        border-radius: 0.4em;
+        transition-duration: 0.2s;
+        transition-delay: 50ms;
+    }
+
+    textarea:hover{
+        outline: none;
+        box-shadow: 0.3em 0.4em;
+    }
+
+    textarea:focus{
+        outline: none;
+        box-shadow: 0.3em 0.4em;
+    }
+
+    button{
+        margin: 1rem;
+    }
+}
+
 .two-normal-divs{
     display: flex;
     flex-direction: row;

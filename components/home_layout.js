@@ -47,7 +47,7 @@ export default function HomeLayout({ children }) {
                             <Link className="underline" href="/updates">Updates</Link>
                         </li>
                         <li>
-                            <Link className="underline" href="/credits">Credits</Link>
+                            <Link className="underline" href="/contact">Contact</Link>
                         </li>
                         <li>
                             <Link className="underline" href="/services">Services</Link>
@@ -98,7 +98,7 @@ export default function HomeLayout({ children }) {
                             <Link href="/notes" className="underline">Notes</Link>
                         </li>
                         <li>
-                            <Link href="/services" className="underline">Services</Link>
+                            <Link href="/contact" className="underline">Contact</Link>
                         </li>
                         <li>
                             <Link href="/github" className="underline">GitHub</Link>

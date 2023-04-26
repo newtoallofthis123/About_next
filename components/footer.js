@@ -86,8 +86,8 @@ export default function Footer() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/services">
-                                Services
+                            <Link href="/contact">
+                                Contact
                             </Link>
                         </li>
                     </ul>
@@ -171,8 +171,8 @@ export default function Footer() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/github">
-                                GitHub
+                            <Link href="/services">
+                                Services
                             </Link>
                         </li>
                     </ul>

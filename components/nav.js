@@ -52,7 +52,7 @@ const Nav = () => {
                             <Link href="/notes" className="underline">Notes</Link>
                         </li>
                         <li>
-                            <Link href="/services" className="underline">Services</Link>
+                            <Link href="/contact" className="underline">Contact</Link>
                         </li>
                         <li>
                             <Link href="/github" className="underline">GitHub</Link>
@@ -90,7 +90,7 @@ const Nav = () => {
                             <Link href="/notes" className="underline">Notes</Link>
                         </li>
                         <li>
-                            <Link href="/services" className="underline">Services</Link>
+                            <Link href="/contact" className="underline">Contact</Link>
                         </li>
                         <li>
                             <Link href="/github" className="underline">GitHub</Link>
