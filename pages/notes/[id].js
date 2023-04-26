@@ -1,37 +1,32 @@
-import React from 'react'
-import { useRouter } from 'next/router'
-import useSwr, {preload} from "swr"
-import { marked } from 'marked'
-import LoadingScreen from '@/components/loading'
-import hljs from "highlight.js";
 import Layout from "@/components/layout";
 import Markdown from '@/components/md'
 import { connectToDatabase } from "@/utils/db";
+import Head from "next/head";
 
 export default function UpdatesID({data}) {
-
-    if (data) {
-        const note = data
-        if(!note) return <div>404</div>
-        if (note) {
-            return (
-                <Layout>
-                    <div className="normalize">
-                        <div className='notes_div'>
-                            <h1>
-                                {
-                                    note.title
-                                }
-                            </h1>
-                            <Markdown content={note.content}></Markdown>
-                        </div>
-                    </div>
-                </Layout>
-            )
-        } else {
-            <div>404</div>
-        }
-    }
+    const note = data
+    return (
+        <Layout>
+            <div className="normalize">
+                <Head>
+                    <title>
+                        {note.title} | Ishan's Notes
+                    </title>
+                    <meta name="description" content={
+                        note.content.slice(0, 100)
+                    } />
+                </Head>
+                <div className='notes_div'>
+                    <h1>
+                        {
+                            note.title
+                        }
+                    </h1>
+                    <Markdown content={note.content}></Markdown>
+                </div>
+            </div>
+        </Layout>
+    )
 }
 
 
