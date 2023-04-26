@@ -5,10 +5,7 @@
 This is the source code for my portfolio website. It is built using [NextJS](https://nextjs.org/) and 
 [Vercel](https://vercel.com/).
 I am actually quite proud of it.
-
-My site is currently built using cra, but I am planning to migrate it to NextJS. This is a beta version of the site. It is hosted on a different subdomain, and is not the main site.
-
-## [Beta Site](https://new.noobscience.rocks)
+## [Site](https://noobscience.rocks)
 
 ## Features
 Fast, responsive, and accessible. It is also a PWA, so you can install it on your phone.

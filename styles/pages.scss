@@ -35,7 +35,7 @@
 }
 
 .not-found-div {
-    display: flex;
+    display: flex;  
     flex-direction: row;
     width: 100%;
     margin: 0;
@@ -258,8 +258,6 @@
 .page-div{
     padding: 2rem;
     margin: 2rem;
-    color: var(--color);
-    background-color: var(--bg);
     border: 3px solid var(--black);
     border-radius: 0.4em;
     box-shadow: 0.3em 0.4em;
@@ -548,7 +546,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        border: 3px solid var(--color);
+        // border: 3px solid var(--color);
         background-color: var(--pink);
         color: var(--black);
         font-size: 4rem;

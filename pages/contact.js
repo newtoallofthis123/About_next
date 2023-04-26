@@ -2,7 +2,6 @@ import Layout from "@/components/layout";
 import React from "react";
 import {marked} from "marked";
 import {dateTime} from "@/utils/utils";
-import Link from "next/link";
 
 export default function Credits() {
     const [mail, setMail] = React.useState(false);
@@ -68,7 +67,7 @@ export default function Credits() {
                     marginTop: "8vw",
                 }} className={`page-div content-div-${ranColor()}`}>
 
-                    <h1>
+                    <h1 className="jello" hello>
                         Contact The Noob
                     </h1>
                     <form className="contact-div" onSubmit={sendMail} method="POST">
@@ -80,7 +79,7 @@ export default function Credits() {
                         <p>
                             Enter The Content of the message: Markdown is supported.
                         </p>
-                        <textarea placeholder="Leave a message for me" required name="message" id="message" cols="30" rows="10"></textarea>
+                        <textarea placeholder="Leave a message for me" required name="message" id="message" cols="30"></textarea>
                         <p></p>
                         <input type="submit" value="Send Message" />
                     </form>
@@ -101,12 +100,6 @@ export default function Credits() {
                             </>
                         )
                     }
-                    <h2>
-                        Tip:
-                    </h2>
-                    <p>
-                        You can contact me for my <Link href="/services">Services</Link> as well
-                    </p>
                 </div>
             </div>
         </Layout>

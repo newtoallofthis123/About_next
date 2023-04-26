@@ -42,7 +42,7 @@ export default function HomeLayout({ children }) {
                         <li><Link className="underline" href="/blog">Blog</Link></li>
                         <li><Link className="underline" href="/projects">Projects</Link></li>
                         <li><Link className="underline" href="/skills">Skills</Link></li>
-                        <li><Link className="underline" href="/contact">Resume</Link></li>
+                        <li><Link className="underline" href="/resume">Resume</Link></li>
                         <li>
                             <Link className="underline" href="/updates">Updates</Link>
                         </li>
