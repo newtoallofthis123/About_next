@@ -43,12 +43,21 @@ def commit():
 
 def deploy():
     data = get_content()
-    if str(int(data["version"].split(".")[2]) + 1) >= "10":
-        data["version"] = '.'.join(str(data["version"]).split(".")[0:2]) + "." + "0" + str(int(data["version"].split(".")[2]) + 1)
-    data["version"] = '.'.join(str(data["version"]).split(".")[0:2]) + "." + str(int(data["version"].split(".")[2]) + 1)
+    Console().print("The Current version is [bold red]" + data["version"] + "[/bold red]")
+    version = Prompt.ask("Enter the new version")
+    data["version"] = version
     Console().log("Version updated to [bold red]" + data["version"] + "[/bold red]")
     write_content(data)
-    commit()
+    Console().print("Before deploying, make sure you test out the build.")
+    test_ask = Prompt.ask("Do you want to test the build? You will have to restart deployer", choices=["y", "n"])
+    if test_ask == "y":
+        Console().print("Testing build...")
+        os.system("npm run build")
+        Console().print("Build successful")
+        os.system("npm run start")
+    else:
+        Console().print("Skipping build test")
+        commit()
 
 def main():
     if os.getlogin() != "joshi":

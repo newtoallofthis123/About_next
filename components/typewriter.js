@@ -1,5 +1,9 @@
 import React from "react";
 
+// ? Third Party Component to create a typewriter effect
+//! Currently not in use
+// TODO: Convert this to a typescript component
+
 class TypeWriter extends React.PureComponent {
     constructor(props) {
         super(props);

@@ -1,3 +1,7 @@
+//! Will Not be implemented in typescript
+//? This is a simple test page to test out monaco-editor.
+//? It's not really used for anything else.
+
 import React from 'react'
 import Editor, { useMonaco } from '@monaco-editor/react';
 import Layout from '@/components/layout';
@@ -6,7 +10,7 @@ export default function EditorIndex() {
     const monaco = useMonaco();
     React.useEffect(() => {
         if (monaco) {
-            console.log('here is the monaco instance:', monaco);
+            console.log('Initialized Monaco');
         }
     }, [monaco]);
     const [code, setCode] = React.useState('// type your code...');

@@ -1,6 +1,19 @@
+// TODO: Add a captcha to prevent spam
+// FIXME: Migrate to typescript
+//? This is the API route for sending emails from the contact form on the website.
+//? It uses nodemailer to send the email to my personal email address.
+//* You can only use this in post requests.
+//* The body of the request should be a JSON object with the following structure:
+//* {
+//*     emailData: {
+//*         name: "Your name",
+//*         message: "Your message",
+//*     }
+//* }
+//! This is a public API route, so don't put any sensitive information in the request body.
+//! This API route is not protected by rate limiting, so don't spam it.
+
 import nodemailer from 'nodemailer';
-import { marked } from 'marked';
-import { dateTime } from '@/utils/utils';
 
 export default async function handler(req, res) {
     if(req.method === "POST") {
@@ -21,7 +34,7 @@ export default async function handler(req, res) {
             });
             const mailData = {
                 from: process.env.MAIL_EMAIL,
-                to: "noobscience123@gmail.com",
+                to: "noobscience123@gmail.com", // This is my public email address
                 subject: `Hey Noob! You've got mail from ${name}`,
                 html: message,
             };
@@ -35,6 +48,7 @@ export default async function handler(req, res) {
         }
     }
     else {
+        //! Only POST requests are allowed.
         res.status(400).json({ error: "Invalid request method." });
     }
 }

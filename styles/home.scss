@@ -71,3 +71,74 @@
     }
     }
 }
+
+// ? Designs for the Special Component
+// FIXME: Better Mobile Responsiveness
+
+.special{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1rem;
+    .special__title{
+        padding-left: 2vw;
+        color: var(--black);
+        font-family: var(--font);
+    }
+
+    .special__title h1{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+    }
+
+    .special__title p{
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        font-weight: 400;
+    }
+
+    .special__cancel-button{
+        font-family: var(--font);
+        font-size: 2rem;
+        line-height: 1.5rem;
+        color: var(--black);
+        font-weight: 700;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &:hover{
+            color: var(--black);
+        }
+    }
+
+    ::selection {
+        background-color: var(--white);
+        color: #082dff;
+    }
+}
+
+.red{
+    background-color: #ff1e1e;
+    color: var(--white);
+}
+
+.pink{
+    background-color: #ff4ced;
+    color: var(--white);
+}
+
+.orange{
+    background-color: #ff8c00;
+    color: var(--white);
+}
+
+.yellow{
+    background-color: #ffea00;
+    color: var(--black);
+}
+
+.green{
+    background-color: #81ff81;
+    color: var(--black);
+}
