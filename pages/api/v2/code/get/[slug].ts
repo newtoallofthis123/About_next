@@ -9,11 +9,11 @@ export default async function handler(
     if (req.method === 'POST') {
         const { db }: { db: Database } = await connectToDatabase();
         const slug = req.body.slug;
-        const data = await db.collection("code").find({ slug: slug }).toArray();
+        const data = await db.collection("code").find({ hash: slug }).toArray();
         res.json(data[0]);
     }
     const { db }: { db: Database } = await connectToDatabase();
     const {slug} = req.query;
-    const data = await db.collection("code").find({ slug: slug }).toArray();
+    const data = await db.collection("code").find({ hash: slug }).toArray();
     res.json(data[0]);
 }

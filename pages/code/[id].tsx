@@ -1,6 +1,5 @@
-import React from 'react'
 import { useRouter } from 'next/router'
-import useSwr, { preload } from "swr"
+import useSwr from "swr"
 import Layout from '@components/layout';
 import LoadingScreen from '@components/loading';
 import Highlight from '@components/highlight';
@@ -11,14 +10,13 @@ export default function CodeId({ }: Props) {
   const router = useRouter()
   const { id } = router.query
   const param = id
-  const fetcher = (url) => fetch(url).then(res => res.json())
+  const fetcher = (url:string) => fetch(url).then(res => res.json())
   const { data, error, isLoading } = useSwr(`/api/v2/code/get/${param}`, fetcher)
   if (isLoading) return <div><LoadingScreen></LoadingScreen></div>
   if (error) return <div>Failed to load</div>
 if (data) {
         const code = data
         if(!code) return <div>404</div>
-        const param_id = code._id
         if (code) {
             return (
                 <Layout>
