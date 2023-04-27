@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { marked } from 'marked'
 import LoadingScreen from '@components/loading'
 import Head from 'next/head'
+import Theme from '@components/theme'
 
 type Update = {
     _id: string
@@ -38,6 +39,7 @@ export default function UpdatesID() {
                             {update.name} | Ishan's Updates
                         </title>
                     </Head>
+                    <Theme />
                     <h1>
                         Ishan's Updates
                     </h1>

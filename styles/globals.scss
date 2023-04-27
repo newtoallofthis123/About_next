@@ -44,16 +44,11 @@
     --selection-bg: #0059ff;
 }
 
-// @media (prefers-color-scheme: dark) {
-//     :root {
-//         --bg: #fdfdfd;
-//         --color: #1a1919;
-//     }
-// }
-
 :root[data-theme="light"] {
     --color: #1a1919;
-    --bg: #ffffff
+    --bg: #ffffff;
+    --selection-bg: #c4e9ff;
+    --selection-color: #000000;
 }
 
 :root[data-theme="dark"] {
@@ -114,6 +109,11 @@ pre{
     font-size: 1.2rem;
     font-family: "Fira Code", monospace;
     overflow: auto;
+
+    ::selection{
+        background-color: #ffffff;
+        color: #000000;
+    }
 
     @media screen and (max-width: 1024px) {
         font-size: 1rem;

@@ -57,21 +57,21 @@ const Home = () => {
     return (
         <HomeLayout>
             <Head>
-                <title>
-                    NoobScience | Open Source Enthusiast
-                </title>
+                <title>NoobScience | Open Source Enthusiast</title>
             </Head>
             <div className="two-content-divs">
-                <div
-                    className="animate__animated animate__fadeInDown hero content content-div-yellow">
-                    <h1 className="hero__title">
-                        Meet The Noob
-                    </h1>
+                <div className="animate__animated animate__fadeInDown hero content content-div-yellow">
+                    <h1 className="hero__title">Meet The Noob</h1>
                     <div className="hero__text">
                         {time()}! I am Ishan Joshi and I like to talk tech.
-                        Currently at <Link href="https://greit.ac.in">GRIET</Link>, I am pursuing my Bachelors in Computer Science.
-                        You might find me in India, but mostly, it is fun living on the <i className="bi bi-globe"></i> <Link href="/social">Internet</Link>.
-                        Anyways, a little quirky and a lot of fun, I think I am a pretty cool guy. So, let's get to know each other.
+                        Currently at{' '}
+                        <Link href="https://greit.ac.in">GRIET</Link>, I am
+                        pursuing my Bachelors in Computer Science. You might
+                        find me in India, but mostly, it is fun living on the{' '}
+                        <i className="bi bi-globe"></i>{' '}
+                        <Link href="/social">Internet</Link>. Anyways, a little
+                        quirky and a lot of fun, I think I am a pretty cool guy.
+                        So, let's get to know each other.
                     </div>
                     <div className="hero__btn">
                         <button className="fancy_btn">
@@ -79,36 +79,48 @@ const Home = () => {
                         </button>
                     </div>
                     <div className="hero__text">
-                        Or you know, I can take you on a tour of my <Link href="/projects">Projects</Link> or my <Link href="/blog">Blog</Link>.
-                        Better yet, just scrollllllllllll
+                        Or you know, I can take you on a tour of my{' '}
+                        <Link href="/projects">Projects</Link> or my{' '}
+                        <Link href="/blog">Blog</Link>. Better yet, just
+                        scrollllllllllll
                     </div>
                 </div>
-                <div
-                    className="animate__animated animate__fadeInUp content content-div-blue">
+                <div className="animate__animated animate__fadeInUp content content-div-blue">
                     <div className="center-img">
                         {/* //! I know this is not good practice, but it is a temporary solution */}
                         {/* // TODO: Design a better solution */}
                         {/*eslint-disable-next-line @next/next/no-img-element*/}
-                        <img width="auto" height="auto" src="/assets/profile.png" alt="profile" />
+                        <img
+                            width="auto"
+                            height="auto"
+                            src="/assets/profile.png"
+                            alt="profile"
+                        />
                         <h2
                             style={{
-                                textAlign: "center",
-                                fontSize: "2.5rem",
-                                fontWeight: "bold",
-                                textDecoration: "underline",
-                                textDecorationThickness: "0.8rem",
+                                textAlign: 'center',
+                                fontSize: '2.5rem',
+                                fontWeight: 'bold',
+                                textDecoration: 'underline',
+                                textDecorationThickness: '0.8rem',
                                 lineHeight: 1,
                             }}
                         >
-                            The Noob<Link style={{
-                                textDecoration: "none",
-                                cursor: "text",
-                        }} href="/admin"><sup>TM</sup></Link>
+                            The Noob
+                            <Link
+                                style={{
+                                    textDecoration: 'none',
+                                    cursor: 'text',
+                                }}
+                                href="/admin"
+                            >
+                                <sup>TM</sup>
+                            </Link>
                         </h2>
                         <p
                             style={{
-                                textAlign: "center",
-                                fontSize: "1.2rem",
+                                textAlign: 'center',
+                                fontSize: '1.2rem',
                                 lineHeight: 1,
                             }}
                         >
@@ -117,120 +129,206 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div style={{
-                backgroundColor: "var(--green)",
-            }} className="full-content-div content-div-green">
+            <div
+                style={{
+                    backgroundColor: 'var(--green)',
+                }}
+                className="full-content-div content-div-green"
+            >
                 <div className="notification">
                     <div className="notification__text">
-                        <h1>
-                            What's Up?
-                        </h1>
+                        <h1>What's Up?</h1>
                         <p>
-                            Currently working on optimizing the website and adding new features. Check out the <Link href="/changelog">Changelog</Link> for more info.
-                            Moving and learning Typescript.
-                            Most of the site's code has now been migrated to Typescript.
+                            Currently working on optimizing the website and
+                            adding new features. Most of the site's code has now
+                            been migrated to Typescript. Check out my latest
+                            update
                         </p>
+                        <div style={{
+                            backgroundColor: 'var(--white)',
+                            padding: '1rem',
+                            borderRadius: '1rem',
+                            boxShadow: '0.3rem 0.4rem var(--black)',
+                            cursor: 'pointer',
+                            border: '0.2rem solid var(--black)',
+                        }}
+                            onClick={() => {
+                                (typeof window !== 'undefined') && (window.location.href = `/updates/latest`)
+                            }}
+                            className="full-page-div">
+                            {
+                            error ? (
+                                <>Error Loading</>
+                            ) : !data ? (
+                                <>Loading</>
+                                    ) : (
+                                            <>
+                                                {
+                                                    data.slice(0).reverse().map((update: Update, index: number) => {
+                                                        if (index !== 0) {
+                                                            return (
+                                                                <></>
+                                                            )
+                                                        }
+                                                        return (
+                                                            <>
+                                                                <h1>{update.name}</h1>
+                                                                <p>
+                                                                    {update.date}
+                                                                </p>
+                                                                <p>
+                                                                    {update.content.slice(0, 400)}...
+                                                                </p>
+                                                            </>
+                                                        )
+                                                    })
+                                            }
+                                            </>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
             <div className="half-two-divs">
                 <div data-aos="fade-up" className="content content-half">
-                    <div  className="showcase-div">
-                        {
-                            (blog_error)? <>Error Loading</>:
-                                (!blog_data) ? <>Loading</> :(
-                                    <div className="animate__animated animate__fadeIn" style={{cursor: "pointer",}} onClick={() => {
-                                        window.location.href = `${blog_data.blogs[0].slug}`}
-                                    } key={blog_data.blogs[0].id}>
-                                        <h1>{blog_data.blogs[0].title}</h1>
-                                        <div className="center-img">
-                                            {/*eslint-disable-next-line @next/next/no-img-element*/}
-                                            <img src={`${blog_data.blogs[0].img}`} alt="Blog Post Image" />
-                                        </div>
-                                        <div className="text-div">
-                                            <p>
-                                                {blog_data.blogs[0].description}
-                                            </p>
-                                        </div>
-                                        <div className="hero__btn">
-                                            <button style={{width: "100%", backgroundColor: "var(--yellow)",}} className="fancy_btn">
-                                                <a href={`${blog_data.blogs[0].slug}`}>Read More on SubStack</a>
-                                            </button>
-                                        </div>
-                                    </div>
-                                )
-                        }
+                    <div className="showcase-div">
+                        {blog_error ? (
+                            <>Error Loading</>
+                        ) : !blog_data ? (
+                            <>Loading</>
+                        ) : (
+                            <div
+                                className="animate__animated animate__fadeIn"
+                                style={{ cursor: 'pointer' }}
+                                onClick={() => {
+                                    window.location.href = `${blog_data.blogs[0].slug}`;
+                                }}
+                                key={blog_data.blogs[0].id}
+                            >
+                                <h1>{blog_data.blogs[0].title}</h1>
+                                <div className="center-img">
+                                    {/*eslint-disable-next-line @next/next/no-img-element*/}
+                                    <img
+                                        src={`${blog_data.blogs[0].img}`}
+                                        alt="Blog Post Image"
+                                    />
+                                </div>
+                                <div className="text-div">
+                                    <p>{blog_data.blogs[0].description}</p>
+                                </div>
+                                <div className="hero__btn">
+                                    <button
+                                        style={{
+                                            width: '100%',
+                                            backgroundColor: 'var(--yellow)',
+                                        }}
+                                        className="fancy_btn"
+                                    >
+                                        <a href={`${blog_data.blogs[0].slug}`}>
+                                            Read More on SubStack
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="content content-rest">
                     <div className="col-divs">
-                        <div data-aos="fade-left" className="content content-half content-div-pink">
-                            <h1>
-                                Updates
-                            </h1>
-                            <p>
-                                Here are some of my latest updates:
-                            </p>
-                            {
-                                (error)? <>Error Loading</>:
-                                    (!data) ? <>Loading</> :
-                                        data.slice(0).reverse().map((update: Update) => {
-                                                const url = "/updates/" + update.hash
-                                                count++
-                                                if (count < 6) {
-                                                    return (
-                                                        <div className="update" key={update._id}>
-                                                            <ul style={{
-                                                                listStyle: "none",
-                                                                lineHeight: "1.5rem",
-                                                                padding: "0 0.5rem",
-                                                            }}>
-                                                                <li><Link href={url}>{update.name}</Link></li>
-                                                            </ul>
-                                                        </div>
-                                                    )
-                                                }
-                                            }
-                                        )
-                            }
-                        </div>
-                        <div style={{
-                            border: "3px solid var(--color)",
-                        }} className="content content-half">
-                            <h1>
-                                Latest Notes
-                            </h1>
-                            <p>
-                                Here are some of my latest notes:
-                            </p>
-                            {
-                                (notes_error) ? <p>Error Loading</p> :
-                                    (!notes_data) ? <p>Loading</p> :
-                                        notes_data.slice(0).reverse().map((note: Note) => {
-                                            const url = "/notes/" + note.slug
-                                            notes_count++
-                                            if (notes_count < 6) {
-                                                return (
-                                                    <div className="update" key={note._id}>
-                                                        <ul style={{
-                                                            listStyle: "none",
-                                                            lineHeight: "1.5rem",
-                                                            padding: "0 0.5rem",
-                                                        }}>
-                                                            <li>{note.category}: <Link href={url}>{note.title}</Link></li>
-                                                        </ul>
-                                                    </div>
-                                                )
-                                            }
+                        <div
+                            data-aos="fade-left"
+                            className="content content-half content-div-pink"
+                        >
+                            <h1>Updates</h1>
+                            <p>Here are some of my latest updates:</p>
+                            {error ? (
+                                <>Error Loading</>
+                            ) : !data ? (
+                                <>Loading</>
+                            ) : (
+                                data
+                                    .slice(0)
+                                    .reverse()
+                                    .map((update: Update) => {
+                                        const url = '/updates/' + update.hash;
+                                        count++;
+                                        if (count < 6) {
+                                            return (
+                                                <div
+                                                    className="update"
+                                                    key={update._id}
+                                                >
+                                                    <ul
+                                                        style={{
+                                                            listStyle: 'none',
+                                                            lineHeight:
+                                                                '1.5rem',
+                                                            padding: '0 0.5rem',
+                                                        }}
+                                                    >
+                                                        <li>
+                                                            <Link href={url}>
+                                                                {update.name}
+                                                            </Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            );
                                         }
-                                        )
-                            }                                
+                                    })
+                            )}
+                        </div>
+                        <div
+                            style={{
+                                border: '3px solid var(--color)',
+                            }}
+                            className="content content-half"
+                        >
+                            <h1>Latest Notes</h1>
+                            <p>Here are some of my latest notes:</p>
+                            {notes_error ? (
+                                <p>Error Loading</p>
+                            ) : !notes_data ? (
+                                <p>Loading</p>
+                            ) : (
+                                notes_data
+                                    .slice(0)
+                                    .reverse()
+                                    .map((note: Note) => {
+                                        const url = '/notes/' + note.slug;
+                                        notes_count++;
+                                        if (notes_count < 6) {
+                                            return (
+                                                <div
+                                                    className="update"
+                                                    key={note._id}
+                                                >
+                                                    <ul
+                                                        style={{
+                                                            listStyle: 'none',
+                                                            lineHeight:
+                                                                '1.5rem',
+                                                            padding: '0 0.5rem',
+                                                        }}
+                                                    >
+                                                        <li>
+                                                            {note.category}:{' '}
+                                                            <Link href={url}>
+                                                                {note.title}
+                                                            </Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            );
+                                        }
+                                    })
+                            )}
                         </div>
                     </div>
                 </div>
             </div>
         </HomeLayout>
-    )
+    );
 }
 
 export default Home

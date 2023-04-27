@@ -3,6 +3,7 @@ import useSwr from "swr"
 import Layout from '@components/layout';
 import LoadingScreen from '@components/loading';
 import Highlight from '@components/highlight';
+import { toast } from 'react-toastify';
 
 type Props = {}
 
@@ -24,11 +25,28 @@ if (data) {
                         <div className='notes_div'>
                             <h1>
                                 {
-                                    String(code.title).toUpperCase()
+                                    code.title
                                 }
                             </h1>
                             <p>
                                 Language: {String(code.lang).toUpperCase()}
+                            </p>
+                            <p>
+                                Copy Code:
+                                <button style={{
+                                    marginLeft: '10px',
+                                    padding: '5px',
+                                    backgroundColor: 'transparent',
+                                    border: 'none',
+                                    color: 'var(--color)',
+                                    fontSize: '1.5rem',
+                                    cursor: 'pointer'
+                                }} onClick={() => {
+                                    navigator.clipboard.writeText(code.content)
+                                    toast("Code Copied!")
+                                }}>
+                                    <i className="bi bi-clipboard"></i>
+                                </button>
                             </p>
                                 <Highlight language={code.lang}>
                                     {
