@@ -5,7 +5,7 @@ export default function Tos() {
     return (
         <Layout>
             <div className="normalize">
-                <div style={{textAlign: "justify", marginTop: "8vw", fontFamily: "var(--font)", backgroundColor: "var(--yellow)",}} className="page-div bod">
+                <div style={{textAlign: "justify", marginTop: "8vw", fontFamily: "var(--font)"}} className="page-div bod">
                     <h1 className="atx" id="terms-of-service-1">Terms of Service</h1>
                     <h2 className="atx" id="tldr-summary">TLDR (Summary)</h2>
                     <p>By using our personal blog, you accept and agree to the following terms. We use Nextjs for site functionality, hosting on Vercel, <a href="https://Name.com">Name.com</a> domain service, and cookies to remember your last visit. We also display Google Ads. For legal information, read the advanced section below.</p>

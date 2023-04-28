@@ -138,15 +138,9 @@ const Home = () => {
                 <div className="notification">
                     <div className="notification__text">
                         <h1>What's Up?</h1>
-                        <p>
-                            Currently working on optimizing the website and
-                            adding new features. Most of the site's code has now
-                            been migrated to Typescript. Check out my latest
-                            update
-                        </p>
                         <div style={{
                             backgroundColor: 'var(--white)',
-                            padding: '1rem',
+                            padding: '1.5rem',
                             borderRadius: '1rem',
                             boxShadow: '0.3rem 0.4rem var(--black)',
                             cursor: 'pointer',
@@ -171,7 +165,7 @@ const Home = () => {
                                                             )
                                                         }
                                                         return (
-                                                            <>
+                                                            <div key={update._id}>
                                                                 <h1>{update.name}</h1>
                                                                 <p>
                                                                     {update.date}
@@ -179,7 +173,7 @@ const Home = () => {
                                                                 <p>
                                                                     {update.content.slice(0, 400)}...
                                                                 </p>
-                                                            </>
+                                                            </div>
                                                         )
                                                     })
                                             }

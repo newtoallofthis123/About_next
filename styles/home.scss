@@ -78,6 +78,7 @@
 .special{
     display: flex;
     justify-content: space-between;
+    border-bottom: 3px solid var(--color);
     align-items: center;
     padding: 0.1rem;
     .special__title{
@@ -140,5 +141,10 @@
 
 .green{
     background-color: #81ff81;
+    color: var(--black);
+}
+
+.blue{
+    background-color: #00bfff;
     color: var(--black);
 }

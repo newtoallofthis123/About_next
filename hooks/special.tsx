@@ -7,40 +7,31 @@
 
 import React from 'react'
 import { dateHash } from 'utils/utils'
+import useSwr from 'swr'
 
 type Props = {
 }
 
 type Case = {
+    tag: string
     title: string
     description: string
     theme: string
-    date: string
+    hash: string
 }
 
-const cases: Case[] = [
-    {
-        title: '🥳 Today is VSCode Day!',
-        description: 'Catch the special event on the official website!',
-        theme: 'green',
-        date: '20230427'
-    }
-]
 
 const Special = ({ }: Props) => {
     const [special, setSpecial] = React.useState<boolean>(false)
-    const fetcher = () => {
-        const timeHash = dateHash()
-        const current: Case = cases.find((c) => c.date === timeHash) || null
+    const fetcher = (url: string) => fetch(url).then((res) => res.json());
+    const { data: cases, error } = useSwr('/api/v2/special', fetcher);
+    (error && !cases) && setSpecial(false)
+    const current: Case = cases?.find((c: Case) => c.hash === dateHash()) || null
+    React.useEffect(() => {
         if (current) {
             setSpecial(true)
         }
-    }
-    React.useEffect(() => {
-        fetcher()
-    }, [])
-    const timeHash = dateHash()
-    const current: Case = cases.find((c) => c.date === timeHash) || null
+    }, [current])
     return (
         <>
             {special && (

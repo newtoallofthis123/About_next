@@ -20,6 +20,7 @@ export default async function handler(req, res) {
         const { emailData } = req.body;
         const message = emailData.message;
         const name = emailData.name;
+        const email = emailData.email;
         if(!name || !message) {
             res.status(400).json({ error: "Please fill out all fields." });
         } else {;

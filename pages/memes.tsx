@@ -1,10 +1,17 @@
 import PicsDiv from "@components/pics_div";
 import Head from "next/head";
+import { GetStaticProps } from "next";
 import Theme from "@components/theme";
+import fs from "fs";
 
-type Props = {}
+type Props = {
+    files: string[];
+};
 
-export default function Memes({}: Props) {
+export default function Memes({files}: Props) {    
+    const pics = files.map((file) => {
+        return "/memes/" + file;
+    });
     return (
         <div className="page-div">
             <Head>
@@ -42,12 +49,7 @@ export default function Memes({}: Props) {
                 </p>
                 <p>(Click on them to see them in full size)</p>
                 <PicsDiv
-                    pics={[
-                        '/memes/thats_what_she_said.jpg',
-                        '/memes/sem_exams.jpg',
-                        '/memes/timepass_on_phone.jpg',
-                        '/memes/affagado.jpg',
-                    ]}
+                    pics={pics}
                 />
                 <p>
                     Stay tuned for more memes! I'll be adding more as I make
@@ -64,3 +66,12 @@ export default function Memes({}: Props) {
         </div>
     );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+    const files = fs.readdirSync('./public/memes');
+    return {
+        props: {
+            files,
+        },
+    };
+};

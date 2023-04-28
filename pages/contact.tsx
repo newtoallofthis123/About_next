@@ -1,11 +1,13 @@
 import Layout from "@components/layout";
 import React from "react";
 import { marked } from "marked";
-import { dateTime } from "utils/utils";
+import { dateTime, emailValidate } from "utils/utils";
+import {toast} from "react-toastify";
 
 interface EmailData {
-  name: string;
-  message: string;
+    name: string;
+    email: string;
+    message: string;
 }
 
 export default function Credits() {
@@ -14,6 +16,7 @@ export default function Credits() {
         e.preventDefault();
         const emailData: EmailData = {
             name: e.currentTarget.author.value,
+            email: e.currentTarget.email.value,
             message: `
     <style>
       body{
@@ -28,6 +31,7 @@ export default function Credits() {
     <p>
       This Mail was given to Noob Mailer at ${dateTime()}.
     </p>
+    <p>You can contact ${e.currentTarget.author.value} at ${e.currentTarget.email.value}</p>
     <p>
       This is the message:
     </p>
@@ -39,6 +43,13 @@ export default function Credits() {
     </p>
   `,
         };
+        if (!emailValidate(emailData.email)) {
+            toast.error("Invalid Email");
+            return;
+        }
+        else {
+            toast.info("Sending Email");
+        }
         fetch("/api/v2/mail", {
             method: "POST",
             headers: {
@@ -51,6 +62,7 @@ export default function Credits() {
             .then((res) => res.json())
             .then((data) => {
                 setMail(true)
+                toast.success("Email Sent");
             })
             .catch((err) => {
                 console.log(err);
@@ -68,45 +80,69 @@ export default function Credits() {
     return (
         <Layout>
             <div className="normalize">
-                <div style={{
-                    marginTop: "8vw",
-                }} className={`page-div content-div-${ranColor()}`}>
-
-                    <h1 className="jello">
-                        Contact The Noob
-                    </h1>
-                    <form className="contact-div" onSubmit={sendMail} method="POST">
+                <div
+                    style={{
+                        marginTop: '8vw',
+                    }}
+                    className={`page-div content-div-${ranColor()}`}
+                >
+                    <h1 className="jello">Contact The Noob</h1>
+                    <form
+                        className="contact-div"
+                        onSubmit={sendMail}
+                        method="POST"
+                    >
                         <p>
-                            Enter Your Name:
-                            Just use anonymous if you don't want to reveal your name.
+                            Enter Your Name: Just use anonymous if you don't
+                            want to reveal your name.
                         </p>
-                        <input placeholder="Enter Your Name" required type="text" name="author" id="author" />
+                        <input
+                            placeholder="Enter Your Name"
+                            required
+                            type="text"
+                            name="author"
+                            id="author"
+                        />
                         <p>
-                            Enter The Content of the message: Markdown is supported.
+                            Enter a valid Email: I'll be sending you a mail
                         </p>
-                        <textarea placeholder="Leave a message for me" required name="message" id="message" cols={30}></textarea>
+                        <input
+                            placeholder="Enter A valid Email"
+                            required
+                            type="text"
+                            name="email"
+                            id="email"
+                        />
+                        <p>
+                            Enter The Content of the message: Markdown is
+                            supported.
+                        </p>
+                        <textarea
+                            placeholder="Leave a message for me"
+                            required
+                            name="message"
+                            id="message"
+                            cols={30}
+                        ></textarea>
                         <p></p>
                         <input type="submit" value="Send Message" />
                     </form>
-                    {
-                        mail && (
-                            <>
-                            <h2>
-                                Thanks For Contacting Me!
-                            </h2>
-                                <p>
-                                    I will get back to you as soon as possible.
-                                    Please be patient and don't spam me.
-                                    You'll be receiving a mail from me soon at the email you provided.
-                                    So as to not spam you, I will only send you one mail.
-                                    It's be from <em>noobscience@duck.com</em>.
-                                    So, be on the lookout for it.
-                                </p>
-                            </>
-                        )
-                    }
+                    {mail && (
+                        <>
+                            <h2>Thanks For Contacting Me!</h2>
+                            <p>
+                                I will get back to you as soon as possible.
+                                Please be patient and don't spam me. You'll be
+                                receiving a mail from me soon at the email you
+                                provided. So as to not spam you, I will only
+                                send you one mail. It's be from{' '}
+                                <em>noobscience@duck.com</em>. So, be on the
+                                lookout for it.
+                            </p>
+                        </>
+                    )}
                 </div>
             </div>
         </Layout>
-    )
+    );
 }

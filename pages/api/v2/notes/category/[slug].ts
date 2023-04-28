@@ -15,5 +15,5 @@ export default async function handler(
     const { db }: { db: Database } = await connectToDatabase();
     const {slug} = req.query;
     const data = await db.collection("notes").find({ category: slug }).toArray();
-    res.json(data[0]);
+    res.json(data);
 }
