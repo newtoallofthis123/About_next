@@ -17,16 +17,17 @@ type Case = {
     title: string
     description: string
     theme: string
+    link: string
     hash: string
 }
-
 
 const Special = ({ }: Props) => {
     const [special, setSpecial] = React.useState<boolean>(false)
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data: cases, error } = useSwr('/api/v2/special', fetcher);
     (error && !cases) && setSpecial(false)
-    const current: Case = cases?.find((c: Case) => c.hash === dateHash()) || null
+    console.log(dateHash())
+    const current: Case = cases?.find((c: Case) => c.hash >= dateHash()) || null
     React.useEffect(() => {
         if (current) {
             setSpecial(true)
@@ -35,7 +36,9 @@ const Special = ({ }: Props) => {
     return (
         <>
             {special && (
-                <div className={`special ${current.theme}`}>
+                <div onClick={() => {
+                    (typeof(window) !== 'undefined') && window.open(current.link, '_blank')
+                }} className={`special ${current.theme}`}>
                     <div className="special__title">
                         <span>
                             <h1>

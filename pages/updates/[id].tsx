@@ -39,7 +39,7 @@ export default function UpdatesID() {
                             {update.name} | Ishan's Updates
                         </title>
                     </Head>
-                    <Theme />
+                    {/* <Theme /> */}
                     <h1>
                         Ishan's Updates
                     </h1>

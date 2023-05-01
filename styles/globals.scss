@@ -28,12 +28,12 @@
 
 :root {
     --blue: #5c9cfc;
-    --green: #83f583;
+    --green: #6aff6a;
     --yellow: #ffd845;
     --pink: #ed72bc;
     --red: #ff9c9c;
     --violet: #dd5eff;
-    --black: #1a1919;
+    --black: #101010;
     --white: #f9f5f5;
     --bg: #fdfdfd;
     --color: #1a1919;
@@ -45,7 +45,7 @@
 }
 
 :root[data-theme="light"] {
-    --color: #1a1919;
+    --color: #101010;
     --bg: #ffffff;
     --selection-bg: #c4e9ff;
     --selection-color: #000000;

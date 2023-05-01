@@ -76,6 +76,7 @@
 // FIXME: Better Mobile Responsiveness
 
 .special{
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     border-bottom: 3px solid var(--color);
