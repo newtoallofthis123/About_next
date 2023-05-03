@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import useSwr, {preload} from "swr"
+import useSwr, { preload } from "swr"
 import Link from 'next/link'
 import { Seo } from '@/components/seo'
 import { marked } from 'marked'
@@ -20,7 +20,7 @@ export default function UpdatesID() {
 
     if (data) {
         const notes = data
-        if(!notes) return <div>404</div>
+        if (!notes) return <div>404</div>
         if (notes) {
             return (
                 <Layout>
@@ -35,16 +35,16 @@ export default function UpdatesID() {
                             <ul>
                                 {
                                     notes.map((note) => {
-                                            return (
-                                                <li key={note._id}>
-                                                    <Link href={`/notes/${note.slug}`}>
-                                                        {
-                                                            note.title
-                                                        }
-                                                    </Link>
-                                                </li>
-                                            )
-                                        }
+                                        return (
+                                            <li key={note._id}>
+                                                <Link href={`/notes/${note.slug}`}>
+                                                    {
+                                                        note.title
+                                                    }
+                                                </Link>
+                                            </li>
+                                        )
+                                    }
                                     )}
                             </ul>
                         </div>

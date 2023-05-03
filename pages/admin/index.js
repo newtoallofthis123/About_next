@@ -1,18 +1,18 @@
 import Link from "next/link";
 
-export default function AdminPage(){
+export default function AdminPage() {
     return (
         <div
             style={{
                 textAlign: "center",
-                }}
+            }}
         >
             <h1>Admin Page</h1>
             <p>Here are some useful links</p>
             <ul
-            style={{
-                listStyleType: "none",
-            }}
+                style={{
+                    listStyleType: "none",
+                }}
             >
                 <li><Link href="/admin/view">View</Link></li>
                 <li><Link href="/admin/delete">Delete</Link></li>

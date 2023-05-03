@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import Comments from '@components/comments';
 import CommentInsert from '@components/comment_insert';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-type Props = {}
+type Props = {};
 
-export default function Discuss({ }: Props) {
-    const [comments, setComments] = React.useState<boolean>(false)
+export default function Discuss({}: Props) {
+    const [comments, setComments] = React.useState<boolean>(false);
     return (
         <>
             <ToastContainer
@@ -32,7 +32,7 @@ export default function Discuss({ }: Props) {
                     {comments ? 'Hide The Form' : 'Add A Comment'}
                 </button>
                 {comments && <CommentInsert></CommentInsert>}
-                <Comments ></Comments>
+                <Comments></Comments>
             </div>
         </>
     );

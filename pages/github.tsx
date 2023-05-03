@@ -1,12 +1,14 @@
-import React, {useState, useEffect} from 'react'
-import Layout from '@components/layout'
+import React, { useState, useEffect } from 'react';
+import Layout from '@components/layout';
 
 const RepositoryList = () => {
     const [repositories, setRepositories] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`https://api.github.com/users/newtoallofthis123/repos?sort=updated&per_page=20`);
+            const response = await fetch(
+                `https://api.github.com/users/newtoallofthis123/repos?sort=updated&per_page=20`
+            );
             const data = await response.json();
             setRepositories(data);
         }
@@ -14,12 +16,14 @@ const RepositoryList = () => {
     }, []);
 
     return (
-        <div style={{ margin: "1.2rem" }}>
+        <div style={{ margin: '1.2rem' }}>
             <ul>
                 {repositories.map((repo) => (
-                    <li key={repo.id}
+                    <li
+                        key={repo.id}
                         onClick={() => window.open(repo.html_url)}
-                        className="repo-item">
+                        className="repo-item"
+                    >
                         <div>
                             <div className="repo-name">
                                 <a href={repo.html_url}>{repo.full_name}</a>
@@ -41,7 +45,7 @@ const RepositoryList = () => {
             </ul>
         </div>
     );
-}
+};
 
 export default function GitHub() {
     return (
@@ -49,16 +53,26 @@ export default function GitHub() {
             <div className="normalize">
                 <div className="full-content-div">
                     <h1>GitHub</h1>
-                    <div style={{
-                        textAlign: "center",
-                    }}>
+                    <div
+                        style={{
+                            textAlign: 'center',
+                        }}
+                    >
                         <div className="text-div">
-                            <p>Here are some of my GitHub repositories I recently commited to:</p>
+                            <p>
+                                Here are some of my GitHub repositories I
+                                recently commited to:
+                            </p>
                         </div>
                         <div>
-                            <button onClick={() => {
-                                window.open("https://github.com/newtoallofthis123")
-                            }} className="fancy_btn">
+                            <button
+                                onClick={() => {
+                                    window.open(
+                                        'https://github.com/newtoallofthis123'
+                                    );
+                                }}
+                                className="fancy_btn"
+                            >
                                 https://github.com/newtoallofthis123
                             </button>
                         </div>
@@ -67,5 +81,5 @@ export default function GitHub() {
                 </div>
             </div>
         </Layout>
-  )
+    );
 }

@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         const del_id = new ObjectId(id)
         const data = await db.collection("go").deleteOne({ _id: del_id })
         console.log(data);
-        if(data)
+        if (data)
             res.json(data);
         else
             res.json({ error: "Error deleting page" })

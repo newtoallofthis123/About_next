@@ -63,6 +63,6 @@ export default function EditorIndex() {
                     theme='vs-dark'
                 />;
             </div>
-      </Layout>
-  )
+        </Layout>
+    )
 }

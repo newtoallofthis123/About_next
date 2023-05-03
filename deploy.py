@@ -11,45 +11,57 @@ except ModuleNotFoundError as e:
     print("Sorry, it works only if you have rich and pyfiglet installed. Please install them and try again.")
     exit()
 
+
 def get_content():
     with open("package.json", "r") as f:
         data = dict(json.loads(f.read()))
         return data
-    
+
+
 def write_content(content):
     with open("package.json", "w") as file:
         file.write(json.dumps(content, indent=2))
         print("Data updated")
 
+
 def get_time():
     now = datetime.datetime.now()
     return now.strftime("%Y-%m-%d %H:%M")
 
+
 def commit():
     os.system("git status")
-    exit_try = input("These are the git changes. Press any key to proceed or type 'exit' to exit: ")
+    exit_try = input(
+        "These are the git changes. Press any key to proceed or type 'exit' to exit: ")
     if exit_try == "exit":
         exit()
     msg = Prompt.ask("Commit message")
     os.system("git add .")
-    commit_choice = Prompt.ask("Commit and push to github?", choices=["y", "n"])
+    commit_choice = Prompt.ask(
+        "Commit and push to github?", choices=["y", "n"])
     if commit_choice == "y":
         os.system("git commit -m \"" + msg + "\"")
         os.system("git push")
-        Console().print("Commited to git and pushed to [link=https://github.com/newtoallofthis123/About_next]github.com[/link]")
-        Console().print("Check deployment status at [link=https://vercel.com/newtoallofthis123/about-next]vercel.com[/link]")
+        Console().print(
+            "Commited to git and pushed to [link=https://github.com/newtoallofthis123/About_next]github.com[/link]")
+        Console().print(
+            "Check deployment status at [link=https://vercel.com/newtoallofthis123/about-next]vercel.com[/link]")
     else:
         print("Not commited to git or pushed to github")
 
+
 def deploy():
     data = get_content()
-    Console().print("The Current version is [bold red]" + data["version"] + "[/bold red]")
+    Console().print(
+        "The Current version is [bold red]" + data["version"] + "[/bold red]")
     version = Prompt.ask("Enter the new version")
     data["version"] = version
-    Console().log("Version updated to [bold red]" + data["version"] + "[/bold red]")
+    Console().log(
+        "Version updated to [bold red]" + data["version"] + "[/bold red]")
     write_content(data)
     Console().print("Before deploying, make sure you test out the build.")
-    test_ask = Prompt.ask("Do you want to test the build? You will have to restart deployer", choices=["y", "n"])
+    test_ask = Prompt.ask(
+        "Do you want to test the build? You will have to restart deployer", choices=["y", "n"])
     if test_ask == "y":
         Console().print("Testing build...")
         os.system("npm run build")
@@ -58,6 +70,7 @@ def deploy():
     else:
         Console().print("Skipping build test")
         commit()
+
 
 def main():
     if os.getlogin() != "joshi":
@@ -80,6 +93,7 @@ def main():
             Console().print("The Deployer rejected your request. He says you are not worthy of deploying the website.")
     else:
         print("Wrong password")
+
 
 if __name__ == "__main__":
     try:

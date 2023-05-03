@@ -29,7 +29,7 @@ export default function DeleteAdmin() {
     const handleDelete = (topic) => (e) => {
         // const choice = window.confirm("Are you sure you want to delete this item?")
         // if (!choice)
-            // return
+        // return
         e.preventDefault();
         fetch(`/api/v1/get/${topic}`, {
             method: 'POST',
@@ -55,7 +55,7 @@ export default function DeleteAdmin() {
             }
         )
         console.log(id)
-    if (!id) {
+        if (!id) {
             toast("Something went wrong")
             return
         }
@@ -75,9 +75,9 @@ export default function DeleteAdmin() {
                 }
             })
             .catch((err) => {
-                    console.log(err)
-                    toast("Error posting Link")
-                }
+                console.log(err)
+                toast("Error posting Link")
+            }
             )
     }
 
@@ -101,7 +101,7 @@ export default function DeleteAdmin() {
                         <form method="post">
                             <select onChange={(e) => {
                                 setMode(e.target.value)
-                            }} onSubmit={() => {handleDelete(mode)}}>
+                            }} onSubmit={() => { handleDelete(mode) }}>
                                 <option value="go">Delete a Link</option>
                                 <option value="updates">Delete an update</option>
                                 <option value="notes">Delete a note</option>
@@ -109,7 +109,7 @@ export default function DeleteAdmin() {
                             <p>
                                 Hash/Slug: <b>{link}</b>
                             </p>
-                            <input type="text" name="hash" onChange={(e) => {setHash(e.target.value)}} id="hash" />
+                            <input type="text" name="hash" onChange={(e) => { setHash(e.target.value) }} id="hash" />
                             <p></p>
                             <button type="submit" onClick={handleDelete(mode)}>Delete</button>
                         </form>

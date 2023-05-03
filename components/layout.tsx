@@ -1,13 +1,13 @@
-import React from "react";
-import Nav from "./nav"
-import Footer from "./footer";
-import { Seo } from "./seo";
+import React from 'react';
+import Nav from './nav';
+import Footer from './footer';
+import { Seo } from './seo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 type Props = {
-    children: React.ReactNode
-}
+    children: React.ReactNode;
+};
 
 export default function Layout({ children }: Props) {
     return (

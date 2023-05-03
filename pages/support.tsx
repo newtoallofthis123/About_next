@@ -1,9 +1,5 @@
 export default function Support() {
-    return (
-        <p>
-            Redirecting
-        </p>
-  )
+    return <p>Redirecting</p>;
 }
 
 export async function getServerSideProps() {
@@ -12,5 +8,5 @@ export async function getServerSideProps() {
             destination: 'https://www.buymeacoffee.com/noobscience',
             permanent: false,
         },
-    }
+    };
 }

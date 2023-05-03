@@ -4,25 +4,24 @@
 //* If you are trying to connect to the database, use the connectToDatabase function
 // TODO: Add Ability to connect to multiple databases
 
+import { MongoClient, MongoClientOptions, Db, Collection } from 'mongodb';
 
-import { MongoClient, MongoClientOptions, Db, Collection } from 'mongodb'
-
-const { MONGODB_URL } = process.env
+const { MONGODB_URL } = process.env;
 
 if (!MONGODB_URL) {
     throw new Error(
         'Please define the MONGODB_URI environment variable inside .env.local'
-    )
+    );
 }
 
 interface DatabaseConnection {
-  client: MongoClient;
-  db: ReturnType<MongoClient['db']>;
+    client: MongoClient;
+    db: ReturnType<MongoClient['db']>;
 }
 
 interface CachedConnection {
-  conn: DatabaseConnection | null;
-  promise: Promise<void> | null;
+    conn: DatabaseConnection | null;
+    promise: Promise<void> | null;
 }
 
 interface MongoOptions extends MongoClientOptions {
@@ -30,36 +29,36 @@ interface MongoOptions extends MongoClientOptions {
     useUnifiedTopology?: boolean;
 }
 
-let cached: CachedConnection = global.mongo
+let cached: CachedConnection = global.mongo;
 if (!cached) {
-    cached = global.mongo = { conn: null, promise: null }
+    cached = global.mongo = { conn: null, promise: null };
 }
 
 export async function connectToDatabase(): Promise<{ db: Db }> {
-    if (cached.conn) return cached.conn
+    if (cached.conn) return cached.conn;
     if (!cached.promise) {
         const conn: DatabaseConnection = {
             client: null,
             db: null,
-        }
+        };
         const opts: MongoOptions = {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-        }
+        };
         cached.promise = MongoClient.connect(MONGODB_URL, opts)
             .then((client) => {
-                conn.client = client
-                return client.db("updates")
+                conn.client = client;
+                return client.db('updates');
             })
             .then((db) => {
-                conn.db = db
-                cached.conn = conn
-            })
+                conn.db = db;
+                cached.conn = conn;
+            });
     }
-    await cached.promise
-    return cached.conn
+    await cached.promise;
+    return cached.conn;
 }
 
 export interface Database {
-  collection(name: string): Collection;
+    collection(name: string): Collection;
 }

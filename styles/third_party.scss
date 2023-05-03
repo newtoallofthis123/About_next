@@ -23,7 +23,7 @@
     box-shadow: 0.05em 0.05em;
 }
 
-.fancy_btn a{
+.fancy_btn a {
     color: black;
     text-decoration: none;
 }
@@ -39,7 +39,7 @@
     text-align: center;
     margin: 5rem 2rem;
 
-    img{
+    img {
         padding: 5rem;
         width: 10vw;
         // height: 100px;
@@ -138,33 +138,43 @@
         &.JavaScript:before {
             background-color: #f1e05a;
         }
+
         &.HTML:before {
             background-color: #e34c26;
         }
+
         &.CSS:before {
             background-color: #563d7c;
         }
+
         &.TypeScript:before {
             background-color: #2b7489;
         }
+
         &.Python:before {
             background-color: #3572A5;
         }
+
         &.Java:before {
             background-color: #b07219;
         }
+
         &.Markdown:before {
             background-color: #181717;
         }
+
         &.Astro:before {
             background-color: #ff4d00;
         }
+
         &.Rust:before {
             background-color: #dea584;
         }
+
         &.C:before {
             background-color: #555555;
         }
+
         &.Go:before {
             background-color: #00ADD8;
         }

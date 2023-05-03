@@ -6,23 +6,23 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#ffffff" />
-        <meta name="title" content="NoobScience"/>
-        <meta name="description" content="Hi! I am Ishan. I am a Student and Open Source Enthusiast. This is my personal portfolio website. I Like to Code Stuff. Check out my work!"/>
-        <meta name="title" content="NoobScience"/>
-        <meta name="keywords" content="noobscience, noob science, NoobScience, newtoallofthis123, technology, website"/>
-        <meta name="robots" content="index, follow, archive"/>
-        <meta name="language" content="English"/>
-        <meta name="author" content="NoobScience"/>
+        <meta name="title" content="NoobScience" />
+        <meta name="description" content="Hi! I am Ishan. I am a Student and Open Source Enthusiast. This is my personal portfolio website. I Like to Code Stuff. Check out my work!" />
+        <meta name="title" content="NoobScience" />
+        <meta name="keywords" content="noobscience, noob science, NoobScience, newtoallofthis123, technology, website" />
+        <meta name="robots" content="index, follow, archive" />
+        <meta name="language" content="English" />
+        <meta name="author" content="NoobScience" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://noobscience.rocks" />
         <meta property="twitter:title" content="NoobScience" />
         <meta property="twitter:description" content="Student and Open Source Enthusiast. I Like to Code Stuff. Check out my work!" />
         <meta property="twitter:image" content="https://noobscience.rocks/assets/banner.png" />
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://noobscience.rocks/" />
-        <meta property="og:title" content="NoobScience"/>
-        <meta property="og:description" content="Student and Open Source Enthusiast. I Like to Code Stuff. Check out my work!"/>
-        <meta property="og:image" content="https://noobscience.rocks/assets/banner.png"/>
+        <meta property="og:title" content="NoobScience" />
+        <meta property="og:description" content="Student and Open Source Enthusiast. I Like to Code Stuff. Check out my work!" />
+        <meta property="og:image" content="https://noobscience.rocks/assets/banner.png" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="canonical" href="https://noobscience.rocks" />
         <link rel="manifest" href="/manifest.json" />

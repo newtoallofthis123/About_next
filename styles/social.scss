@@ -37,21 +37,25 @@
   cursor: pointer;
 
 
-  :hover{
+  :hover {
     background-color: var(--color);
     color: var(--bg);
   }
+
   a {
     text-decoration: none;
     color: inherit;
   }
+
   a:hover {
     color: inherit;
     background-color: inherit;
-  } .bi {
-      color: inherit;
-      background-color: inherit;
-    }
+  }
+
+  .bi {
+    color: inherit;
+    background-color: inherit;
+  }
 
   @media screen and (max-width: 698px) {
     .main-card {
@@ -63,6 +67,7 @@
       display: block;
       font-size: 1rem;
     }
+
     .social-btn {
       font-size: 1rem;
       width: 80%;
@@ -71,24 +76,24 @@
   }
 }
 
-.social_bg{
-    background-color: var(--yellow);
-    color: var(--color);
+.social_bg {
+  background-color: var(--yellow);
+  color: var(--color);
 }
 
-.discussion{
+.discussion {
   margin: 2%;
   padding: 2%;
   border: 3px solid var(--color);
   box-shadow: 0.3em 0.4em var(--color);
 
-  .insert_btn{
+  .insert_btn {
     border: 3px solid var(--color);
     border-radius: 12px;
     font-size: 1.2rem;
   }
 
-  .comment{
+  .comment {
     // margin: 1% 2%;
     padding: 1% 2%;
     border: 3px solid var(--color);

@@ -32,8 +32,5 @@ export default function Theme() {
             }
         }
     }, []);
-    return (
-        <>
-        </>
-    );
+    return <></>;
 }

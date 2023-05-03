@@ -177,7 +177,7 @@ export default function NewsAdd() {
                                         <p></p>
                                         <button type="submit">Submit</button>
                                     </form>
-                                    <Link href={link}>{ link}</Link>
+                                    <Link href={link}>{link}</Link>
                                 </div>
                             )
                         }
@@ -361,7 +361,7 @@ export default function NewsAdd() {
                                                     </Link>
                                                 </div>
                                             ) : (
-                                                    <></>
+                                                <></>
                                             )
                                         }
                                     </form>

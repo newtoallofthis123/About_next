@@ -10,9 +10,9 @@ export default function Markdown({ content }) {
 
     renderer.code = function (code, language) {
         const className = `hls ${language}`;
-        const highlightedCode = language ?
-            hljs.highlight(language, code).value :
-            code;
+        const highlightedCode = language
+            ? hljs.highlight(language, code).value
+            : code;
         return `<pre class="${className}"><code class="language-${language}">${highlightedCode}</code></pre>`;
     };
 

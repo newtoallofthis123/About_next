@@ -16,14 +16,15 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-    if(req.method === "POST") {
+    if (req.method === "POST") {
         const { emailData } = req.body;
         const message = emailData.message;
         const name = emailData.name;
         const email = emailData.email;
-        if(!name || !message) {
+        if (!name || !message) {
             res.status(400).json({ error: "Please fill out all fields." });
-        } else {;
+        } else {
+            ;
             const transporter = nodemailer.createTransport({
                 host: "smtp.gmail.com",
                 port: 465,
@@ -40,7 +41,7 @@ export default async function handler(req, res) {
                 html: message,
             };
             transporter.sendMail(mailData, function (err, info) {
-                if(err) {
+                if (err) {
                     res.status(500).json({ error: "Internal server error." });
                 } else {
                     res.status(200).json({ message: "Message sent successfully." });

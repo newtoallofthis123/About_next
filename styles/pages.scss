@@ -1,4 +1,4 @@
-.normalize{
+.normalize {
     margin-top: 4.5%;
     font-size: 100%;
     font: inherit;
@@ -17,7 +17,7 @@
 
     @media (max-width: 1024px) {
         flex-direction: column;
-        
+
     }
 
     .content {
@@ -35,7 +35,7 @@
 }
 
 .not-found-div {
-    display: flex;  
+    display: flex;
     flex-direction: row;
     width: 100%;
     margin: 0;
@@ -56,7 +56,7 @@
             width: 100%;
             flex: 1;
 
-            img{
+            img {
                 width: 100%;
             }
         }
@@ -68,7 +68,7 @@
         margin: 5% 0;
         margin-left: 3%;
 
-        h1{
+        h1 {
             font-size: 4rem;
             font-weight: 900;
         }
@@ -84,7 +84,7 @@
     background-color: var(--blue);
     color: var(--black);
 
-    a{
+    a {
         color: var(--black);
     }
 }
@@ -93,7 +93,7 @@
     background-color: var(--yellow);
     color: var(--black);
 
-    a{
+    a {
         color: var(--black);
     }
 }
@@ -102,16 +102,16 @@
     background-color: var(--pink);
     color: var(--black);
 
-    a{
+    a {
         color: var(--black);
     }
 }
 
-.content-div-green{
+.content-div-green {
     background-color: #4dc2b0;
     color: var(--black);
 
-    a{
+    a {
         color: var(--black);
     }
 }
@@ -130,7 +130,7 @@
     }
 }
 
-.full-content-div{
+.full-content-div {
     width: 100%;
     padding: 2rem 0;
 
@@ -147,10 +147,11 @@
         // border: 3px solid var(--black);
         border-top: none;
     }
+
     // border-bottom: 3px solid var(--black);
 }
 
-.half-two-divs{
+.half-two-divs {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -162,15 +163,15 @@
         flex-direction: column;
     }
 
-    p{
+    p {
         padding: 1rem;
     }
 
-    .content-half{
+    .content-half {
         flex: 0.5 50%;
     }
 
-    .content-rest{
+    .content-rest {
         flex: 1;
     }
 
@@ -189,7 +190,8 @@
             font-weight: 700;
             text-align: center;
         }
-        p{
+
+        p {
             padding: 0.5rem 1rem;
             font-size: 1.4rem;
             font-weight: 400;
@@ -225,15 +227,18 @@
     }
 }
 
-.updates_showcase{
+.updates_showcase {
     max-height: inherit;
-    ul{
+
+    ul {
         list-style: none;
         line-height: 1rem;
     }
-    li{
+
+    li {
         font-size: 1.2rem;
-        a{
+
+        a {
             text-decoration: underline;
         }
     }
@@ -243,26 +248,28 @@
     display: flex;
     flex-direction: row;
     max-width: 100%;
-    button{
+
+    button {
         margin: 1rem;
     }
 
     @media screen and (max-width: 1024px) {
-        button{
+        button {
             margin: 0.5rem;
         }
+
         flex-direction: column;
     }
 }
 
-.page-div{
+.page-div {
     padding: 2rem;
     margin: 2rem;
     border: 3px solid var(--black);
     border-radius: 0.4em;
     box-shadow: 0.3em 0.4em;
 
-    img{
+    img {
         width: 80%;
         margin: 0 auto;
         border: 3px solid var(--black);
@@ -275,14 +282,14 @@
     }
 }
 
-.showcase-div{
+.showcase-div {
     padding: 2rem;
     margin: 2rem;
     border: 3px solid var(--color);
     border-radius: 0.4em;
     box-shadow: 0.3em 0.4em;
 
-    img{
+    img {
         width: 80%;
         margin: 0 auto;
     }
@@ -303,13 +310,13 @@
     box-shadow: 0.05em 0.05em;
 }
 
-.showcase-div:hover{
+.showcase-div:hover {
     box-shadow: 0.4em 0.5em;
 
 }
 
-.contact-div{
-    input{
+.contact-div {
+    input {
         width: 80%;
         padding: 1rem;
         margin: 0.5rem;
@@ -321,21 +328,21 @@
         transition-delay: 50ms;
     }
 
-    input:hover{
+    input:hover {
         outline: none;
         box-shadow: 0.3em 0.4em;
     }
 
-    input:focus{
+    input:focus {
         outline: none;
         box-shadow: 0.3em 0.4em;
     }
 
-    input[type="submit"]{
+    input[type="submit"] {
         cursor: pointer;
     }
 
-    textarea{
+    textarea {
         width: 80%;
         padding: 1rem;
         resize: vertical;
@@ -348,22 +355,22 @@
         transition-delay: 50ms;
     }
 
-    textarea:hover{
+    textarea:hover {
         outline: none;
         box-shadow: 0.3em 0.4em;
     }
 
-    textarea:focus{
+    textarea:focus {
         outline: none;
         box-shadow: 0.3em 0.4em;
     }
 
-    button{
+    button {
         margin: 1rem;
     }
 }
 
-.two-normal-divs{
+.two-normal-divs {
     display: flex;
     flex-direction: row;
     width: 90%;
@@ -403,7 +410,7 @@
             text-align: center;
         }
 
-        h2{
+        h2 {
             font-size: 2rem;
             font-weight: 700;
             margin: 0;
@@ -421,13 +428,13 @@
             }
         }
 
-        img{
+        img {
             width: 100%;
             margin: 0 auto;
             border: 3px solid var(--black);
         }
 
-        iframe{
+        iframe {
             border: 3px solid var(--black);
             border-radius: 12px;
             width: 30rem;
@@ -452,63 +459,70 @@
     text-align: center;
 }
 
-.text-div{
+.text-div {
     padding: 0.5rem;
 }
 
-.hero{
-    .hero__title{
+.hero {
+    .hero__title {
         font-size: 4rem;
         font-weight: 700;
         text-align: center;
     }
 
-    .hero__subtitle{
+    .hero__subtitle {
         font-size: 2rem;
         font-weight: 700;
         text-align: center;
     }
 
-    .hero__text{
+    .hero__text {
         padding: 1.5rem;
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 3rem;
     }
-    .hero__btn{
+
+    .hero__btn {
         text-align: center;
-        button{
+
+        button {
             background-color: var(--pink);
             font-size: 3rem;
             margin: 2rem;
         }
 
-        button a{
+        button a {
             color: var(--black);
             text-decoration: none;
 
-            &:hover{
+            &:hover {
                 color: var(--black);
             }
         }
     }
-    a{
+
+    a {
         text-decoration: underline;
     }
 
     @media screen and (max-width: 1024px) {
-        .hero__title{
-            font-size: 3rem;;
+        .hero__title {
+            font-size: 3rem;
+            ;
         }
-        .hero__subtitle{
+
+        .hero__subtitle {
             font-size: 1.5rem;
         }
-        .hero__text{
+
+        .hero__text {
             font-size: 1.2rem;
             line-height: 2.4rem;
         }
-        .hero__btn{
-            button{
+
+        .hero__btn {
+            button {
                 margin: 1rem;
                 font-size: 1.5rem;
             }
@@ -516,7 +530,7 @@
     }
 }
 
-.redirect{
+.redirect {
     text-align: center;
     margin: 10%;
     //position: absolute;
@@ -524,7 +538,7 @@
     //left: 50%;
     //transform: translate(-50%, -50%);
 
-    h2{
+    h2 {
         font-size: 1.5rem;
         font-weight: 700;
         margin: 0.5rem;
@@ -554,7 +568,7 @@
     }
 }
 
-.col-divs{
+.col-divs {
     display: flex;
     flex-direction: column;
     margin: 5% 0;
@@ -600,22 +614,23 @@
     }
 }
 
-.notes_div{
+.notes_div {
     margin: 8% 10%;
     padding: 0;
     overflow-x: hidden;
-    pre{
+
+    pre {
         background-color: var(--color);
         color: var(--bg);
 
     }
 
-    img{
+    img {
         width: 80%;
         border: 3px solid var(--color);
     }
 
-    iframe{
+    iframe {
         border: 3px solid var(--color);
         border-radius: 12px;
         width: 30rem;
@@ -627,7 +642,7 @@
         }
     }
 
-    ol{
+    ol {
         @media (max-width: 1032px) {
             padding: 0;
         }
@@ -638,15 +653,18 @@
     }
 
 }
-.notes__showcase{
-    h1{
+
+.notes__showcase {
+    h1 {
         font-size: 2.5rem;
         font-weight: 700;
         margin: 2rem 3rem;
     }
-    ul{
+
+    ul {
         list-style: none;
-        li{
+
+        li {
             margin: 1rem;
             font-size: 1.5rem;
             font-weight: 400;
@@ -655,23 +673,23 @@
     }
 }
 
-.notification{
+.notification {
     padding: 0 2vw;
     font-size: 1.5rem;
 }
 
-.meme-div{
+.meme-div {
     margin-top: 5%;
 }
 
-.pics-div{
+.pics-div {
     margin: 3rem 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
 
-    .pic{
+    .pic {
         flex-basis: calc(100% / 2);
         max-width: calc(100% / 2);
     }
@@ -680,7 +698,7 @@
         flex-direction: column;
         text-align: center;
 
-        .pic{
+        .pic {
             flex-basis: 100%;
             max-width: 100%;
         }

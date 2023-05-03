@@ -4,22 +4,18 @@
 //* It should also link to a GitHub commit
 //! Currently a WIP
 
-import React from 'react'
-import Layout from '@components/layout'
+import React from 'react';
+import Layout from '@components/layout';
 
-type Props = {}
+type Props = {};
 
 export default function ChangeLog({}: Props) {
     return (
         <Layout>
             <div className="page-div normalize">
-                <h1>
-                    Change Log
-                </h1>
-                <p>
-                    WIP: This page is still a work in progress.
-                </p>
+                <h1>Change Log</h1>
+                <p>WIP: This page is still a work in progress.</p>
             </div>
-      </Layout>
-  )
+        </Layout>
+    );
 }

@@ -1,12 +1,12 @@
-import React from "react";
-import { Fancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import React from 'react';
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
 type Props = {
-    pics: string[]
-}
+    pics: string[];
+};
 
-export default function PicsDiv({pics}: Props) {
+export default function PicsDiv({ pics }: Props) {
     React.useEffect(() => {
         Fancybox.bind('[data-fancybox]', {
             // Your options go here

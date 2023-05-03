@@ -5,7 +5,9 @@
     border-radius: 5px;
     margin: 2vw;
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
         font-family: var(--font);
         font-size: 1.2rem;
         background-color: var(--bg);
@@ -17,16 +19,20 @@
         margin: 1rem;
         transition-duration: 0.2s;
         transition-delay: 50ms;
-    
+
     }
 
-    input:focus, textarea:focus, select:focus {
+    input:focus,
+    textarea:focus,
+    select:focus {
         outline: none;
         border: 3px solid var(--color);
         box-shadow: 0.3em 0.4em var(--color);
     }
 
-    input:hover, textarea:hover, select:hover {
+    input:hover,
+    textarea:hover,
+    select:hover {
         border: 3px solid var(--color);
         box-shadow: 0.3em 0.4em var(--color);
     }
@@ -57,7 +63,7 @@
     }
 }
 
-.password_div{
+.password_div {
     background-color: var(--bg);
     padding: 1rem;
     border: 3px solid var(--color);
@@ -69,22 +75,22 @@
     justify-content: center;
 
     input,
-        textarea,
-        select {
-            font-family: var(--font);
-            font-size: 1.2rem;
-            background-color: var(--bg);
-            color: var(--color);
-            width: 80%;
-            border: 3px solid var(--color);
-            border-radius: 5px;
-            padding: 1rem;
-            margin: 1rem;
-            transition-duration: 0.2s;
-            transition-delay: 50ms;
-    
-        }
-    
+    textarea,
+    select {
+        font-family: var(--font);
+        font-size: 1.2rem;
+        background-color: var(--bg);
+        color: var(--color);
+        width: 80%;
+        border: 3px solid var(--color);
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem;
+        transition-duration: 0.2s;
+        transition-delay: 50ms;
+
+    }
+
     input:focus,
     textarea:focus,
     select:focus {

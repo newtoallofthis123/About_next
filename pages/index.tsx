@@ -1,26 +1,26 @@
-import React from "react";
+import React from 'react';
 
-import HomeLayout from "@components/home_layout";
-import Link from "next/link";
-import Head from "next/head";
-import useSwr from "swr";
+import HomeLayout from '@components/home_layout';
+import Link from 'next/link';
+import Head from 'next/head';
+import useSwr from 'swr';
 import AOS from 'aos';
 
 type Note = {
-    _id: string,
-    title: string,
-    slug: string,
-    category: string,
-    content: string,
-}
+    _id: string;
+    title: string;
+    slug: string;
+    category: string;
+    content: string;
+};
 
 type Update = {
-    _id: string
-    name: string
-    content: string
-    hash: string
-    date: string
-}
+    _id: string;
+    name: string;
+    content: string;
+    hash: string;
+    date: string;
+};
 
 const Home = () => {
     //? For the animation
@@ -36,24 +36,27 @@ const Home = () => {
     //* Fetching data from the API
     //! To be replaced with a better API
     // TODO: Replace with a better API
-    
-    const fetcher = (url:string) => fetch(url).then(res => res.json());
+
+    const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, error } = useSwr('/api/v1/updates', fetcher);
     const { data: blog_data, error: blog_error } = useSwr('/api/all', fetcher);
-    const { data: notes_data, error: notes_error } = useSwr('/api/v2/notes/all', fetcher);
-    let count = 0
-    let notes_count = 0
+    const { data: notes_data, error: notes_error } = useSwr(
+        '/api/v2/notes/all',
+        fetcher
+    );
+    let count = 0;
+    let notes_count = 0;
     const time = () => {
-        const date = new Date()
-        const hours = date.getHours()
+        const date = new Date();
+        const hours = date.getHours();
         if (hours < 12) {
-            return "Hope you are having a great morning"
+            return 'Hope you are having a great morning';
         } else if (hours < 18) {
-            return "Great Noon to you"
+            return 'Great Noon to you';
         } else {
-            return "Hope you are having a fun night"
+            return 'Hope you are having a fun night';
         }
-    }
+    };
     return (
         <HomeLayout>
             <Head>
@@ -138,46 +141,51 @@ const Home = () => {
                 <div className="notification">
                     <div className="notification__text">
                         <h1>What's Up?</h1>
-                        <div style={{
-                            backgroundColor: 'var(--white)',
-                            padding: '1.5rem',
-                            borderRadius: '1rem',
-                            boxShadow: '0.3rem 0.4rem var(--black)',
-                            cursor: 'pointer',
-                            border: '0.2rem solid var(--black)',
-                        }}
-                            onClick={() => {
-                                (typeof window !== 'undefined') && (window.location.href = `/updates/latest`)
+                        <div
+                            style={{
+                                backgroundColor: 'var(--white)',
+                                padding: '1.5rem',
+                                borderRadius: '1rem',
+                                boxShadow: '0.3rem 0.4rem var(--black)',
+                                cursor: 'pointer',
+                                border: '0.2rem solid var(--black)',
                             }}
-                            className="full-page-div">
-                            {
-                            error ? (
+                            onClick={() => {
+                                typeof window !== 'undefined' &&
+                                    (window.location.href = `/updates/latest`);
+                            }}
+                            className="full-page-div"
+                        >
+                            {error ? (
                                 <>Error Loading</>
                             ) : !data ? (
                                 <>Loading</>
-                                    ) : (
-                                            <>
-                                                {
-                                                    data.slice(0).reverse().map((update: Update, index: number) => {
-                                                        if (index !== 0) {
-                                                            return (
-                                                                <></>
-                                                            )
-                                                        }
-                                                        return (
-                                                            <div key={update._id}>
-                                                                <h1>{update.name}</h1>
-                                                                <p>
-                                                                    {update.date}
-                                                                </p>
-                                                                <p>
-                                                                    {update.content.slice(0, 400)}...
-                                                                </p>
-                                                            </div>
-                                                        )
-                                                    })
+                            ) : (
+                                <>
+                                    {data
+                                        .slice(0)
+                                        .reverse()
+                                        .map(
+                                            (update: Update, index: number) => {
+                                                if (index !== 0) {
+                                                    return <></>;
+                                                }
+                                                return (
+                                                    <div key={update._id}>
+                                                        <h1>{update.name}</h1>
+                                                        <p>{update.date}</p>
+                                                        <p>
+                                                            {update.content.slice(
+                                                                0,
+                                                                400
+                                                            )}
+                                                            ...
+                                                        </p>
+                                                    </div>
+                                                );
                                             }
-                                            </>
+                                        )}
+                                </>
                             )}
                         </div>
                     </div>
@@ -323,6 +331,6 @@ const Home = () => {
             </div>
         </HomeLayout>
     );
-}
+};
 
-export default Home
+export default Home;

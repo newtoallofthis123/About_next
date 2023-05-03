@@ -1,8 +1,8 @@
-import Layout from "@components/layout";
-import React from "react";
-import { marked } from "marked";
-import { dateTime, emailValidate } from "utils/utils";
-import {toast} from "react-toastify";
+import Layout from '@components/layout';
+import React from 'react';
+import { marked } from 'marked';
+import { dateTime, emailValidate } from 'utils/utils';
+import { toast } from 'react-toastify';
 
 interface EmailData {
     name: string;
@@ -12,7 +12,7 @@ interface EmailData {
 
 export default function Credits() {
     const [mail, setMail] = React.useState(false);
-    const sendMail = async(e: React.FormEvent<HTMLFormElement>) => {
+    const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const emailData: EmailData = {
             name: e.currentTarget.author.value,
@@ -31,7 +31,9 @@ export default function Credits() {
     <p>
       This Mail was given to Noob Mailer at ${dateTime()}.
     </p>
-    <p>You can contact ${e.currentTarget.author.value} at ${e.currentTarget.email.value}</p>
+    <p>You can contact ${e.currentTarget.author.value} at ${
+                e.currentTarget.email.value
+            }</p>
     <p>
       This is the message:
     </p>
@@ -44,16 +46,15 @@ export default function Credits() {
   `,
         };
         if (!emailValidate(emailData.email)) {
-            toast.error("Invalid Email");
+            toast.error('Invalid Email');
             return;
+        } else {
+            toast.info('Sending Email');
         }
-        else {
-            toast.info("Sending Email");
-        }
-        fetch("/api/v2/mail", {
-            method: "POST",
+        fetch('/api/v2/mail', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 emailData,
@@ -61,22 +62,19 @@ export default function Credits() {
         })
             .then((res) => res.json())
             .then((data) => {
-                setMail(true)
-                toast.success("Email Sent");
+                setMail(true);
+                toast.success('Email Sent');
             })
             .catch((err) => {
                 console.log(err);
-                (typeof window !== "undefined") && alert("An error occurred. Please try again later.");
+                typeof window !== 'undefined' &&
+                    alert('An error occurred. Please try again later.');
             });
     };
     const ranColor = () => {
-        const colors = [
-            "green",
-            "yellow",
-            "pink"
-        ];
+        const colors = ['green', 'yellow', 'pink'];
         return colors[Math.floor(Math.random() * colors.length)];
-    }
+    };
     return (
         <Layout>
             <div className="normalize">
@@ -103,9 +101,7 @@ export default function Credits() {
                             name="author"
                             id="author"
                         />
-                        <p>
-                            Enter a valid Email: I'll be sending you a mail
-                        </p>
+                        <p>Enter a valid Email: I'll be sending you a mail</p>
                         <input
                             placeholder="Enter A valid Email"
                             required
