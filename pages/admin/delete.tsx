@@ -1,5 +1,5 @@
 import React from 'react'
-import { Seo } from '@/components/seo'
+import { Seo } from '@components/seo';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
@@ -42,21 +42,19 @@ export default function DeleteAdmin() {
         ).then(
             (data) => {
                 if (data.error) {
-                    toast("Something went wrong")
+                    toast.error("Something went wrong")
                 } else {
                     setId(data._id)
-                    toast("Fetched Successfully")
                 }
             }
         ).catch(
             (err) => {
                 console.log(err)
-                toast("Error posting Link")
+                toast.error("Error posting Link")
             }
         )
-        console.log(id)
         if (!id) {
-            toast("Something went wrong")
+            toast.error("Something went wrong")
             return
         }
         fetch(`/api/v1/delete/${topic}`, {
@@ -69,14 +67,13 @@ export default function DeleteAdmin() {
             .then((res) => res.json())
             .then((data) => {
                 if (data.error) {
-                    toast("Something went wrong")
+                    toast.error("Something went wrong")
                 } else {
-                    toast("Successfully Deleted")
+                    toast.success("Successfully Deleted")
                 }
             })
             .catch((err) => {
-                console.log(err)
-                toast("Error posting Link")
+                toast.error("Error posting Link")
             }
             )
     }
@@ -84,19 +81,20 @@ export default function DeleteAdmin() {
     return (
         <div>
             <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar={true}
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
                 rtl={false}
                 pauseOnFocusLoss
                 draggable
-                pauseOnHover />
+                pauseOnHover
+                theme="dark"
+            />
             {
                 (auth) ? (
-                    <div className='admin_div'>
-                        <Seo title="Add a New Update | Ishan's Updates"></Seo>
+                    <div className='page-div admin_div'>
                         <h1>Hey Noobie!</h1>
                         <form method="post">
                             <select onChange={(e) => {
@@ -115,7 +113,7 @@ export default function DeleteAdmin() {
                         </form>
                     </div>
                 ) : (
-                    <div className='password_div'>
+                    <div className='page-div admin_div'>
                         <Seo title="Login to view admin page"></Seo>
                         <h1>Admin Page!</h1>
                         <form onSubmit={handleSubmit}>

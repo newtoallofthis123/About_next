@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { marked } from 'marked';
 import LoadingScreen from '@components/loading';
 import Head from 'next/head';
-import Theme from '@components/theme';
+import NotFound from '@pages/404';
 
 type Update = {
     _id: string;
@@ -27,11 +27,15 @@ export default function UpdatesID() {
                 <LoadingScreen></LoadingScreen>
             </div>
         );
-    if (error) return <div>Failed to load</div>;
+    if (error) {
+        return <div>Failed to load</div>;
+    };
     if (data) {
         const updates = data;
         const update = updates.find((update: Update) => update.hash === param);
-        if (!update) return <div>404</div>;
+        if (!update) {
+            return <><NotFound></NotFound></>;
+        };
         const param_id = update._id;
         const htmlContent = (content) => {
             return { __html: marked.parse(content) };

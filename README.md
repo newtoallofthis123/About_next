@@ -38,6 +38,9 @@ npm install
 npm run dev
 ```
 
+## How it works
+In it's essense, noobscience.rocks is a monorepo using, as vercel terms it, the FrontEnd Cloud. However, if you break it down, it is merely MongoDB, React and Edge Functions.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)

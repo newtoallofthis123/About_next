@@ -102,7 +102,10 @@ export default function Credits() {
                         </p>
                         <ol>
                             <li>
-                                <a href="">Sachin's</a> a.k.a Sneha Padhi
+                                <a href="https://www.instagram.com/snehahaha.0408/">
+                                    Sachin's
+                                </a>{' '}
+                                a.k.a Sneha Padhi
                             </li>
                             <li>
                                 <a href="https://instagram.com/the_ansh4">
@@ -111,13 +114,22 @@ export default function Credits() {
                                 a.k.a Devansh Kumar
                             </li>
                             <li>
-                                <a href="">PP</a> a.ka. Prudhvi
+                                <a href="https://www.instagram.com/prudhvi_05_/">
+                                    PP
+                                </a>{' '}
+                                a.ka. Prudhvi
                             </li>
                             <li>
-                                <a href="">Anuska</a> a.ka. Anushka Kumar
+                                <a href="https://www.instagram.com/_anushkaa_kumar/">
+                                    Anuska
+                                </a>{' '}
+                                a.ka. Anushka Kumar
                             </li>
                             <li>
-                                <a href="">Dhaniya</a> a.k.a Ram Kishan
+                                <a href="https://www.instagram.com/_anushkaa_kumar/">
+                                    Dhaniya
+                                </a>{' '}
+                                a.k.a Ram Kishan
                             </li>
                         </ol>
                         <p>And BTW, shout out to my parents :)</p>

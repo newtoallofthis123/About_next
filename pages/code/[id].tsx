@@ -32,9 +32,11 @@ export default function CodeId({}: Props) {
                     <div className="normalize">
                         <div className="notes_div">
                             <h1>{code.title}</h1>
-                            <p>Language: {String(code.lang).toUpperCase()}</p>
                             <p>
-                                Copy Code:
+                                Posted by <b>{code.author}</b>
+                            </p>
+                            <p>
+                                Code ID: <b>{code.hash}</b>{' '}
                                 <button
                                     style={{
                                         marginLeft: '10px',
@@ -58,6 +60,7 @@ export default function CodeId({}: Props) {
                             <Highlight language={code.lang}>
                                 {code.content}
                             </Highlight>
+                            <small>{code.lang}</small>
                         </div>
                     </div>
                 </Layout>

@@ -7,9 +7,11 @@ type Props = {
 };
 
 export default function Hightlight({ children, language }: Props) {
-    const codeRef = useRef(null);
+    const codeRef = useRef<HTMLElement>(null);
     useEffect(() => {
-        hljs.highlightBlock(codeRef.current);
+        if (codeRef.current) {
+            hljs.highlightBlock(codeRef.current);
+        }
     }, [language]);
 
     return (

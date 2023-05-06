@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Head from 'next/head';
 import useSwr from 'swr';
 import AOS from 'aos';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type Note = {
     _id: string;
@@ -62,6 +64,18 @@ const Home = () => {
             <Head>
                 <title>NoobScience | Open Source Enthusiast</title>
             </Head>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
             <div className="two-content-divs">
                 <div className="animate__animated animate__fadeInDown hero content content-div-yellow">
                     <h1 className="hero__title">Meet The Noob</h1>
@@ -98,6 +112,10 @@ const Home = () => {
                             height="auto"
                             src="/assets/profile.png"
                             alt="profile"
+                            onContextMenu={(e) => {
+                                e.preventDefault();
+                                toast.warn('I mean, you can try.');
+                            }}
                         />
                         <h2
                             style={{
@@ -187,6 +205,26 @@ const Home = () => {
                                         )}
                                 </>
                             )}
+                        </div>
+                        <div>
+                            <h1>Site Update</h1>
+                            <p>
+                                The current version of the site is v.4.8 In the
+                                latest update, I almost rewrote the whole site
+                                using the new app/ folder structure. However, it
+                                is just not for me. I know it is the future, but
+                                I am not ready for it yet. So, I am going to
+                                stick with the old structure for now. One
+                                feature I am quite proud of is the new comments
+                                section. You have to check it out from{' '}
+                                <Link href="/discuss">/discuss</Link>. On the
+                                other hand, I made a few changes to the backend.
+                                The CMS is now more robust and the API is more
+                                secure. I am working on creating a public API
+                                for the site. I am also working on a new
+                                project, which is a secret for now. I will
+                                reveal it soon.
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -56,6 +56,61 @@
     --color: #f9f5f5;
 }
 
+:root[data-theme="monokai"]{
+    --bg: #23241f;
+    --color: #f8f8f2;
+    --yellow: #e7db74;
+    --red: #f92472;
+    --blue: #66d9ef;
+    --green: #a6e22b;
+    --violet: #ae81ff;
+    --pink: #f48bca;
+}
+
+:root[data-theme="nord"]{
+    --bg: #3b4253;
+    --color: #e5e9f0;
+    --yellow: #eccc87;
+    --red: #c16069;
+    --blue: #80a0c2;
+    --green: #a2bf8a;
+    --violet: #b58dae;
+    --pink: #b58dae;
+}
+
+:root[data-theme="purple"]{
+    --bg: #f7d5ff;
+    --color: #0a0a0a;
+    --yellow: #ffd374;
+    --red: #c16069;
+    --blue: #a6d1ff;
+    --green: #bff891;
+    --violet: #ffffff;
+    --pink: #ffa2e3;
+}
+
+:root[data-theme="dracula"]{
+    --bg: #282a36;
+    --color: #f8f8f2;
+    --yellow: #f1fa8c;
+    --red: #ff5555;
+    --blue: #6272a4;
+    --green: #50fa7b;
+    --violet: #bd93f9;
+    --pink: #ff79c6;
+}
+
+:root[data-theme="vs-light"]{
+    --bg: #ffffff;
+    --color: #2c2c2c;
+    --yellow: #ffcd81;
+    --red: #e50000;
+    --blue: #5272ff;
+    --green: #009d63;
+    --violet: #6f42c1;
+    --pink: #d73a49;
+}
+
 body {
     background-color: var(--bg);
     color: var(--color);

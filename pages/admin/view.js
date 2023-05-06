@@ -69,7 +69,7 @@ export default function DbView({ data }) {
                 pauseOnHover />
             {
                 (auth) ? (
-                    <div>
+                    <div className='page-div'>
                         <h1>View</h1>
                         {
                             data.map((collection, index) => {
@@ -116,7 +116,7 @@ export default function DbView({ data }) {
                         }
                     </div>
                 ) : (
-                    <div className='password_div'>
+                    <div className='page-div admin_div'>
                         <Seo title="Login to view admin page"></Seo>
                         <h1>Admin Page!</h1>
                         <form onSubmit={handlePasswordSubmit}>

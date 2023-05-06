@@ -3,17 +3,19 @@
 //* This file is a key component of the project and is used to connect to the database
 //* If you are trying to connect to the database, use the connectToDatabase function
 // TODO: Add Ability to connect to multiple databases
+//! HONESTLY: I HAVE NO IDEA HOW I WAS ABLE TO WRITE THIS FILE
 
 import { MongoClient, MongoClientOptions, Db, Collection } from 'mongodb';
 
-const { MONGODB_URL } = process.env;
-
+// Ensure that MONGODB_URL is defined
+const MONGODB_URL: string = process.env.MONGODB_URL!;
 if (!MONGODB_URL) {
     throw new Error(
-        'Please define the MONGODB_URI environment variable inside .env.local'
+        'Please define the MONGODB_URL environment variable inside .env.local'
     );
 }
 
+// Define reusable interfaces and types
 interface DatabaseConnection {
     client: MongoClient;
     db: ReturnType<MongoClient['db']>;
@@ -29,17 +31,22 @@ interface MongoOptions extends MongoClientOptions {
     useUnifiedTopology?: boolean;
 }
 
-let cached: CachedConnection = global.mongo;
-if (!cached) {
-    cached = global.mongo = { conn: null, promise: null };
-}
+declare const global: typeof globalThis & {
+    mongo: CachedConnection;
+};
+
+// Initialize the global cache
+let cached: CachedConnection = global.mongo || { conn: null, promise: null };
 
 export async function connectToDatabase(): Promise<{ db: Db }> {
+    // Return the cached connection if it exists
     if (cached.conn) return cached.conn;
+
+    // Initialize a new connection and store it in the cache
     if (!cached.promise) {
         const conn: DatabaseConnection = {
-            client: null,
-            db: null,
+            client: null!,
+            db: null!,
         };
         const opts: MongoOptions = {
             useNewUrlParser: true,
@@ -55,10 +62,13 @@ export async function connectToDatabase(): Promise<{ db: Db }> {
                 cached.conn = conn;
             });
     }
+
+    // Wait for the connection to be established and return it
     await cached.promise;
-    return cached.conn;
+    return cached.conn!;
 }
 
+// Define the database interface
 export interface Database {
     collection(name: string): Collection;
 }

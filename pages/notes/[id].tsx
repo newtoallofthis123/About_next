@@ -4,6 +4,7 @@ import { marked } from 'marked';
 import LoadingScreen from '@components/loading';
 import hljs from 'highlight.js';
 import Layout from '@components/layout';
+import NotFound from '@pages/404';
 
 export default function UpdatesID() {
     const router = useRouter();
@@ -20,7 +21,7 @@ export default function UpdatesID() {
                 <LoadingScreen></LoadingScreen>
             </div>
         );
-    if (error) return <div>Failed to load</div>;
+    if (error) return <><NotFound></NotFound></>;
 
     const renderer = new marked.Renderer();
     renderer.code = function (code: string, language: string) {

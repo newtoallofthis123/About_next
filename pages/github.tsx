@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '@components/layout';
 
 const RepositoryList = () => {
-    const [repositories, setRepositories] = useState([]);
+    const [repositories, setRepositories]: any = useState([]);
 
     useEffect(() => {
         async function fetchData() {

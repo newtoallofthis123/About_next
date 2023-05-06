@@ -2,6 +2,11 @@ import React from 'react';
 
 export default function Init() {
     const [icon, setIcon] = React.useState('bi-moon');
+    const setTheme = (theme: string) => {
+        if (typeof window !== 'undefined') {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    }
     const toggleTheme = (theme: string) => {
         let set_theme = theme;
         if (theme === 'system') {
@@ -14,7 +19,7 @@ export default function Init() {
                 set_theme = 'light';
             }
         }
-        if (set_theme === 'dark') {
+        if (set_theme === 'dark' || set_theme === 'monokai' || set_theme === 'dracula' || set_theme === 'nord' || set_theme === 'synthwave' || set_theme === 'github' || set_theme === 'nightowl'){
             setIcon('bi-sun');
         } else {
             setIcon('bi-moon');
@@ -70,7 +75,85 @@ export default function Init() {
                 }}
             >
                 <i className="bi bi-repeat"></i>
-            </button>
+            </button>{' '}
+            <div>
+                <span>Special Themes:</span>
+                <button
+                    style={{
+                        marginLeft: '0.5rem',
+                        background: 'none',
+                        color: 'var(--color)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '1rem',
+                    }}
+                    onClick={() => {
+                        toggleTheme('monokai');
+                    }}
+                >
+                    Monokai
+                </button>
+                <button
+                    style={{
+                        marginLeft: '0.5rem',
+                        background: 'none',
+                        color: 'var(--color)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '1rem',
+                    }}
+                    onClick={() => {
+                        toggleTheme('nord');
+                    }}
+                >
+                    Nord
+                </button>
+                <button
+                    style={{
+                        marginLeft: '0.5rem',
+                        background: 'none',
+                        color: 'var(--color)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '1rem',
+                    }}
+                    onClick={() => {
+                        toggleTheme('purple');
+                    }}
+                >
+                    Voila
+                </button>
+                <button
+                    style={{
+                        marginLeft: '0.5rem',
+                        background: 'none',
+                        color: 'var(--color)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '1rem',
+                    }}
+                    onClick={() => {
+                        toggleTheme('dracula');
+                    }}
+                >
+                    Dracula
+                </button>
+                <button
+                    style={{
+                        marginLeft: '0.5rem',
+                        background: 'none',
+                        color: 'var(--color)',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: '1rem',
+                    }}
+                    onClick={() => {
+                        toggleTheme('vs-light');
+                    }}
+                >
+                    VSLight
+                </button>
+            </div>
         </>
     );
 }

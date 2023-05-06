@@ -22,6 +22,7 @@ export default function PicsDiv({ pics }: Props) {
                         data-fancybox="gallery"
                         className="pic"
                     >
+                        {/* eslint-disable-next-line */}
                         <img src={pic} alt={'Meme Number: ' + index} />
                     </div>
                 ))}

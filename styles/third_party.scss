@@ -92,12 +92,7 @@
 
     // Add hover effect on the repository list item
     &:hover {
-        background-color: #f6f8fa;
         cursor: pointer;
-
-        @media (prefers-color-scheme: dark) {
-            background-color: #24292e;
-        }
     }
 
     // Add the repository name and description styles

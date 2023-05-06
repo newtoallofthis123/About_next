@@ -38,7 +38,7 @@ export default function EditAdmin() {
             .then(res => res.json())
             .then(data => {
                 if (data.error) {
-                    toast("Error fetching data")
+                    toast.error("Error fetching data")
                 } else {
                     const item = data.find(item => item.hash === edit_hash)
                     if (item) {
@@ -47,14 +47,13 @@ export default function EditAdmin() {
                         setId(item._id)
                         setName(item.name)
                         setContent(item.content)
-                        toast("Item found")
                     } else {
                         setEdit(false)
                         setName('')
                         setData({})
                         setId('')
                         setContent('')
-                        toast("No item found")
+                        toast.error("No item found")
                     }
                 }
             })
@@ -83,9 +82,9 @@ export default function EditAdmin() {
             .then(res => res.json())
             .then(data => {
                 if (data.error) {
-                    toast("Error deleting data")
+                    toast.error("Error deleting data")
                 } else {
-                    toast("Data deleted")
+                    toast.info("Data deleted")
                     fetch(`/api/v1/${type}`, {
                         method: 'POST',
                         headers: {
@@ -100,36 +99,38 @@ export default function EditAdmin() {
                         .then(res => res.json())
                         .then(data => {
                             if (data.error) {
-                                toast("Error adding data")
+                                toast.error("Error adding data")
                             } else {
-                                toast("Data added")
+                                toast.success("Data Updated")
                             }
                         })
                         .catch(err => {
-                            toast("Error adding data")
+                            toast.error("Error adding data")
                         })
                 }
             })
             .catch(err => {
-                toast("Error deleting data")
+                toast.error("Error deleting data")
             })
     }
 
     return (
         <div>
             <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar={true}
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
                 rtl={false}
                 pauseOnFocusLoss
                 draggable
-                pauseOnHover />
+                pauseOnHover
+                theme="dark"
+            />
             {
                 (auth) ? (
-                    <div className='admin_div'>
+                    <div className='page-div admin_div'>
                         <Seo title="Admin Page"></Seo>
                         <h1>Edit the Contents</h1>
                         <p>Here you can edit the contents of the site.</p>

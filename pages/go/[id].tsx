@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import LoadingScreen from '@components/loading';
+import NotFound from '@pages/404';
 
 type Go = {
     _id: string;
@@ -17,7 +18,7 @@ export default function GoPage() {
     if (error) return <div>No Such URL Shortened</div>;
     if (!data) return <LoadingScreen />;
     const link = data.find((go: Go) => go.slug === param);
-    if (!link) return <div>No Such URL Shortened</div>;
+    if (!link) return <><NotFound></NotFound></>;
     if (typeof window !== 'undefined') {
         if (link.url.includes('http://') || link.url.includes('https://')) {
             window.location.href = link.url;

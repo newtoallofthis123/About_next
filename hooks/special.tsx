@@ -35,14 +35,14 @@ const Special = ({}: Props) => {
     return (
         <>
             {special && (
-                <div
-                    onClick={() => {
-                        typeof window !== 'undefined' &&
-                            window.open(current.link, '_blank');
-                    }}
-                    className={`special ${current.theme}`}
-                >
-                    <div className="special__title">
+                <div className={`special ${current.theme}`}>
+                    <div
+                        onClick={() => {
+                            typeof window !== 'undefined' &&
+                                window.open(current.link, '_blank') && setSpecial(false);
+                        }}
+                        className="special__title"
+                    >
                         <span>
                             <h1>{current.title}</h1>
                             {current.description}

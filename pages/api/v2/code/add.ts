@@ -8,14 +8,15 @@ export default async function handler(
 ): Promise<void> {
     if (req.method === 'POST') {
         const { db }: { db: Database } = await connectToDatabase();
-        const { title, content, category } = req.body;
+        const { title, content, hash, lang, author } = req.body;
         const data = await db
             .collection('code')
             .insertOne({
                 title: title,
                 content: content,
-                slug: hypens(title),
-                category: category,
+                lang: lang,
+                author: author,
+                hash: hash
             });
         res.json(data);
     }
