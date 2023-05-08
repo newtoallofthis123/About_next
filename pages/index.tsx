@@ -40,11 +40,24 @@ const Home = () => {
     // TODO: Replace with a better API
 
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
-    const { data, error } = useSwr('/api/v1/updates', fetcher);
-    const { data: blog_data, error: blog_error } = useSwr('/api/all', fetcher);
+    const { data, error } = useSwr('/api/v1/updates', fetcher, {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
+        revalidateOnMount: true,
+    });
+    const { data: blog_data, error: blog_error } = useSwr('/api/all', fetcher, {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
+        revalidateOnMount: true,
+    });
     const { data: notes_data, error: notes_error } = useSwr(
         '/api/v2/notes/all',
-        fetcher
+        fetcher,
+        {
+            revalidateOnFocus: false,
+            revalidateOnReconnect: false,
+            revalidateOnMount: true,
+        }
     );
     let count = 0;
     let notes_count = 0;

@@ -20,7 +20,11 @@ export default function UpdatesID() {
     const { id } = router.query;
     const param = id;
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
-    const { data, error, isLoading } = useSwr(`/api/v1/updates`, fetcher);
+    const { data, error, isLoading } = useSwr(`/api/v1/updates`, fetcher, {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
+        revalidateOnMount: true,
+    });
     if (isLoading)
         return (
             <div>

@@ -23,7 +23,11 @@ type Case = {
 const Special = ({}: Props) => {
     const [special, setSpecial] = React.useState<boolean>(false);
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
-    const { data: cases, error } = useSwr('/api/v2/special', fetcher);
+    const { data: cases, error } = useSwr('/api/v2/special', fetcher, {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
+        revalidateOnMount: true,
+    });
     error && !cases && setSpecial(false);
     const current: Case =
         cases?.find((c: Case) => c.hash >= dateHash()) || null;

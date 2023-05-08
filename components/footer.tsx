@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Init from './init';
+import useSwr from 'swr';
 
 export default function Footer() {
     const [footer, setFooter] = React.useState(false);
@@ -11,6 +12,13 @@ export default function Footer() {
             }
         }
     }, []);
+
+    const fetcher = (url: string) => fetch(url).then((r) => r.json());
+    const { data, error } = useSwr(
+        'https://api.quotable.io/quotes/random?limit=1&maxLength=50',
+        fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateOnMount: true,  }
+    );
+
     return (
         <>
             <footer className="footer two-content-divs">
@@ -162,14 +170,19 @@ export default function Footer() {
                     </div>
                 </div>
             </footer>
-            <div style={{
-                borderTop: '2px solid var(--color)',
-            }}>
-                <p style={{
-                    margin: '0',
-                    padding: '0',
-                    textAlign: 'center',
-                }}>
+            <div
+                style={{
+                    padding: '1rem',
+                    borderTop: '2px solid var(--color)',
+                }}
+            >
+                <p
+                    style={{
+                        margin: '0',
+                        padding: '0',
+                        textAlign: 'center',
+                    }}
+                >
                     Made with{' '}
                     <span>
                         <i
@@ -180,6 +193,19 @@ export default function Footer() {
                         ></i>
                     </span>{' '}
                     by Ishan.
+                </p>
+                <p
+                    style={{
+                        margin: '0',
+                        padding: '0',
+                        textAlign: 'center',
+                    }}
+                >
+                    {data && (
+                        <>
+                            {data[0]?.content} -{data[0]?.author}
+                        </>
+                    )}
                 </p>
             </div>
         </>

@@ -13,7 +13,12 @@ export default function UpdatesID() {
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, error, isLoading } = useSwr(
         `/api/v2/notes/get/${param}`,
-        fetcher
+        fetcher,
+        {
+            revalidateOnFocus: false,
+            revalidateOnReconnect: false,
+            revalidateOnMount: true,
+        }
     );
     if (isLoading)
         return (

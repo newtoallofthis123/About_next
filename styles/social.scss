@@ -10,10 +10,8 @@
   transition-delay: 50ms;
   background-color: var(--bg);
 
-  @media screen and (max-width: 698px) {
-    .main-card {
-      margin: 2%;
-    }
+  @media screen and (max-width: 1032px) {
+    margin: 8% 2%;
   }
 }
 
@@ -25,7 +23,7 @@
 
 .social-btn {
   font-size: 2rem;
-  width: 50%;
+  width: 80%;
   padding: 2%;
   margin: 1%;
   border-radius: 24px;
@@ -58,10 +56,6 @@
   }
 
   @media screen and (max-width: 698px) {
-    .main-card {
-      margin: 2%;
-    }
-
     .btn-link {
       text-decoration: none;
       display: block;

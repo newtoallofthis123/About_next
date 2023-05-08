@@ -262,10 +262,14 @@
     }
 }
 
+.gap {
+    margin-top: 8vw;
+}
+
 .page-div {
     padding: 2rem;
     margin: 2rem;
-    border: 3px solid var(--black);
+    border: 3px solid var(--color);
     border-radius: 0.4em;
     box-shadow: 0.3em 0.4em;
 
@@ -703,4 +707,54 @@
             max-width: 100%;
         }
     }
+}
+
+.collection_body {
+    background-image: url("/assets/bbblurry.svg");
+    height: 100%;
+    // background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.collection_div {
+    display: flex;
+    margin: 5%;
+    padding: 5%;
+}
+
+.collection_nav{
+    flex: 1;
+    // margin: 0 10%;
+    text-align: center;
+    padding: 0.5% 2%;
+    background-color: #ffffff7c;
+    border-radius: 12px;
+    color: #000000;
+
+    h1{
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 1%;
+    }
+    p{
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 0.5%;
+    }
+    h3{
+        font-size: 1.5rem;
+        margin: 0.5%;
+    }
+}
+
+.collection_content {
+    flex: 1;
+    margin: 0 2%;
+    padding: 0 5%;
+    background-color: #ffffff7c;
+    border-radius: 12px;
+    color: #000000;
+    height: 60vh;
+    overflow-y: scroll;
 }

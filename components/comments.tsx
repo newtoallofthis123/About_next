@@ -7,7 +7,11 @@ type Props = {};
 
 export default function Comments({}: Props) {
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
-    const { data, error } = useSWR('/api/v2/discuss', fetcher);
+    const { data, error } = useSWR('/api/v2/discuss', fetcher, {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
+        revalidateOnMount: true,
+    });
     let comments_number = 0;
     if (error) return <div>failed to load</div>;
     if (!data) return <div>Loading Data...</div>;

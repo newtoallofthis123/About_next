@@ -13,7 +13,11 @@ type Note = {
 
 export default function Notes() {
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
-    const { data, error, isLoading } = useSwr(`/api/v2/notes/all`, fetcher);
+    const { data, error, isLoading } = useSwr(`/api/v2/notes/all`, fetcher, {
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
+        revalidateOnMount: true,
+    });
     if (isLoading)
         return (
             <div>

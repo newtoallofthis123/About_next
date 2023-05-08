@@ -103,21 +103,6 @@ export default function Init() {
                         fontSize: '1rem',
                     }}
                     onClick={() => {
-                        toggleTheme('nord');
-                    }}
-                >
-                    Nord
-                </button>
-                <button
-                    style={{
-                        marginLeft: '0.5rem',
-                        background: 'none',
-                        color: 'var(--color)',
-                        border: 'none',
-                        cursor: 'pointer',
-                        fontSize: '1rem',
-                    }}
-                    onClick={() => {
                         toggleTheme('purple');
                     }}
                 >
@@ -137,21 +122,6 @@ export default function Init() {
                     }}
                 >
                     Dracula
-                </button>
-                <button
-                    style={{
-                        marginLeft: '0.5rem',
-                        background: 'none',
-                        color: 'var(--color)',
-                        border: 'none',
-                        cursor: 'pointer',
-                        fontSize: '1rem',
-                    }}
-                    onClick={() => {
-                        toggleTheme('vs-light');
-                    }}
-                >
-                    VSLight
                 </button>
             </div>
         </>
