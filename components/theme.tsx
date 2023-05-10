@@ -1,7 +1,7 @@
+'use client';
 import React from 'react';
 
 export default function Theme() {
-    const [icon, setIcon] = React.useState('bi-moon');
     const toggleTheme = (theme: string) => {
         let set_theme = theme;
         if (theme === 'system') {
@@ -13,11 +13,6 @@ export default function Theme() {
             } else {
                 set_theme = 'light';
             }
-        }
-        if (set_theme === 'dark') {
-            setIcon('bi-sun');
-        } else {
-            setIcon('bi-moon');
         }
         document.documentElement.setAttribute('data-theme', set_theme);
         localStorage.setItem('theme', theme);

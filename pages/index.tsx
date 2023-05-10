@@ -222,7 +222,7 @@ const Home = () => {
                         <div>
                             <h1>Site Update</h1>
                             <p>
-                                The current version of the site is v.4.8 In the
+                                The current version of the site is v.4.9 In the
                                 latest update, I almost rewrote the whole site
                                 using the new app/ folder structure. However, it
                                 is just not for me. I know it is the future, but

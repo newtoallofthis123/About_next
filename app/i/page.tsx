@@ -1,10 +1,16 @@
-import React from 'react'
-import { redirect } from 'next/navigation'
-
-type Props = {}
+type Props = {};
 
 export default function IPage({}: Props) {
-    return (
-      redirect('/')
-  )
+  return (
+    <div className="redirect">
+      <h1>
+       Other Writings
+      </h1>
+      <p>
+        Just a random Linker page.
+        This basically stores all my miscellaneous writings
+      </p>
+    </div>
+  );
 }
+
