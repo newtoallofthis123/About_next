@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import useSwr from 'swr';
-import AOS from 'aos';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Drag from '@components/drag';
@@ -26,20 +25,6 @@ type Update = {
 };
 
 const Home = () => {
-    //? For the animation
-    React.useEffect(() => {
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-out',
-            disable: 'mobile',
-        });
-        AOS.refresh();
-    }, []);
-
-    //* Fetching data from the API
-    //! To be replaced with a better API
-    // TODO: Replace with a better API
-
     const fetcher = (url: string) => fetch(url).then((res) => res.json());
     const { data, error } = useSwr('/api/v1/updates', fetcher, {
         revalidateOnFocus: false,

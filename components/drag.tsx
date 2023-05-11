@@ -1,3 +1,4 @@
+"use client"
 import { useDraggable } from '@neodrag/react';
 import React, { useEffect, useRef } from 'react';
 
