@@ -1,9 +1,9 @@
-import Layout from '@components/layout';
+"use client"
 import Link from 'next/link';
 
 export default function Blog() {
     return (
-        <Layout>
+        <>
             <div
                 style={{
                     marginTop: '8vw',
@@ -60,6 +60,6 @@ export default function Blog() {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </>
     );
 }

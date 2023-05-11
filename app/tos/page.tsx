@@ -1,9 +1,8 @@
-import Layout from '@components/layout';
 import Link from 'next/link';
 
 export default function Tos() {
     return (
-        <Layout>
+        <>
             <div className="normalize">
                 <div
                     style={{
@@ -185,6 +184,6 @@ export default function Tos() {
                     <p>Resident of Telangana, India</p>
                 </div>
             </div>
-        </Layout>
+        </>
     );
 }

@@ -17,7 +17,6 @@ export default function HomeLayout({ children }) {
         <>
             <Head>
                 <title>NoobScience | Open Source Enthusiast</title>
-                <meta name="theme-color" content="#ffd845" />
             </Head>
             <div className="home">
                 <Special />

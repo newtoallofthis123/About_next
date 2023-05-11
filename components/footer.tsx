@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Link from 'next/link';
 import Init from './init';
@@ -20,8 +21,8 @@ export default function Footer() {
     );
 
     return (
-        <>
-            <footer className="footer two-content-divs">
+        <footer>
+            <div className="footer two-content-divs">
                 <div className="content">
                     <h1 className="content__title">
                         {/* eslint-disable-next-line */}
@@ -169,7 +170,7 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
-            </footer>
+            </div>
             <div
                 style={{
                     padding: '1rem',
@@ -208,6 +209,6 @@ export default function Footer() {
                     )}
                 </p>
             </div>
-        </>
+        </footer>
     );
 }

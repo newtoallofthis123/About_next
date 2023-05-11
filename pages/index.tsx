@@ -192,31 +192,39 @@ const Home = () => {
                             ) : !data ? (
                                 <>Loading</>
                             ) : (
-                                <>
+                                <ul
+                                    style={{
+                                        listStyle: 'none',
+                                    }}
+                                >
                                     {data
                                         .slice(0)
                                         .reverse()
                                         .map(
                                             (update: Update, index: number) => {
                                                 if (index !== 0) {
-                                                    return <></>;
+                                                    return null;
                                                 }
                                                 return (
-                                                    <div key={update._id}>
-                                                        <h1>{update.name}</h1>
-                                                        <p>{update.date}</p>
-                                                        <p>
-                                                            {update.content.slice(
-                                                                0,
-                                                                400
-                                                            )}
-                                                            ...
-                                                        </p>
-                                                    </div>
+                                                    <li key={update._id}>
+                                                        <div>
+                                                            <h1>
+                                                                {update.name}
+                                                            </h1>
+                                                            <p>{update.date}</p>
+                                                            <p>
+                                                                {update.content.slice(
+                                                                    0,
+                                                                    400
+                                                                )}
+                                                                ...
+                                                            </p>
+                                                        </div>
+                                                    </li>
                                                 );
                                             }
                                         )}
-                                </>
+                                </ul>
                             )}
                         </div>
                         <div>
@@ -288,49 +296,62 @@ const Home = () => {
                 </div>
                 <div className="content content-rest">
                     <div className="col-divs">
-                        <div
-                            data-aos="fade-left"
-                            className="content content-half content-div-pink"
-                        >
-                            <h1>Updates</h1>
-                            <p>Here are some of my latest updates:</p>
-                            {error ? (
-                                <>Error Loading</>
-                            ) : !data ? (
-                                <>Loading</>
-                            ) : (
-                                data
-                                    .slice(0)
-                                    .reverse()
-                                    .map((update: Update) => {
-                                        const url = '/updates/' + update.hash;
-                                        count++;
-                                        if (count < 6) {
-                                            return (
-                                                <div
-                                                    className="update"
-                                                    key={update._id}
-                                                >
-                                                    <ul
-                                                        style={{
-                                                            listStyle: 'none',
-                                                            lineHeight:
-                                                                '1.5rem',
-                                                            padding: '0 0.5rem',
-                                                        }}
+                        <>
+                            <div
+                                data-aos="fade-left"
+                                className="content content-half content-div-pink"
+                            >
+                                <h1>Updates</h1>
+                                <p>Here are some of my latest updates:</p>
+                                {error ? (
+                                    <>Error Loading</>
+                                ) : !data ? (
+                                    <>Loading</>
+                                ) : (
+                                    data
+                                        .slice(0)
+                                        .reverse()
+                                        .map((update: Update) => {
+                                            const url =
+                                                '/updates/' + update.hash;
+                                            count++;
+                                            if (count < 6) {
+                                                return (
+                                                    <div
+                                                        className="update"
+                                                        key={update._id}
                                                     >
-                                                        <li>
-                                                            <Link href={url}>
-                                                                {update.name}
-                                                            </Link>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            );
-                                        }
-                                    })
-                            )}
-                        </div>
+                                                        <ul
+                                                            style={{
+                                                                listStyle:
+                                                                    'none',
+                                                                lineHeight:
+                                                                    '1.5rem',
+                                                                padding:
+                                                                    '0 0.5rem',
+                                                            }}
+                                                        >
+                                                            <li
+                                                                key={
+                                                                    update.hash
+                                                                }
+                                                            >
+                                                                <Link
+                                                                    href={url}
+                                                                >
+                                                                    {
+                                                                        update.name
+                                                                    }
+                                                                </Link>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                );
+                                            }
+                                        })
+                                )}
+                            </div>
+                        </>
                         <div
                             style={{
                                 border: '3px solid var(--color)',
@@ -364,7 +385,7 @@ const Home = () => {
                                                             padding: '0 0.5rem',
                                                         }}
                                                     >
-                                                        <li>
+                                                        <li key={note.slug}>
                                                             {note.category}:{' '}
                                                             <Link href={url}>
                                                                 {note.title}
