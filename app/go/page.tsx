@@ -1,7 +1,7 @@
+'use client';
 import React from 'react';
-import Link from 'next/link';
 import Layout from '@components/layout';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function NoGo() {
@@ -19,11 +19,10 @@ export default function NoGo() {
                 Math.floor(Math.random() * charactersLength)
             );
         }
-
         return hash;
     };
 
-    const copy = () => {
+    const copy = (link: string) => {
         navigator.clipboard.writeText('https://noobscience.rocks/' + link);
         toast('Copied to clipboard');
     };
@@ -33,8 +32,6 @@ export default function NoGo() {
         e.preventDefault();
         const url = e.currentTarget.url.value;
         const slug = ranHash();
-        setLink('/go/' + slug);
-        copy();
         fetch('/api/v1/go', {
             method: 'POST',
             headers: {
@@ -43,6 +40,7 @@ export default function NoGo() {
             body: JSON.stringify({ url, slug }),
         })
             .then(() => {
+                setLink('go/' + slug);
                 toast('Successfully posted GO');
             })
             .catch(() => {
@@ -51,17 +49,6 @@ export default function NoGo() {
     };
     return (
         <Layout>
-            <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar={true}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
             <div className="normalize">
                 <div className="page-div">
                     <div
@@ -79,8 +66,10 @@ export default function NoGo() {
                             </form>
                             {link && (
                                 <div>
-                                    <button className="fancy_btn">
-                                        Link is: <Link href={link}>{link}</Link>
+                                    <button onClick={() => {
+                                        copy(link);
+                                    }} className="fancy_btn">
+                                        Link is: <span>{link}</span>
                                     </button>
                                 </div>
                             )}
