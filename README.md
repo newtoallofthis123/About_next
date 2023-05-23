@@ -38,8 +38,17 @@ npm install
 npm run dev
 ```
 
+## ScreenShot
+
+![ScreenShot](https://noobscience.rocks/assets/site/screenshot.png)
+
 ## How it works
+
 In it's essense, noobscience.rocks is a monorepo using, as vercel terms it, the FrontEnd Cloud. However, if you break it down, it is merely MongoDB, React and Edge Functions.
+
+## Update on the Site
+
+I believe that building this site has honestly helped me learn Next.js alot and hey! It looks so cool. I recently went through a lot of effort to make it cost sustainable as well. Hope you enjoy my site. Wanna get in touch? Contact me on [my site](https://www.noobscience.rocks/contact).
 
 ## License
 

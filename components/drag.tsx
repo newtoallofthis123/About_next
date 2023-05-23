@@ -1,23 +1,21 @@
-"use client"
-import { useDraggable } from '@neodrag/react';
-import React, { useEffect, useRef } from 'react';
+"use client";
+import { useDraggable } from "@neodrag/react";
+import React, { useEffect, useRef } from "react";
 
 type Props = {
-    children: React.ReactNode;
+  children: React.ReactNode;
 };
 
 function Drag({ children }: Props) {
-    const draggableRef = useRef(null);
+  const draggableRef = useRef(null);
 
-    const { isDragging, dragState } = useDraggable(draggableRef, {
-        axis: 'both',
-    });
+  const { isDragging, dragState } = useDraggable(draggableRef, {
+    axis: "both",
+  });
 
-    useEffect(() => {}, [isDragging, dragState]);
+  useEffect(() => {}, [isDragging, dragState]);
 
-    return <div ref={draggableRef}>
-        {children}
-    </div>;
+  return <div ref={draggableRef}>{children}</div>;
 }
 
 export default Drag;

@@ -1,34 +1,43 @@
 {
-    "blogs": [
-        {
-            "id": 4,
-            "title": "The Age of AI Subscriptions",
-            "description": "AI is the future. It is the future of everything. But what does that mean for the future of subscriptions? What does that mean for the future of the internet? We will be talking about all of that and more.",
-            "author": "Ishan",
-            "slug": "https://noobscience.substack.com/p/the-age-of-ai-subscriptions",
-            "img": "https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3f848f9d-4fbb-424e-9bd5-3c62b2a1ac8f_1200x628.webp",
-            "wip": false
-        },
-        {
-            "id": 3,
-            "title": "TikTok-fication of Everything",
-            "description": "Everything now a days is either TikTok or trying to be TikTok. But why is this happening? What is TikTok doing that is so different from other social media platforms? And what does this mean for the future of social media?",
-            "author": "Ishan",
-            "slug": "https://noobscience.substack.com/p/the-tiktok-ification-of-everything",
-            "img": "https://substackcdn.com/image/fetch/w_1360,h_764,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe24540a8-ec89-4d87-8e69-035299c53c6f_1200x628.webp",
-            "video": "tiktok_everything.mp4",
-            "wip": false
-        },
-        {
-            "id": 2,
-            "title": "Social Media Part 1",
-            "description": "Yes. I know. Social media is a blogger's favorite topic to talk about. It is a topic that so needed to be talked about, but so cliched, that most people are like eh it's a choice afterall. But what happens when it no longer is a choice. What happens when social media is shoved down our throats. Is there anything we can do about it then",
-            "time": "2019-03-17",
-            "author": "Ishan Joshi",
-            "slug": "https://noobscience.substack.com/p/social-media-its-complicated",
-            "img": "https://substackcdn.com/image/fetch/w_704,h_396,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F58b92d74-f992-4698-9072-cac4a36e2640_1200x628.webp",
-            "video": "social_media.mp4",
-            "wip": false
-        }
-    ]
+  "blogs": [
+    {
+      "id": 5,
+      "title": "This Man Uses Vim!",
+      "description": "So, I finally started using NeoVim and I am loving it. So I'll be talking about a few steps to start using NeoVim properly and my exprience using it. Click to read on and get inspired to install and try out vim yourself.",
+      "author": "Ishan",
+      "slug": "https://blog.noobscience.rocks/this-man-uses-vim",
+      "img": "https://cdn.hashnode.com/res/hashnode/image/upload/v1684857020437/c0130451-aaa2-4dcf-9c8b-beb1136b4553.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
+      "wip": false
+    },
+    {
+      "id": 4,
+      "title": "The Age of AI Subscriptions",
+      "description": "AI is the future. It is the future of everything. But what does that mean for the future of subscriptions? What does that mean for the future of the internet? We will be talking about all of that and more.",
+      "author": "Ishan",
+      "slug": "https://noobscience.substack.com/p/the-age-of-ai-subscriptions",
+      "img": "https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3f848f9d-4fbb-424e-9bd5-3c62b2a1ac8f_1200x628.webp",
+      "wip": false
+    },
+    {
+      "id": 3,
+      "title": "TikTok-fication of Everything",
+      "description": "Everything now a days is either TikTok or trying to be TikTok. But why is this happening? What is TikTok doing that is so different from other social media platforms? And what does this mean for the future of social media?",
+      "author": "Ishan",
+      "slug": "https://noobscience.substack.com/p/the-tiktok-ification-of-everything",
+      "img": "https://substackcdn.com/image/fetch/w_1360,h_764,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe24540a8-ec89-4d87-8e69-035299c53c6f_1200x628.webp",
+      "video": "tiktok_everything.mp4",
+      "wip": false
+    },
+    {
+      "id": 2,
+      "title": "Social Media Part 1",
+      "description": "Yes. I know. Social media is a blogger's favorite topic to talk about. It is a topic that so needed to be talked about, but so cliched, that most people are like eh it's a choice afterall. But what happens when it no longer is a choice. What happens when social media is shoved down our throats. Is there anything we can do about it then",
+      "time": "2019-03-17",
+      "author": "Ishan Joshi",
+      "slug": "https://noobscience.substack.com/p/social-media-its-complicated",
+      "img": "https://substackcdn.com/image/fetch/w_704,h_396,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F58b92d74-f992-4698-9072-cac4a36e2640_1200x628.webp",
+      "video": "social_media.mp4",
+      "wip": false
+    }
+  ]
 }
