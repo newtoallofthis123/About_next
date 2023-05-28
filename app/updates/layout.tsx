@@ -13,11 +13,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <title>Updates | NoobScience</title>
             <body>
+                <title>Updates | NoobScience</title>
                 {children}
             </body>
-        </html>
     );
 }

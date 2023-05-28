@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import Footer from './footer';
 import Link from 'next/link';

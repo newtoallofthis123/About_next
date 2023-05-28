@@ -9,6 +9,7 @@ import '@/styles/third_party.scss';
 
 import ServerNav from '@components/server_nav';
 import Footer from '@components/footer';
+import { Atkinson_Hyperlegible } from 'next/font/google';
 
 export default function RootLayout({
     children,
@@ -16,13 +17,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <title>NoobScience | Student and Open Source Enthusiast</title>
             <body>
                 <ServerNav />
                 {children}
                 <Footer />
             </body>
-        </html>
     );
 }

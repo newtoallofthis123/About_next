@@ -16,11 +16,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
+        <body>
             <title>Ishan's Links</title>
-            <body>
-                {children}
-            </body>
-        </html>
+            {children}
+        </body>
     );
 }

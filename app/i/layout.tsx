@@ -14,12 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
       <body>
         <div className="colors">
           <div>{children}</div>
         </div>
       </body>
-    </html>
   );
 }

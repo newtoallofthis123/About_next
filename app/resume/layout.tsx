@@ -13,11 +13,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <title>Ishan's Resume</title>
             <body>
                 {children}
             </body>
-        </html>
     );
 }

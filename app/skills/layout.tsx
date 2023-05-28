@@ -16,13 +16,10 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <title>NoobScience | Student and Open Source Enthusiast</title>
             <body>
                 <ServerNav />
                 {children}
                 <Footer />
             </body>
-        </html>
     );
 }
