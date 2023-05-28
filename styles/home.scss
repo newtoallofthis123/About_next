@@ -1,171 +1,182 @@
 .home {
-    .nav {
-        background-color: var(--bg);
-        color: var(--color);
-        border-bottom: 3px solid var(--color);
-        font-family: 'Scheherazade', 'Times New Roman', Times, serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding-top: 1.2rem;
-        cursor: pointer;
+  .nav {
+    background-color: var(--bg);
+    color: var(--color);
+    border-bottom: 3px solid var(--color);
+    font-family: "Scheherazade", "Times New Roman", Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-top: 1.2rem;
+    cursor: pointer;
 
-        @media screen and (max-width: 1024px) {
-            display: none;
-        }
+    @media screen and (max-width: 1325px) {
+      display: none;
     }
+  }
 
-    .nav__img img {
-        width: 6rem;
-        vertical-align: middle;
+  .nav__img img {
+    width: 6rem;
+    vertical-align: middle;
+    margin: 0;
+    padding-bottom: 1rem;
+  }
+
+  .nav__title h1 {
+    display: flex;
+    padding: 0;
+    padding-left: 12px;
+    font-size: 128px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .nav__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: "Scheherazade New", "Times New Roman", Times, serif;
+    border-bottom: 3px solid var(--color);
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
         margin: 0;
-        padding-bottom: 1rem;
-    }
-
-    .nav__title h1 {
-        display: flex;
         padding: 0;
-        padding-left: 12px;
-        font-size: 128px;
-        line-height: 1;
-        font-weight: 700;
-        margin: 0;
-        text-transform: uppercase;
+
+        a {
+          display: block;
+          padding: 1rem 1.5rem;
+          text-decoration: none;
+          color: var(--color);
+          font-size: 1.8rem;
+          line-height: 2rem;
+          font-weight: 400;
+          text-transform: capitalize;
+
+          &:hover {
+            color: var(--link);
+          }
+        }
+      }
     }
 
-    .nav__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        font-family: "Scheherazade New", 'Times New Roman', Times, serif;
-        border-bottom: 3px solid var(--color);
-
-        ul {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-
-            li {
-                margin: 0;
-                padding: 0;
-
-                a {
-                    display: block;
-                    padding: 1rem 1.5rem;
-                    text-decoration: none;
-                    color: var(--color);
-                    font-size: 1.8rem;
-                    line-height: 2rem;
-                    font-weight: 400;
-                    text-transform: capitalize;
-
-                    &:hover {
-                        color: var(--link);
-                    }
-                }
-            }
-        }
-
-        @media screen and (max-width: 1024px) {
-            display: none;
-        }
+    @media screen and (max-width: 1325px) {
+      display: none;
     }
+  }
 }
 
 // ? Designs for the Special Component
 // FIXME: Better Mobile Responsiveness
 
 .special {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--color);
+  align-items: center;
+  padding: 0.1rem;
+
+  .special__title {
+    padding-left: 2vw;
+    color: var(--black);
+    font-family: var(--font);
+  }
+
+  .special__title h1 {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+  }
+
+  .special__title p {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+  }
+
+  .special__cancel-button {
+    font-family: var(--font);
+    font-size: 2rem;
+    line-height: 1.5rem;
+    color: var(--black);
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 3px solid var(--color);
-    align-items: center;
-    padding: 0.1rem;
 
-    .special__title {
-        padding-left: 2vw;
-        color: var(--black);
-        font-family: var(--font);
+    &:hover {
+      color: var(--black);
     }
+  }
 
-    .special__title h1 {
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        font-weight: 700;
-    }
+  @media screen and (max-width: 1034px) {
+    flex-direction: column;
+  }
 
-    .special__title p {
-        font-size: 1.2rem;
-        line-height: 1.2rem;
-        font-weight: 400;
-    }
-
-    .special__cancel-button {
-        font-family: var(--font);
-        font-size: 2rem;
-        line-height: 1.5rem;
-        color: var(--black);
-        font-weight: 700;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            color: var(--black);
-        }
-    }
-
-    ::selection {
-        background-color: var(--white);
-        color: #082dff;
-    }
+  ::selection {
+    background-color: var(--white);
+    color: #082dff;
+  }
 }
 
 .red {
-    background-color: var(--red);
-    color: var(--black);
+  background-color: var(--red);
+  color: var(--black);
 }
 
 .pink {
-    background-color: var(--pink);
-    color: var(--black);
+  background-color: var(--pink);
+  color: var(--black);
 }
 
 .orange {
-    background-color: #ff8c00;
-    color: var(--black);
+  background-color: #ff8c00;
+  color: var(--black);
 }
 
 .yellow {
-    background-color: var(--yellow);
-    color: var(--black);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 .green {
-    background-color: var(--green);
-    color: var(--black);
+  background-color: var(--green);
+  color: var(--black);
 }
 
 .blue {
-    background-color: var(--blue);
-    color: var(--black);
+  background-color: var(--blue);
+  color: var(--black);
 }
 
-.light{
-    background-color: var(--white);
-    color: var(--black);
+.light {
+  background-color: var(--white);
+  color: var(--black);
 }
 
-.dark{
-    background-color: var(--black);
-    color: var(--white);
+.dark {
+  background-color: var(--black);
+  color: var(--white);
 }
+
+.violet {
+  background-color: var(--violet);
+  color: var(--black);
+}
+

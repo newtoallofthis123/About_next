@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 
 import HomeLayout from "@components/home_layout";
@@ -7,6 +8,7 @@ import useSwr from "swr";
 import AOS from "aos";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 type Note = {
   _id: string;
@@ -161,9 +163,6 @@ const Home = () => {
         </div>
       </div>
       <div
-        style={{
-          backgroundColor: "var(--green)",
-        }}
         className="full-content-div content-div-green"
       >
         <div className="notification">
@@ -172,6 +171,7 @@ const Home = () => {
             <div
               style={{
                 backgroundColor: "var(--white)",
+                color: "var(--black)",
                 padding: "1.5rem",
                 borderRadius: "1rem",
                 boxShadow: "0.3rem 0.4rem var(--black)",
@@ -206,10 +206,9 @@ const Home = () => {
                           <div>
                             <h1>{update.name}</h1>
                             <p>{update.date}</p>
-                            <p>
-                              {update.content.slice(0, 400)}
-                              ...
-                            </p>
+                            <ReactMarkdown>
+                              {update.content.slice(0, 400) + "..."}
+                            </ReactMarkdown>
                           </div>
                         </li>
                       );
@@ -220,17 +219,18 @@ const Home = () => {
             <div>
               <h1>Site Update</h1>
               <p>
-                The current version of the site is v.4.9 In the latest update, I
-                almost rewrote the whole site using the new app/ folder
-                structure. However, it is just not for me. I know it is the
-                future, but I am not ready for it yet. So, I am going to stick
-                with the old structure for now. One feature I am quite proud of
-                is the new comments section. You have to check it out from{" "}
-                <Link href="/discuss">/discuss</Link>. On the other hand, I made
-                a few changes to the backend. The CMS is now more robust and the
-                API is more secure. I am working on creating a public API for
-                the site. I am also working on a new project, which is a secret
-                for now. I will reveal it soon.
+                The current version of the site is v.5.0. It is a long term release 
+                for my site. All the components are dynamic. So I can update them directly 
+                from database or the custom CMS I made.
+                The site is now 80% written using the latest NextJS 13.4's app/ directory.
+                I am working on the remaining 20%.
+                Most of the components seem to work and perform the same way as they did before.
+                However, some of them are now less pwax friendly. I am working on that.
+                The site is now mostly responsive. I've added a few more breakpoints.
+                Moreover, the I have deprecated a few old pages that were just not needed.
+                Overall, you should feel the site to be faster and more responsive.
+                Any bugs you find, please report them to me. I'll try to fix them as soon as possible.
+                Report the bugs on the site's <Link href="/i/bugtracker">GitHub</Link> page.
               </p>
             </div>
           </div>

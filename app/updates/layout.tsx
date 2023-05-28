@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <title>Ishan's Resume</title>
+            <title>Updates | NoobScience</title>
             <body>
                 {children}
             </body>

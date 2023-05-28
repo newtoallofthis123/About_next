@@ -43,6 +43,12 @@ export default function Footer() {
             <li>
               <Init></Init>
             </li>
+            <li>
+              Source Code available on{" "}
+              <Link href="/go/github">
+                <i className="bi bi-github"></i> GitHub
+              </Link>
+            </li>
           </ul>
           <div
             style={{
@@ -191,6 +197,7 @@ export default function Footer() {
             <i
               style={{
                 color: "red",
+                fontSize: "1.2rem",
               }}
               className="bi bi-heart-fill"
             ></i>

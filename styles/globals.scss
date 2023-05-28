@@ -18,8 +18,7 @@
 ::-webkit-scrollbar-thumb {
   height: 5px;
   background: #555555;
-  border-radius: 5px;
-  // border: 2px solid #000000;
+  //border: 2px solid #000000;
 }
 
 /* Handle on hover */
@@ -48,8 +47,8 @@
 :root[data-theme="light"] {
   --color: #101010;
   --bg: #ffffff;
-  --selection-bg: #c4e9ff;
-  --selection-color: #000000;
+  --selection-bg: #3390ff;
+  --selection-color: #fff;
 }
 
 :root[data-theme="dark"] {
@@ -99,17 +98,6 @@
   --green: #50fa7b;
   --violet: #bd93f9;
   --pink: #ff79c6;
-}
-
-:root[data-theme="vs-light"] {
-  --bg: #ffffff;
-  --color: #2c2c2c;
-  --yellow: #ffcd81;
-  --red: #e50000;
-  --blue: #5272ff;
-  --green: #009d63;
-  --violet: #6f42c1;
-  --pink: #d73a49;
 }
 
 body {
@@ -284,13 +272,14 @@ pre {
   .nav-title {
     font-size: 1.8rem;
     font-weight: 700;
-    margin: 0;
-    margin-right: 1rem;
+    margin: 0 1rem;
+    margin-left: 2rem;
     padding: 0;
     text-transform: uppercase;
   }
 
   img {
+    margin-right: 0.5rem;
     padding-bottom: 0.5rem;
   }
 
@@ -331,7 +320,7 @@ pre {
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1325px) {
     display: flex;
   }
 }
@@ -346,6 +335,8 @@ pre {
     font-size: 2rem;
     font-weight: 700;
     padding: 0.5rem;
+    text-align: left;
+    margin: 1rem;
     text-transform: uppercase;
   }
 
@@ -357,7 +348,7 @@ pre {
     width: 3rem;
     vertical-align: middle;
     margin-right: 0.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
 
   ul {
@@ -428,4 +419,3 @@ pre {
     display: block;
   }
 }
-

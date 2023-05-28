@@ -1,4 +1,3 @@
-"use client"
 import Link from 'next/link';
 
 export default function Blog() {
@@ -10,7 +9,7 @@ export default function Blog() {
                 }}
                 className="normalize"
             >
-                <div className="page-div">
+                <div className='normal-div'>
                     <h1>Ishan Writes is now Noobing With The Noob</h1>
                     <p className="text-div">
                         Yep! I retired my old blog that I wrote. It is now
