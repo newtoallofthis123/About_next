@@ -14,17 +14,6 @@ export default function Footer() {
     }
   }, []);
 
-  const fetcher = (url: string) => fetch(url).then((r) => r.json());
-  const { data, error } = useSwr(
-    "https://api.quotable.io/quotes/random?limit=1&maxLength=50",
-    fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false,
-      revalidateOnMount: true,
-    }
-  );
-
   return (
     <footer className="footer">
       <div className="footer-content two-content-divs">
@@ -211,11 +200,8 @@ export default function Footer() {
             textAlign: "center",
           }}
         >
-          {data && (
-            <>
-              {data[0]?.content} -{data[0]?.author}
-            </>
-          )}
+          There is only do or do not, there is no try.
+          - Yoda
         </p>
       </div>
     </footer>

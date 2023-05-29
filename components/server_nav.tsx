@@ -22,7 +22,7 @@ const ServerNav = () => {
                         {/* eslint-disable-next-line */}
                         <img
                             src="/logo192.png"
-                            width="32"
+                            width="28"
                             style={{
                                 verticalAlign: 'middle',
                                 borderRadius: '24px',

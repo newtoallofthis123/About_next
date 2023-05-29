@@ -119,6 +119,7 @@ export default function Credits() {
                             name="message"
                             id="message"
                             cols={30}
+                            rows={5}
                         ></textarea>
                         <p></p>
                         <input type="submit" value="Send Message" />

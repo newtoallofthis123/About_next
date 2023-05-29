@@ -13,6 +13,7 @@
     ul {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         list-style: none;
     }
 
@@ -26,6 +27,12 @@
         vertical-align: middle;
         width: 32px;
         margin: 0 1rem;
+    }
+
+    @media (max-width: 1024px) {
+        ul {
+            flex-direction: column;
+        }
     }
 }
 
@@ -64,11 +71,16 @@
     }
 
     @media screen and (max-width: 1322px) {
-        margin: 1rem 0.5rem;
         padding: 1rem;
 
         h1 {
             font-size: 3rem;
+        }
+        h2{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            text-decoration: 2px underline var(--black);
         }
     }
 }

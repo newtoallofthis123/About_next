@@ -88,7 +88,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 3px solid var(--color);
   align-items: center;
   padding: 0.1rem;
 
@@ -123,15 +122,34 @@
     &:hover {
       color: var(--black);
     }
-  }
 
-  @media screen and (max-width: 1034px) {
-    flex-direction: column;
+    @media (max-width: 1034px) {
+      font-size: 2rem;
+    }
   }
 
   ::selection {
     background-color: var(--white);
     color: #082dff;
+  }
+  @media screen and (max-width: 1034px) {
+    // flex-direction: column;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+
+    span{
+      font-size: 1rem;
+      line-height: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1{
+      font-size: 1.2rem;
+      line-height: none;
+    }
   }
 }
 

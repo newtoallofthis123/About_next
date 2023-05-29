@@ -117,7 +117,7 @@ const Home = () => {
                         scrollllllllllll
                     </div>
                 </div>
-                <div className="animate__animated animate__fadeInUp content content-div-blue">
+                <div className="second-div animate__animated animate__fadeInUp content content-div-blue">
                     <div className="center-img">
                         {/* //! I know this is not good practice, but it is a temporary solution */}
                         {/* // TODO: Design a better solution */}
@@ -170,31 +170,18 @@ const Home = () => {
                     <div className="notification__text">
                         <h1>What's Up?</h1>
                         <div
-                            style={{
-                                backgroundColor: 'var(--white)',
-                                color: 'var(--black)',
-                                padding: '1.5rem',
-                                borderRadius: '1rem',
-                                boxShadow: '0.3rem 0.4rem var(--black)',
-                                cursor: 'pointer',
-                                border: '0.2rem solid var(--black)',
-                            }}
                             onClick={() => {
                                 typeof window !== 'undefined' &&
                                     (window.location.href = `/updates/latest`);
                             }}
-                            className="full-page-div"
+                            className="notification__div full-page-div"
                         >
                             {error ? (
                                 <>Error Loading</>
                             ) : !data ? (
                                 <>Loading</>
                             ) : (
-                                <ul
-                                    style={{
-                                        listStyle: 'none',
-                                    }}
-                                >
+                                <>
                                     {data
                                         .slice(0)
                                         .reverse()
@@ -204,53 +191,35 @@ const Home = () => {
                                                     return null;
                                                 }
                                                 return (
-                                                    <li key={update._id}>
-                                                        <div>
-                                                            <h1>
-                                                                {update.name}
-                                                            </h1>
-                                                            <p>{update.date}</p>
-                                                            <ReactMarkdown>
-                                                                {update.content.slice(
-                                                                    0,
-                                                                    400
-                                                                ) + '...'}
-                                                            </ReactMarkdown>
-                                                        </div>
-                                                    </li>
+                                                    <div key={update._id}>
+                                                        <h1>{update.name}</h1>
+                                                        <p>{update.date}</p>
+                                                        <ReactMarkdown>
+                                                            {update.content.slice(
+                                                                0,
+                                                                400
+                                                            ) + '...'}
+                                                        </ReactMarkdown>
+                                                    </div>
                                                 );
                                             }
                                         )}
-                                </ul>
+                                </>
                             )}
                         </div>
                         <div>
                             <h1>Site Update</h1>
                             <p>
-                                The current version of the site is v.5.0. It is
-                                a long term release for my site. All the
-                                components are dynamic. So I can update them
-                                directly from database or the custom CMS I made.
-                                The site is now 80% written using the latest
-                                NextJS 13.4's app/ directory. I am working on
-                                the remaining 20%. Most of the components seem
-                                to work and perform the same way as they did
-                                before. However, some of them are now less pwax
-                                friendly. I am working on that. The site is now
-                                mostly responsive. I've added a few more
-                                breakpoints. Moreover, the I have deprecated a
-                                few old pages that were just not needed.
-                                Overall, you should feel the site to be faster
-                                and more responsive. Any bugs you find, please
-                                report them to me. I'll try to fix them as soon
-                                as possible. Report the bugs on the site's{' '}
-                                <Link href="/i/bugtracker">GitHub</Link> page.
+                                The current version of the site is v.5.1. The follow up to the major
+                                backend update of v.5.0, this version is more responsive and has a better UI.
+                                The site is more SEO friendly and has a better performance.
+                                
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="half-two-divs">
+            <div className="second-div half-two-divs">
                 <div data-aos="fade-up" className="content content-half">
                     <div className="showcase-div">
                         {blog_error ? (

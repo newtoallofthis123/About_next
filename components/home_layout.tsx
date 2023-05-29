@@ -66,7 +66,7 @@ export default function HomeLayout({ children }) {
                                 {/* eslint-disable-next-line */}
                                 <img
                                     src="/logo192.png"
-                                    width="32"
+                                    width="28"
                                     style={{
                                         verticalAlign: 'middle',
                                         borderRadius: '24px',
@@ -82,7 +82,7 @@ export default function HomeLayout({ children }) {
                                 <button
                                     onClick={toggleNav}
                                     style={{
-                                        fontSize: '1.4rem',
+                                        fontSize: '1.2rem',
                                         margin: '0 1rem',
                                     }}
                                     id="op_toggle"

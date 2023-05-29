@@ -35,6 +35,14 @@ const Special = ({}: Props) => {
         if (current) {
             setSpecial(true);
         }
+        if (typeof window !== 'undefined') {
+            if (window.innerWidth < 728) {
+                setTimeout(() => {
+                    setSpecial(false);
+                }
+                , 10000);
+            }
+        }
     }, [current]);
     return (
         <>
