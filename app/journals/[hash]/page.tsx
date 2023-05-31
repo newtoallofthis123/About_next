@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import fetchFileContents from '../getJournals'
@@ -11,7 +10,6 @@ type Props = {
 
 export default async function JournalHash({ params: { hash } }: Props) {
     const data = await fetchFileContents('journals/' + hash + '.md')
-    console.log(data)
     return (
         <>
             <ReactMarkdown>

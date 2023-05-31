@@ -1,4 +1,3 @@
-'use client';
 import '@/styles/globals.scss';
 import '@/styles/home.scss';
 import '@/styles/pages.scss';

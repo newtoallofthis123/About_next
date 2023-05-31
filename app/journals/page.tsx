@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import fetchFileContents from './getJournals'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
