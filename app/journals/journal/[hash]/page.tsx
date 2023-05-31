@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import fetchFileContents from '../getJournals'
+import fetchFileContents from '../../getJournals'
 
 type Props = {
     params: {

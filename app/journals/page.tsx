@@ -11,7 +11,7 @@ export default async function Journals({}: Props) {
         <>
             <h3>
                 Read The Latest Entry at:{' '}
-                <Link href={'journals/' + latest}>{
+                <Link href={'journals/journal/' + latest}>{
                     latest.substring(0, 4) + '-' + latest.substring(4, 6) + '-' + latest.substring(6, 8)
                 }</Link>
             </h3>
