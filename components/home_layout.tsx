@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Footer from './footer';
 import Link from 'next/link';
 import Head from 'next/head';
-import Special from 'hooks/special';
+import Special from '@components/special';
 
 export default function HomeLayout({ children }) {
     const [nav, setNav] = useState(false);
@@ -41,7 +41,7 @@ export default function HomeLayout({ children }) {
                                 'resume',
                                 'updates',
                                 'contact',
-                                'services',
+                                'journal',
                                 'social',
                                 'github',
                                 'notes',
@@ -98,6 +98,7 @@ export default function HomeLayout({ children }) {
                                     'skills',
                                     'resume',
                                     'updates',
+                                    'journal',
                                     'contact',
                                     'github',
                                     'social',

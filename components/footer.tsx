@@ -201,7 +201,7 @@ export default function Footer() {
           }}
         >
           There is only do or do not, there is no try.
-          - Yoda
+            - Yoda
         </p>
       </div>
     </footer>

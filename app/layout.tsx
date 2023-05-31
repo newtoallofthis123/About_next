@@ -5,7 +5,7 @@ export default function RootLayout({
 }) {
     return (
         <html>
-            <title>NoobScience | Student and Open Source Enthusiast</title> 
+            <title>NoobScience | Student and Open Source Enthusiast</title>
             <head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="theme-color" content="#ffd845" />
@@ -66,7 +66,7 @@ export default function RootLayout({
                     crossOrigin="anonymous"
                 />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Montserrat:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Montserrat:wght@400;700&family=Scheherazade+New:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap"
                     rel="stylesheet"
                 />
                 <link

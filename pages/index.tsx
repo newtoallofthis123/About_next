@@ -112,9 +112,8 @@ const Home = () => {
                     </div>
                     <div className="hero__text">
                         Or you know, I can take you on a tour of my{' '}
-                        <Link href="/projects">Projects</Link> or my{' '}
-                        <Link href="/blog">Blog</Link>. Better yet, just
-                        scrollllllllllll
+                        <Link href="/projects">Projects</Link> or you are welcome to read my{' '}
+                        <Link href="/journals">Journals</Link>.
                     </div>
                 </div>
                 <div className="second-div animate__animated animate__fadeInUp content content-div-blue">

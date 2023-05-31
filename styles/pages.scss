@@ -937,3 +937,68 @@
 .normal-div{
   margin: 2rem;
 }
+
+.journal{
+  margin: 5%;
+
+  .journal-content{
+    font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+
+    img{
+      width: 80%;
+
+      @media screen and (max-width: 1032px) {
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1032px) {
+    margin: 3%;
+
+    .journal-content{
+      font-size: 1rem;
+    }
+  }
+}
+
+.journal-nav{
+  border-bottom: 3px solid var(--color);
+  background: var(--pink);
+  .nav-title {
+    color: var(--color);
+    font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+    text-align: center;
+    font-size: 5rem;
+    line-height: 0;
+  }
+
+  h3{
+    margin: 1%;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+  }
+
+  @media screen and (max-width: 1032px) {
+    .nav-title {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}
+
+.journal-footer{
+  background-color: var(--yellow);
+  color: var(--black);
+  border-top: 3px solid var(--color);
+  padding: 1% 0;
+  text-align: center;
+}
