@@ -1,6 +1,6 @@
 import React from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import fetchFileContents from '../../getJournals'
+import { fetchNormalFile } from 'app/journals/getJournals'
 
 type Props = {
     params: {
@@ -9,7 +9,7 @@ type Props = {
 }
 
 export default async function JournalHash({ params: { special } }: Props) {
-    const data = await fetchFileContents(special + '.md')
+    const data = await fetchNormalFile(special + '.md')
     return (
         <>
             <ReactMarkdown>

@@ -92,7 +92,7 @@ const Home = () => {
                 theme="dark"
             />
             <div className="two-content-divs">
-                <div className="animate__animated animate__fadeInDown hero content content-div-yellow">
+                <div className="animate__animated animate__fadeInDown hero content content-div-purple">
                     <h1 className="hero__title">Meet The Noob</h1>
                     <div className="hero__text">
                         {time()}! I am Ishan Joshi and I like to talk tech.
@@ -106,7 +106,9 @@ const Home = () => {
                         So, let's get to know each other.
                     </div>
                     <div className="hero__btn">
-                        <button className="fancy_btn">
+                        <button style={{
+                            backgroundColor: 'var(--yellow)',
+                        }} className="fancy_btn">
                             <Link href="/about">Let's Get Going</Link>
                         </button>
                     </div>

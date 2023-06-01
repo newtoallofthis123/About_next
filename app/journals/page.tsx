@@ -1,22 +1,21 @@
 import React from 'react'
-import fetchFileContents from './getJournals'
+import { fetchNormalFile, fetchFileJSON } from './getJournals';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
-import Link from 'next/link'
+import Link from 'next/link';
 
 type Props = {}
 
 export default async function Journals({}: Props) {
-    const latest = await fetchFileContents('latest.txt');
+    const data = await fetchFileJSON();
+    const journals = data["journals"];
+    const latest_journal = Object.keys(journals)[0]
     return (
         <>
             <h3>
-                Read The Latest Entry at:{' '}
-                <Link href={'journals/journal/' + latest}>{
-                    latest.substring(0, 4) + '-' + latest.substring(4, 6) + '-' + latest.substring(6, 8)
-                }</Link>
+                Read the latest journal: <Link href={"/journals/" + latest_journal}>{journals[latest_journal]["name"]}</Link>
             </h3>
             <ReactMarkdown>
-                {await fetchFileContents('README.md')}
+                {await fetchNormalFile('README.md')}
             </ReactMarkdown>
         </>
     );

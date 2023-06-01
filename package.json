@@ -1,12 +1,14 @@
 {
   "name": "next_about",
-  "version": "5.2.3",
+  "version": "5.2.5",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "next analyze",
+    "deploy": "python deploy.py"
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.17",
